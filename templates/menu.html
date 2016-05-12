@@ -14,8 +14,14 @@
         </ion-header-bar>
         <ion-content padding="false" class="side-menu-left has-header">
             <ion-list>
-                <ion-item ui-sref="menu.ray" menu-close="">Home</ion-item>
-                <ion-item ui-sref="menu.lessons" menu-close="">Library</ion-item>
+                <ion-item class="item-icon-left">
+                    <i class="icon ion-android-home"></i>Home
+                    <span class="item-note">new lesson plan!</span>
+                </ion-item>
+                <ion-item class="item-icon-left" ui-sref="menu.lessons" menu-close="">
+                    <i class="icon ion-ionic"></i>Exercise Library</ion-item>
+                <ion-item class="item-icon-left" ui-sref="menu.tools" menu-close="">
+                    <i class="icon ion-ionic"></i>Tools</ion-item>
             </ion-list>
         </ion-content>
     </ion-side-menu>

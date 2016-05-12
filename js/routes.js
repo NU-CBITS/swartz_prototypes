@@ -92,10 +92,14 @@ angular.module('app.routes', [])
     controller: 'dailyMoodEnergyLevelCtrl'
   })
 
-  .state('anticipatingProgress', {
+  .state('menu.anticipatingProgress', {
     url: '/anticipating_progress',
-    templateUrl: 'templates/anticipatingProgress.html',
-    controller: 'anticipatingProgressCtrl'
+    views: {
+      'side-menu21': {
+        templateUrl: 'templates/anticipatingProgress.html',
+        controller: 'anticipatingProgressCtrl'
+      }
+    }
   })
 
   .state('anticipatingProgressQuestions', {
@@ -172,10 +176,14 @@ angular.module('app.routes', [])
     }
   })
 
-  .state('lonelinessAndMood', {
+  .state('menu.lonelinessAndMood', {
     url: '/loneliness_and_mood',
-    templateUrl: 'templates/lonelinessAndMood.html',
-    controller: 'lonelinessAndMoodCtrl'
+    views: {
+      'side-menu21': {
+        templateUrl: 'templates/lonelinessAndMood.html',
+        controller: 'lonelinessAndMoodCtrl'
+      }
+    }
   })
 
   .state('socialRhythmMetricFeedback', {
@@ -204,16 +212,14 @@ angular.module('app.routes', [])
     }
   })
 
-  .state('socialRhythmAnchorsPart3', {
-    url: '/page29',
-    templateUrl: 'templates/socialRhythmAnchorsPart3.html',
-    controller: 'socialRhythmAnchorsPart3Ctrl'
-  })
-
-  .state('tools', {
-    url: '/tools',
-    templateUrl: 'templates/tools.html',
-    controller: 'toolsCtrl'
+  .state('menu.socialRhythmAnchorsPart3', {
+    url: '/srm_anchors3',
+    views: {
+      'side-menu21': {
+        templateUrl: 'templates/socialRhythmAnchorsPart3.html',
+        controller: 'socialRhythmAnchorsPart3Ctrl'
+      }
+    }
   })
 
   .state('socialRhythmMetricGoalSettingII', {
@@ -228,10 +234,20 @@ angular.module('app.routes', [])
     controller: 'socialRhythmMetricGoalSettingII2Ctrl'
   })
 
-  .state('sRM', {
-    url: '/page28',
-    templateUrl: 'templates/sRM.html',
-    controller: 'sRMCtrl'
+  .state('menu.tools', {
+    url: '/tools',
+    views: {
+      'side-menu21': {
+        templateUrl: 'templates/tools.html',
+        controller: 'toolsCtrl'
+      }
+    }
+  })
+
+  .state('socialRhythmMetricFeedback2', {
+    url: '/srm_feedabck',
+    templateUrl: 'templates/socialRhythmMetricFeedback2.html',
+    controller: 'socialRhythmMetricFeedback2Ctrl'
   })
 
 $urlRouterProvider.otherwise('/side-menu21/home')

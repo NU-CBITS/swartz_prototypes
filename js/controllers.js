@@ -92,10 +92,6 @@ angular.module('app.controllers', [])
 
 })
    
-.controller('toolsCtrl', function($scope) {
-
-})
-   
 .controller('socialRhythmMetricGoalSettingIICtrl', function($scope) {
 
 })
@@ -104,7 +100,11 @@ angular.module('app.controllers', [])
 
 })
    
-.controller('sRMCtrl', function($scope) {
+.controller('toolsCtrl', function($scope) {
+
+})
+   
+.controller('socialRhythmMetricFeedback2Ctrl', function($scope) {
 
 })
  
