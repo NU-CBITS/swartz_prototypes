@@ -110,10 +110,14 @@ angular.module('app.routes', [])
     controller: 'alignedMisalignedRhythmsCtrl'
   })
 
-  .state('rememberingAWellPeriod', {
+  .state('menu.rememberingAWellPeriod', {
     url: '/remembering_a_well_period',
-    templateUrl: 'templates/rememberingAWellPeriod.html',
-    controller: 'rememberingAWellPeriodCtrl'
+    views: {
+      'side-menu21': {
+        templateUrl: 'templates/rememberingAWellPeriod.html',
+        controller: 'rememberingAWellPeriodCtrl'
+      }
+    }
   })
 
   .state('rememberingAWellPeriodFeedback', {
@@ -148,10 +152,14 @@ angular.module('app.routes', [])
     }
   })
 
-  .state('exercisesLesson8', {
+  .state('menu.exercisesLesson8', {
     url: '/exercises8',
-    templateUrl: 'templates/exercisesLesson8.html',
-    controller: 'exercisesLesson8Ctrl'
+    views: {
+      'side-menu21': {
+        templateUrl: 'templates/exercisesLesson8.html',
+        controller: 'exercisesLesson8Ctrl'
+      }
+    }
   })
 
   .state('menu.exercisesLesson5', {
@@ -176,24 +184,54 @@ angular.module('app.routes', [])
     controller: 'socialRhythmMetricFeedbackCtrl'
   })
 
-  .state('menu.socialRhythmAnchors', {
+  .state('menu.socialRhythmAnchorsPart1', {
     url: '/srm_anchors',
     views: {
       'side-menu21': {
-        templateUrl: 'templates/socialRhythmAnchors.html',
-        controller: 'socialRhythmAnchorsCtrl'
+        templateUrl: 'templates/socialRhythmAnchorsPart1.html',
+        controller: 'socialRhythmAnchorsPart1Ctrl'
       }
     }
   })
 
-  .state('menu.socialRhythmsAnchors', {
+  .state('menu.socialRhythmAnchorsPart2', {
     url: '/srm_anchors2',
     views: {
       'side-menu21': {
-        templateUrl: 'templates/socialRhythmsAnchors.html',
-        controller: 'socialRhythmsAnchorsCtrl'
+        templateUrl: 'templates/socialRhythmAnchorsPart2.html',
+        controller: 'socialRhythmAnchorsPart2Ctrl'
       }
     }
+  })
+
+  .state('socialRhythmAnchorsPart3', {
+    url: '/page29',
+    templateUrl: 'templates/socialRhythmAnchorsPart3.html',
+    controller: 'socialRhythmAnchorsPart3Ctrl'
+  })
+
+  .state('tools', {
+    url: '/tools',
+    templateUrl: 'templates/tools.html',
+    controller: 'toolsCtrl'
+  })
+
+  .state('socialRhythmMetricGoalSettingII', {
+    url: '/srm_goal_2',
+    templateUrl: 'templates/socialRhythmMetricGoalSettingII.html',
+    controller: 'socialRhythmMetricGoalSettingIICtrl'
+  })
+
+  .state('socialRhythmMetricGoalSettingII2', {
+    url: '/page30',
+    templateUrl: 'templates/socialRhythmMetricGoalSettingII2.html',
+    controller: 'socialRhythmMetricGoalSettingII2Ctrl'
+  })
+
+  .state('sRM', {
+    url: '/page28',
+    templateUrl: 'templates/sRM.html',
+    controller: 'sRMCtrl'
   })
 
 $urlRouterProvider.otherwise('/side-menu21/home')

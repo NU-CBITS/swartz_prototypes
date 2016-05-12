@@ -80,11 +80,31 @@ angular.module('app.controllers', [])
 
 })
    
-.controller('socialRhythmAnchorsCtrl', function($scope) {
+.controller('socialRhythmAnchorsPart1Ctrl', function($scope) {
 
 })
    
-.controller('socialRhythmsAnchorsCtrl', function($scope) {
+.controller('socialRhythmAnchorsPart2Ctrl', function($scope) {
+
+})
+   
+.controller('socialRhythmAnchorsPart3Ctrl', function($scope) {
+
+})
+   
+.controller('toolsCtrl', function($scope) {
+
+})
+   
+.controller('socialRhythmMetricGoalSettingIICtrl', function($scope) {
+
+})
+   
+.controller('socialRhythmMetricGoalSettingII2Ctrl', function($scope) {
+
+})
+   
+.controller('sRMCtrl', function($scope) {
 
 })
  
