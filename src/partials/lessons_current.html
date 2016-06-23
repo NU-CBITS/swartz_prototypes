@@ -1,0 +1,20 @@
+
+<h1>Current Lesson</h1>
+
+<h2>Rhythms and You (RAY!)</h2>
+
+<div class="">
+	<div ng-repeat="lesson in lessonsCurrent.lessons" class="panel" >
+		<div class="row" ng-click="lessonsCurrent.goToLesson(lesson.$index)" ng-disabled="!lesson.available">
+			<div class="col-md-7 col-sm-7">
+			{{lesson.name}}
+			</div>
+			<div class="col-md-3 col-sm-3">
+			<span ng-if="!lesson.available">not available</span>
+			</div>
+			<div class="col-md-1 col-sm-1">
+			<i class="fa fa-chevron-right" aria-hidden="true"></i>
+			</div>
+		</div>
+	</div>
+</div>
