@@ -1,0 +1,18 @@
+<h1>Lesson Plan Archive</h1>
+
+<div ng-repeat="task in lessonsArchive.lessons track by $index" class="bs-callout bs-callout-{{task.status}}}"> 
+
+	<a ng-href="{{task.target}}">
+		<div class="row">
+			<div class="col-md-7 col-sm-7">
+			{{task.name}}
+			</div>
+			<div class="col-md-3 col-sm-3">
+			<span ng-if="!task.available">not available</span>
+			</div>
+			<div class="col-md-1 col-sm-1 text-right">
+			<i class="fa fa-chevron-right" aria-hidden="true"></i>
+			</div>
+		</div>
+	</div>
+</div>

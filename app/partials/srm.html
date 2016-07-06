@@ -1,0 +1,98 @@
+<h2>Social Rhythm Metric ({{100*srm.daysLeftToLog()/7}}% complete)</h2>
+
+<p><a data-toggle="modal" data-target="#targetTimesModal">Reset your target times <i class="fa fa-clock-o" aria-hidden="true"></i></a>
+</p>
+
+<div class="row">
+<div ng-repeat="srmDay in srm.srmDays track by $index" class="text-center col-md-2">
+            <button ng-click="srm.gotoDay($index)" class="btn btn-active {{btnActive(srm.currentActiveDay,$index)}} btn-xs btn-{{srm.srmDayStatusLabel(srmDay.accessible,srmDay.complete)}}">
+            {{srmDay.dayName}} <br/>
+            <span ng-show="srmDay.complete">complete</span>
+            <span ng-show="srmDay.accessible && !srmDay.complete">click to finish</span>
+            </button>
+</div>
+</div>
+
+<div ng-repeat="srmDay in srm.srmDays track by $index">
+
+    <div class="panel panel-primary" ng-show="$index == srm.currentActiveDay">
+        <div class="panel-heading">
+            <h3 class="panel-title">On {{srmDay.dayName}}, what time did you...</h3>
+        </div>
+        <div class="panel-body">
+            <form>
+                <div class="form-group">
+                    <label for="getOutOfBed">Get out of bed?</label>
+                    <input type="time" class="form-control" id="getOutOfBed" ng-model="srmDay.getOutOfBed[$index]">
+                </div>
+                <div class="form-group">
+                    <label for="firstContact">Have your first contact with another person?</label>
+                    <input type="time" class="form-control" id="firstContact" ng-model="srmDay.firsContact[$index]">
+                </div>
+                <div class="form-group">
+                    <label for="startWork">Start your work, school, volunteer work or family care?
+                    </label>
+                    <input type="time" class="form-control" id="startWork" ng-model="srmDay.startWork[$index]">
+                </div>
+                <div class="form-group">
+                    <label for="haveDinner">Have dinner?</label>
+                    <input type="time" class="form-control" id="haveDinner" ng-model="srmDay.haveDinner[$index]">
+                </div>
+
+                <p><a data-toggle="modal" data-target="#helpModal">Need help picking your target times?</a>
+                </p>
+
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" tabindex="-1" role="dialog" id="targetTimesModal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">SRM Target Times</h4>
+            </div>
+            <div class="modal-body">
+                <h3>Write the ideal target time that you would like to do each of these daily activities:</h3>
+                <div class="form-group">
+                    <label for="getOutOfBed">Get out of bed </label>
+                    <input type="time" class="form-control" id="getOutOfBed" ng-model="srm.targetTimes.getOutOfBed">
+                </div>
+                <div class="form-group">
+                    <label for="firstContact">Have your first contact with another person </label>
+                    <input type="time" class="form-control" id="firstContact" ng-model="srm.targetTimes.firstContact">
+                </div>
+                <div class="form-group">
+                    <label for="startWork">Start your work, school, volunteer work or family care?
+                    </label>
+                    <input type="time" class="form-control" id="startWork" ng-model="srm.targetTimes.startWork">
+                </div>
+                <div class="form-group">
+                    <label for="haveDinner">Have dinner</label>
+                    <input type="time" class="form-control" id="haveDinner" ng-model="srm.targetTimes.haveDinner">
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" data-dismiss="modal">Save Changes</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" tabindex="-1" role="dialog" id="helpModal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">Need some help picking your times?</h4>
+            </div>
+            <div class="modal-body">
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
