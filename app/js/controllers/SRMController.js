@@ -8,13 +8,13 @@
     this.currentActiveDay = currentDayOfWeek; 
 
     this.srmDays = [
-    	{dayName:'Sunday', getOutOfBed:null, firstContact:null, startWork:null, haveDinner:null, complete:true, accessible:true},
-    	{dayName:'Monday', getOutOfBed:null, firstContact:null, startWork:null, haveDinner:null, complete:true, accessible:true},
-    	{dayName:'Tuesday', getOutOfBed:null, firstContact:null, startWork:null, haveDinner:null, complete:false, accessible:true},
-    	{dayName:'Wednesday', getOutOfBed:null, firstContact:null, startWork:null, haveDinner:null, complete:false, accessible:true},
-    	{dayName:'Thursday', getOutOfBed:null, firstContact:null, startWork:null, haveDinner:null, complete:false, accessible:false},
-     	{dayName:'Friday', getOutOfBed:null, firstContact:null, startWork:null, haveDinner:null, complete:false, accessible:false},
-      	{dayName:'Saturday', getOutOfBed:null, firstContact:null, startWork:null, haveDinner:null, complete:false, accessible:false}
+    	{dayName:'Sunday', getOutOfBed:null, firstContact:null, startWork:null, haveDinner:null, mood:null, energy:null, complete:true, accessible:true},
+    	{dayName:'Monday', getOutOfBed:null, firstContact:null, startWork:null, haveDinner:null, mood:null, energy:null, complete:true, accessible:true},
+    	{dayName:'Tuesday', getOutOfBed:null, firstContact:null, startWork:null, haveDinner:null, mood:null, energy:null, complete:false, accessible:true},
+    	{dayName:'Wednesday', getOutOfBed:null, firstContact:null, startWork:null, haveDinner:null, mood:null, energy:null, complete:false, accessible:true},
+    	{dayName:'Thursday', getOutOfBed:null, firstContact:null, startWork:null, haveDinner:null, mood:null, energy:null, complete:false, accessible:true},
+     	{dayName:'Friday', getOutOfBed:null, firstContact:null, startWork:null, haveDinner:null, mood:null, energy:null, complete:false, accessible:false},
+      	{dayName:'Saturday', getOutOfBed:null, firstContact:null, startWork:null, haveDinner:null, mood:null, energy:null, complete:false, accessible:false}
     ];
 
     this.srmDayStatusLabel = function(isAccesible,isComplete){
@@ -45,15 +45,29 @@
     }
 
     this.gotoNextDay = function(){
-
+        this.currentActiveDay++;
     }
 
-    this.gotoLastDay = function(){
-
+    this.showGotoNextDay = function(){
+        return this.currentActiveDay < 7 && this.currentActiveDay <= currentDayOfWeek -1
     }
 
-    this.gotoDay = function(day){
+    this.gotoPreviousDay = function(){
+        this.currentActiveDay--;
+    }
+
+    this.showGotoPreviousDay = function(){
+        return this.currentActiveDay > 0 
+    }
+
+    this.goToDay = function(day){
+        if(day <= currentDayOfWeek){
     	this.currentActiveDay = day;
+        }
+    }
+
+    this.daySelectionActive = function(index){
+        return index == this.currentActiveDay ? 'btn-active' : '' 
     }
  
   }

@@ -1,8 +1,8 @@
-<h1>Lesson Plan Archive</h1>
+<h2>Lesson Plan Archive</h2>
 
 <div ng-repeat="task in lessonsArchive.lessons track by $index" class="bs-callout bs-callout-{{task.status}}}"> 
 
-	<a ng-href="{{task.target}}">
+	<a ng-href="#/lessons_current/{{$index}}">
 		<div class="row">
 			<div class="col-md-7 col-sm-7">
 			{{task.name}}

@@ -1,5 +1,30 @@
-<h1>{{srm_history.pageTitle}}</h1>
+<h2>{{srm_history.pageTitle}}</h2>
 
-<h2>This week (7/4 - 7/11)</h2>
+<div class="panel panel-primary" ng-repeat="week in srm_history.srmWeeks">
+    <div class="panel-heading">
+        <h3 class="panel-title">
+        	{{week.name}}
+        </h3>
+    </div>
+    <div class="panel-body">
+    <h3>SRM Score: {{week.score}}</h3>
+        <div class="bs-callout bs-callout-success">
+            <div class="alert alert-danger">Holly--would be good to get optimal text that interprets this score.
+            </div>
+        </div>
+        <button ng-click="srm_history.showDetails(week.id)" ng-show="!srm_history.detailsVisible[week.id]" class="btn btn-sm btn-info">show details</button>
+        <button ng-click="srm_history.hideDetails(week.id)" ng-show="srm_history.detailsVisible[week.id]" class="btn btn-sm btn-warning">hide details</button>
 
-<h3>Last week (6/26 - 7/3)</h3>
+    	<div class="well" ng-show="srm_history.detailsVisible[week.id]" ng-repeat="srmDay in srm_history.srmDays[week.id]">
+        <h5>{{srmDay.dayName}}</h5>
+            <table class="table table-rounded table-striped table-sm">
+            <tr><td>Got up:</td><td>{{srmDay.gotUp}}</td></tr>
+            <tr><td>First contact with another person:</td><td>{{srmDay.firstContact}}</td></tr>
+            <tr><td>Had dinner:</td><td>{{srmDay.startWork}}</td></tr>
+            <tr><td>Had dinner:</td><td>{{srmDay.haveDinner}}</td></tr>
+            <tr><td>Mood:</td><td>{{srmDay.mood}}</td></tr>
+            <tr><td>Energy:</td><td>{{srmDay.energy}}</td></tr>
+            </table>
+        </div>
+    </div>
+</div>
