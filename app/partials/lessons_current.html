@@ -1,26 +1,26 @@
-
-<h1>Your Current Lesson Plan</h1>
+<h2>Your Current Lesson Plan</h2>
 <div class="panel panel-primary">
     <div class="panel-heading">
-        <h3 class="panel-title">Rhythms and You (RAY)</h3>
+        <h3 class="panel-title">{{lessonsCurrent.lessonPlan[lessonsCurrent.currentLessonPlan].name}}</h3>
     </div>
 	<div class="panel-body">
-	This week is all about how <b>RAY (Rhythms and You)</b> works!
+	{{lessonsCurrent.lessonPlan[lessonsCurrent.currentLessonPlan].description}}
 	</div>
 </div>
-	<div ng-repeat="task in lessonsCurrent.lessonPlan.modules track by $index" class="bs-callout bs-callout-{{task.status}}}"> 
+	<div ng-repeat="task in lessonsCurrent.lessonPlan[lessonsCurrent.currentLessonPlan].modules track by $index" class="bs-callout bs-callout-{{task.status}}}"> 
 	<a ng-href="{{task.target}}">
 		<div class="row">
-			<div class="col-md-1 col-sm-1">
+			<div class="col-md-1 col-sm-1 col-xs-1">
 			<i class="fa fa-{{task.icon}} fa-2x"></i>
 			</div>
-			<div class="col-md-7 col-sm-7">
+			<div class="col-md-7 col-sm-7 col-xs-7">
 			{{task.name}}
+			<br/><label class="label label-success" ng-show="task.completed"><i class="fa fa-check-circle"></i> completed</label>
 			</div>
-			<div class="col-md-3 col-sm-3">
+			<div class="col-md-3 col-sm-3 col-xs-3">
 			<span ng-if="!task.available">not available</span>
 			</div>
-			<div class="col-md-1 col-sm-1 align-right">
+			<div class="col-md-1 col-sm-1 col-xs-1 text-right">
 			<i class="fa fa-chevron-right" aria-hidden="true"></i>
 			</div>
 		</div>

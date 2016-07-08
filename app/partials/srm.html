@@ -1,49 +1,83 @@
-<h2>Social Rhythm Metric ({{100*srm.daysLeftToLog()/7}}% complete)</h2>
+<h2>Social Rhythm Metric ({{100*srm.daysLeftToLog()/7 | number:0}}% complete)</h2>
 
 <p><a data-toggle="modal" data-target="#targetTimesModal">Reset your target times <i class="fa fa-clock-o" aria-hidden="true"></i></a>
 </p>
 
-<div class="row">
-<div ng-repeat="srmDay in srm.srmDays track by $index" class="text-center col-md-2">
-            <button ng-click="srm.gotoDay($index)" class="btn btn-active {{btnActive(srm.currentActiveDay,$index)}} btn-xs btn-{{srm.srmDayStatusLabel(srmDay.accessible,srmDay.complete)}}">
+<table class="full-width-table hidden-xs">
+    <tr>
+        <td ng-repeat="srmDay in srm.srmDays track by $index" style="width:{{(100/7)}}%;" class="text-center">
+            <button ng-click="srm.goToDay($index)" class="btn {{srm.daySelectionActive($index)}} btn-xs btn-{{srm.srmDayStatusLabel(srmDay.accessible,srmDay.complete)}}">
             {{srmDay.dayName}} <br/>
             <span ng-show="srmDay.complete">complete</span>
             <span ng-show="srmDay.accessible && !srmDay.complete">click to finish</span>
+            <span ng-show="!srmDay.accessible">not available</span>
             </button>
-</div>
-</div>
+        </td>
+    </tr>
+</table>
 
 <div ng-repeat="srmDay in srm.srmDays track by $index">
-
     <div class="panel panel-primary" ng-show="$index == srm.currentActiveDay">
         <div class="panel-heading">
-            <h3 class="panel-title">On {{srmDay.dayName}}, what time did you...</h3>
+            <h3 class="panel-title">On {{srmDay.dayName}}:</h3>
         </div>
         <div class="panel-body">
+        <h3>What time did you...</h3>
             <form>
                 <div class="form-group">
-                    <label for="getOutOfBed">Get out of bed?</label>
+                    <label for="getOutOfBed"><i class="fa fa-bed fa-2x fa-fw"></i> Get out of bed?</label>
                     <input type="time" class="form-control" id="getOutOfBed" ng-model="srmDay.getOutOfBed[$index]">
                 </div>
                 <div class="form-group">
-                    <label for="firstContact">Have your first contact with another person?</label>
-                    <input type="time" class="form-control" id="firstContact" ng-model="srmDay.firsContact[$index]">
+                    <label for="firstContact"><i class="fa fa-users fa-2x fa-fw"></i> Have your first contact with another person?</label>
+                    <input type="time" class="form-control" id="firstContact" ng-model="srmDay.firstContact[$index]">
                 </div>
                 <div class="form-group">
-                    <label for="startWork">Start your work, school, volunteer work or family care?
+                    <label for="startWork"><i class="fa fa-suitcase fa-2x fa-fw"></i> Start your work, school, volunteer work or family care?
                     </label>
                     <input type="time" class="form-control" id="startWork" ng-model="srmDay.startWork[$index]">
                 </div>
                 <div class="form-group">
-                    <label for="haveDinner">Have dinner?</label>
+                    <label for="haveDinner"><i class="fa fa-spoon fa-2x fa-fw"></i> Have dinner?</label>
                     <input type="time" class="form-control" id="haveDinner" ng-model="srmDay.haveDinner[$index]">
                 </div>
+                <hr/>
+                <div class="form-group">
+                    <label for="mood"><i class="fa fa-smile-o fa-2x fa-fw"></i> On a scale from 1-10, what was your mood? <label class="label label-success">{{srmDay.mood[$index]}}</label></label>
+                    <input type="range" class="form-control" id="mood" ng-model="srmDay.mood[$index]" min="1" max="10" step="1">
+                    <div class="row">
+                        <div class="col-md-4 col-xs-4 col-sm-4 text-left">Bad</div>
+                        <div class="col-md-4 col-xs-4 col-sm-4 text-center"></div>
+                        <div class="col-md-4 col-xs-4 col-sm-4 text-right">Good</div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="energy"><i class="fa fa-battery-three-quarters fa-2x fa-fw"></i> On a scale from 1-10, what was your energy level?  <label class="label label-success">{{srmDay.energy[$index]}}</label></label>
+                    <input type="range" class="form-control" id="energy" ng-model="srmDay.energy[$index]" min="1" max="10" step="1">
+                    <div class="row">
+                        <div class="col-md-4 col-xs-4 col-sm-4 text-left">Low</div>
+                        <div class="col-md-4 col-xs-4 col-sm-4 text-center"></div>
+                        <div class="col-md-4 col-xs-4 col-sm-4 text-right">High</div>
+                    </div>
+                </div>
 
-                <p><a data-toggle="modal" data-target="#helpModal">Need help picking your target times?</a>
+
+                <p><a data-toggle="modal" data-target="#helpModal">Need help picking your times?</a>
                 </p>
-
-                <button type="submit" class="btn btn-primary">Submit</button>
+                <button type="submit" class="btn btn-primary">Save</button>
             </form>
+        </div>
+        <div class="panel-footer">
+            <div class="row">
+                <div class="col-md-6 col-sm-6 col-xs-6 text-left">
+                    <a ng-show="srm.showGotoPreviousDay()" ng-click="srm.gotoPreviousDay()" ><i class="fa fa-chevron-left"></i>
+                    previous day</a>
+                </div>
+                <div class="col-md-6 col-sm-6 col-xs-6 text-right">
+                    <a ng-show="srm.showGotoNextDay()" ng-click="srm.gotoNextDay()">next day
+                    <i class="fa fa-chevron-right"></i></a>
+                </div>
+            </div>
         </div>
     </div>
 </div>

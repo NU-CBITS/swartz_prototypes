@@ -3,16 +3,26 @@
 
   function RememberingAWellPeriodController($location) {
 
-    this.lessonPlan = {
-    name:"Rhythms and You", description:"", modules:[
-     {name:'Rhythms and You (RAY)',icon:'book',type:'',available:true, target:'#/session'},
-     {name:'Aligned and Misaligned Rhythms',icon:'tool',type:'',available:true, target:"#/aligned_misaligned_rhythms"},
-	   {name:'Remembering a Well Period',icon:'tool',type:'',available:true, target:"#/remembering_a_well_period"},
-	   {name:'Social Rhythm Metric',icon:'bolt',type:'',available:true, target:"#/srm"}
-     ]
-    };
+    this.exerciseComplete = false;
+    this.exerciseAlert = '';
+    this.responses = {};
 
-    this.goToLesson = function (lessonNumber){
+    this.completeExercise = function (){
+      if (this.responses.stability){
+        this.exerciseComplete = true; 
+      }
+      else{
+        this.exerciseAlert = 'Make sure to answer all questions!'
+      }
+    }
+
+    this.showFeedback = function(truthyCriteria){
+
+        var showFeedback = false;
+        if (truthyCriteria.stability == this.responses.stability){
+          showFeedback = true;
+        }
+        return showFeedback
     }
   
   }

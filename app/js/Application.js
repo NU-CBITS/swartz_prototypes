@@ -23,11 +23,16 @@
           controllerAs: 'session'
         })
         .when(Routes.HISTORY, {
-          templateUrl: 'partials/smoking_history.html',
-          controller: 'SmokingHistoryController',
-          controllerAs: 'smokingHistory'
+          templateUrl: 'partials/history.html',
+          controller: 'HistoryController',
+          controllerAs: 'history'
         })
         .when(Routes.LESSONS_CURRENT, {
+          templateUrl: 'partials/lessons_current.html',
+          controller: 'LessonsCurrentController',
+          controllerAs: 'lessonsCurrent'
+        })
+        .when(Routes.LESSONS_CURRENT+ '/:lesson_index', {
           templateUrl: 'partials/lessons_current.html',
           controller: 'LessonsCurrentController',
           controllerAs: 'lessonsCurrent'
@@ -71,6 +76,21 @@
           templateUrl: 'partials/help.html',
           controller: 'HelpController',
           controllerAs: 'help'
+        })
+        .when(Routes.SRM_FEEDBACK, {  
+          templateUrl: 'partials/srm_feedback.html',
+          controller: 'SRMFeedbackController',
+          controllerAs: 'srm_feedback'
+        })
+        .when(Routes.BIPOLAR_DISORDER_CALCULATOR, {  
+          templateUrl: 'partials/bipolar_disorder_calculator.html',
+          controller: 'BipolarDisorderCalculatorController',
+          controllerAs: 'bipolar_calculator'
+        })
+        .when(Routes.MOOD_THERMOMETER, {  
+          templateUrl: 'partials/mood_thermometer.html',
+          controller: 'MoodThermometerController',
+          controllerAs: 'thermometer'
         })
     },
 
