@@ -1,220 +1,90 @@
 (function() {
   'use strict';
 
-  function SessionsController($scope, sessionsService, sessionQuestionService,
-                              sessionAnswerService, $sce, $modal, uuid, $filter, Routes,
-                              $location, $routeParams, $anchorScroll, localSessionService,
-                              eventService) {
-    this.currentAnswer = null;
-    this.currentQuestion = null;
-    this.sessionAnswers = null;
-    this.sessionContent = null;
-    this.cessationDate = null;
-    this.currentNotes = null;
-    this.configurationLock = true;
-    this.startPosition = $routeParams.start || 0;
-    this.endPosition = $routeParams.end;
-    this.showStartScreen = $routeParams.showStart || false;
-    this.showEndScreen = $routeParams.showEnd || true;
-    this.returnRoute = $routeParams.returnRoute || 'home';
+  function SessionsController(contentService,
+                              $sce, $filter, Routes,
+                              $location, $routeParams) {
+
+    self = this;
+
+    this.SESSION_CONTENT_PATH = 'content/SessionContentBITCORE.json';
+    this.rawLessonContent = null;
+    this.currentSlideIndex = 0;
+    this.slides = [{body:''}];
+    this.lessonMetaData = null;
+    this.lessonTitle = null;
+    this.returnRoute = $routeParams.onEndURI || '/home';
+    this.sessionId = $routeParams.sessionId || 3;
     this.currentSessionComplete = null;
     this.currentSessionNumber = null;
 
-    this.getContentAndStartSession = function(){
-      this.setCurrentSessionContent();
-      if (!this.showStartScreen){
-        this.startSession();
-      }
-    }
-
-    this.containsEndSessionIntegration = function(index) {
-      var currentRawLabel = sessionQuestionService.getSessionRawContent()[index].label;
-
-      var endSessionQuestion = this.currentQuestion &&
-        currentRawLabel.indexOf('[INTEGRATION|END_SESSION') > -1;
-      var endSessionAnswer = this.currentAnswer &&
-        this.currentAnswer.indexOf('[INTEGRATION|END_SESSION') > -1;
-      var endPoint = null;
-
-      if(endSessionAnswer || endSessionQuestion) {
-        if(currentRawLabel.indexOf('HOME') > -1 ||
-           this.currentAnswer.indexOf('HOME') > -1) {
-          endPoint = Routes.HOME;
-        } else if(currentRawLabel.indexOf('RESTART') > -1 ||
-                  this.currentAnswer.indexOf('RESTART') > -1) {
-          endPoint = Routes.SESSIONS;
+    this.filterLessonContent = function(data, sessionId){
+      var filteredLessonContent = {};
+      for(var i = 0; i < data.length; i++){
+        if(data[i].lesson.id == sessionId){
+          filteredLessonContent = data[i];
+          break;
         }
       }
-
-      return endPoint;
+      return filteredLessonContent
     };
 
-    this.makeSelection = function (questionDescription, answer) {
-      this.currentAnswer = answer;
-      this.currentQuestion = questionDescription;
-      this.triggerChoiceModal(answer);
-    };
-
-    this.setCurrentSessionContent = function () {
-      sessionQuestionService.resetSessionQuestions();
-      this.currentSessionNumber = 1;
-      if(this.startPosition && this.endPosition){
-        sessionQuestionService.setSubsessionContent(this.startPosition, this.endPosition);
-      } else {
-        sessionQuestionService.setSessionContent(this.currentSessionNumber);
-      }
-    };
-
-    this.saveLocalSessionData = function(question, answer) {
-      if(question === this.NUMBER_OF_CIGARETTES_QUESTION) {
-        localSessionService.saveNumberOfCigarettes(answer);
-        configurationService.scheduleNotifications();
-      }
-    };
-
-    this.saveSessionAnswer = function() {
-      this.sessionAnswers.push({
-        question: this.currentQuestion,
-        answer: this.currentAnswer || this.currentNotes
+    this.getSessionContent = function(lessonId, contentPath){
+      contentService.getContent(contentPath).then(function(data){
+        self.rawLessonContent = self.filterLessonContent(data,self.sessionId);
+        self.slides = self.rawLessonContent.slides;
+        self.lessonMetaData = self.rawLessonContent.lesson;
+        self.lessonTitle = self.lessonMetaData.title;
       });
-
-      this.saveLocalSessionData(this.currentQuestion, this.currentNotes);
-
-      this.currentAnswer = null;
-      this.currentNotes = null;
     };
 
-    this.findAnswer = function(questionLabel){
-      var answer = '';
-      var answerLocation = $filter('filter')(this.sessionAnswers,
-        {question:questionLabel}) || [];
-      if (answerLocation.length > 0){ answer = answerLocation[0].answer}
-      return answer
+    this.cleanSlideContent = function(content){
+      var cleanedSlideContent = unescape(content);
+      cleanedSlideContent.replace(/\*/g,'');
+      return cleanedSlideContent
     }
 
-    this.questionVisible = function(branchingLogic, evaluatedLogic, index){
-      return sessionQuestionService.questionVisible(branchingLogic, evaluatedLogic, index);
+    this.slideContent = function(){
+      var slideContent = this.slides[this.currentSlideIndex].body;
+      slideContent = this.cleanSlideContent(slideContent);
+      return $sce.trustAsHtml(slideContent)
     };
 
-    this.getSessionStarted = function() {
-      return this.sessionAnswers;
-    };
-
-    this.getSessionContent = function() {
-      debugger;
-      return sessionQuestionService.getCurrentSessionContent();
-    };
-
-    this.persistSession = function() {
-      var session = {};
-      session.sessionDate = moment().toISOString();
-      session.id = uuid();
-      session.sessionType = sessionsService.SESSION_KEY_PREFIX +
-        this.currentSessionNumber;
-      sessionsService.saveSession(session);
-      sessionAnswerService.save(this.sessionAnswers, session.id);
-    };
-
-    this.clearQuestionChoices = function(index) {
-      angular.element('#question-' + index + ' input[type=radio]').each(function (index, element) {
-        element.checked = false;
-      });
-      angular.element('#question-' + index + ' input[type=checkbox]').each(function (index, element) {
-        element.checked = false;
-      });
-    };
-
-    this.skipOrShowConclusion = function(){
-      if (this.showEndScreen){
-        this.currentSessionComplete = true;
-      }
-      else {
-        $location.url(this.returnRoute);
-      }
-    }
-
-    this.next = function(index, itemQuestion) {
-
-      this.currentQuestion = itemQuestion;
-      var endSessionLocation = this.containsEndSessionIntegration(index);
-      this.configurationLock = true;
-      if(this.currentAnswer || this.currentNotes || this.currentQuestion === this.NUMBER_OF_CIGARETTES_QUESTION) {
-        this.saveSessionAnswer();
-      }
-
-      sessionQuestionService.savePreviousQuestion();
-      sessionQuestionService.next();
-
-      this.clearQuestionChoices(index);
-
-      if(sessionQuestionService.showConclusion) {
-        this.persistSession();
-        this.skipOrShowConclusion();
-      } else if(endSessionLocation) {
-        this.persistSession();
-        this.setCurrentSessionContent();
-        $location.url(endSessionLocation);
-      } 
-
-      $anchorScroll();
+    this.next = function() {
+      this.currentSlideIndex++;
     };
 
     this.back = function() {
-      if(sessionQuestionService.backButtonVisible() &&
-        !sessionQuestionService.showConclusion) {
-        self.configurationLock = true;
-        sessionQuestionService.back();
-        $scope.$apply();
-        $anchorScroll();
-      }
+      this.currentSlideIndex--;
     };
 
-    this.startSession = function () {
-      this.sessionAnswers = [];
+    this.finish = function(){
+      $location.url(this.returnRoute);
     };
 
-    this.showConclusion = function() {
-      return sessionQuestionService.showConclusion;
+    this.showNextButton = function(){
+      var buttonVisible = this.currentSlideIndex <= this.slides.length-2;
+      return buttonVisible
     };
 
-    this.convertHtmlContent = function(rawContent) {
-      var contentWithIntegrationDisplay = this.transformedIntegrationDisplay(rawContent);
-      return $sce.trustAsHtml(contentWithIntegrationDisplay.replace(/\[INTEGRATION.*]/, ''));
+    this.showBackButton = function(){
+      var buttonVisible = this.currentSlideIndex > 0;
+      return buttonVisible
     };
 
-    this.transformedIntegrationDisplay = function(rawContent) {
-      var transformedContent = rawContent;
-
-      // example of a content transformer
-      // transformedContent = transformedContent.replace('[DISPLAY_LABEL_INTEGRATION|DATE]',
-      //                                 this.formattedCessationDate());
-
- 
-      return transformedContent
+    this.showFinishedLink = function(){
+      var buttonVisible = !this.showNextButton();
+      return buttonVisible
     };
 
-    this.disableNext = function(choices, label) {
-      return (choices.length > 0 && !this.currentAnswer) ||
-             (label.indexOf('[INTEGRATION') > -1 && this.configurationLock &&
-              label.indexOf('END_SESSION') === -1);
-    }; 
-
-    this.stripIntegrationPoints = function(dirtyValue) {
-      return dirtyValue.replace(/\[INTEGRATION.*]/, '');
-    };
-
+    this.getSessionContent(this.sessionId,this.SESSION_CONTENT_PATH);
 
   }
 
   angular.module('sis.controllers')
     .controller('SessionsController',
-    ['$scope',
-     'sessionsService',
-     'sessionQuestionService',
-     'sessionAnswerService',
+    ['contentService',
      '$sce',
-     '$modal',
-     'uuid',
      '$filter',
      'Routes',
      '$location',

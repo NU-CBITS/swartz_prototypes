@@ -5,7 +5,7 @@
 
     this.lessonPlan = new Array();
 
-    this.currentLessonPlan = $routeParams.lesson_index || 0;
+    this.currentLessonPlan = $routeParams.lessons_index || 0;
 
     this.lessonPlan[0] = {
     name:"Rhythms and You", description:"This week is all about how RAY (Rhythms and You) works!", modules:[

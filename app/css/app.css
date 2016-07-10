@@ -21,6 +21,12 @@ body{
     font-size:1.1em;
 }
 
+.lesson-slide img {
+    width:90%;
+    margin-left:5%;
+
+}
+
 /* to preserve vertical height of divs in rows */
 .height200 {height:200px;}
 .height250 {height:250px;}
