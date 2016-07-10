@@ -1,7 +1,7 @@
 <h2>{{session.lessonTitle}}</h2>
 <div class="panel panel-primary">
     <div class="panel-heading">
-        <h3 class="panel-title">{{session.slides[currentSlideIndex].title}}</h3>
+        <h3 class="panel-title">{{session.slideTitle()}}</h3>
     </div>
     <div class="panel-body lesson-slide" ng-bind-html="session.slideContent()">
     </div>
