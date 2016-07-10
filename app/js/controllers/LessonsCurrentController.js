@@ -9,7 +9,7 @@
 
     this.lessonPlan[0] = {
     name:"Rhythms and You", description:"This week is all about how RAY (Rhythms and You) works!", modules:[
-     {name:'Rhythms and You (RAY)',icon:'book',type:'',available:true, target:'#/session/0', completed:true},
+     {name:'Rhythms and You (RAY)',icon:'book',type:'',available:true, target:'#/session/3', completed:true},
      {name:'Aligned and Misaligned Rhythms',icon:'wrench',type:'',available:true, target:"#/aligned_misaligned_rhythms"},
 	   {name:'Remembering a Well Period',icon:'wrench',type:'',available:true, target:"#/remembering_a_well_period"},
 	   {name:'Social Rhythm Metric',icon:'bolt',type:'',available:true, target:"#/srm"}

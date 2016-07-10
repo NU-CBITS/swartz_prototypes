@@ -14,7 +14,7 @@
     this.lessonMetaData = null;
     this.lessonTitle = null;
     this.returnRoute = $routeParams.onEndURI || '/home';
-    this.sessionId = $routeParams.sessionId || 3;
+    this.sessionId = $routeParams.lessonId || null;
     this.currentSessionComplete = null;
     this.currentSessionNumber = null;
 
@@ -46,6 +46,12 @@
 
     this.slideContent = function(){
       var slideContent = this.slides[this.currentSlideIndex].body;
+      slideContent = this.cleanSlideContent(slideContent);
+      return $sce.trustAsHtml(slideContent)
+    };
+
+    this.slideTitle = function(){
+      var slideContent = this.slides[this.currentSlideIndex].title;
       slideContent = this.cleanSlideContent(slideContent);
       return $sce.trustAsHtml(slideContent)
     };
