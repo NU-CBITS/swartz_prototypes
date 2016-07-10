@@ -22,6 +22,16 @@
           controller: 'SessionsController',
           controllerAs: 'session'
         })
+        .when(Routes.SESSIONS + '/:lessonId', {
+          templateUrl: 'partials/session.html',
+          controller: 'SessionsController',
+          controllerAs: 'session'
+        })
+        .when(Routes.SESSIONS + '/:lessonId/:onEndURI', {
+          templateUrl: 'partials/session.html',
+          controller: 'SessionsController',
+          controllerAs: 'session'
+        })
         .when(Routes.HISTORY, {
           templateUrl: 'partials/history.html',
           controller: 'HistoryController',
@@ -32,7 +42,7 @@
           controller: 'LessonsCurrentController',
           controllerAs: 'lessonsCurrent'
         })
-        .when(Routes.LESSONS_CURRENT+ '/:lesson_index', {
+        .when(Routes.LESSONS_CURRENT+ '/:lessons_index', {
           templateUrl: 'partials/lessons_current.html',
           controller: 'LessonsCurrentController',
           controllerAs: 'lessonsCurrent'
@@ -100,7 +110,6 @@
                       sessionAnswerCache) {
 
       function configurationIncompleteRouting() {
-
           $location.url(Routes.HOME);
       }
 
@@ -126,7 +135,7 @@
       .config(['$routeProvider', 'Routes', Application.configure])
       .run(['$rootScope', '$location', '$q', '$window',
         'Routes', 
-        'sessionQuestionService','resourceCache', 'sessionsService', 
+        'contentService','resourceCache', 'sessionsService', 
         'sessionsCache',
         'sessionAnswerCache', Application.run]);
 })();
