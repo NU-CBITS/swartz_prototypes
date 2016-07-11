@@ -17,7 +17,6 @@
       answer.type = sessionAnswerCache.KEY;
       sessionAnswerCache.persist(answer);
     }
-
   }
 
   function SessionAnswerFactory(sessionAnswerCache, uuid) {

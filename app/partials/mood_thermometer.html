@@ -1,79 +1,40 @@
 <h2>Mood Thermometer</h2>
 
-<p>Everyone experiences mania and depression differently.</p>
-
-<p> For each of the categories on the mood thermometer, list some symptoms that you experience when your mood matches the words on the thermometer.</p>
+<div class="bs-callout bs-callout-primary">
+	<p>Everyone experiences mania and depression differently.</p>
+	<p>Let's walk through your specific symptoms of feeling manic, feeling normal, and feeling depressed.</p>
+	<p>Tip: You can drag more than one symptom to the thermometer!</p>
+</div>
 
 <div class="row">
 	<div class="col-md-6">
-		<div class="panel panel-warning">
-			<div class="panel-heading">
-				<h3 class="panel-title">1st, take a look at the mood thermometer...</h3>
-			</div>
-			<div class="panel-body mood-thermometer">
-				<div class="well bgcolor0">
-					<b>+5</b> worst, most manic
-				</div>
-				<div class="well bgcolor1">
-					<b>+4</b> mania getting out of control 
-				</div>
-				<div class="well bgcolor2">
-					<b>+3</b> multiple signs of mania are present
-				</div>
-				<div class="well bgcolor3">
-					<b>+2</b> early sign(s) of mania are present
-				</div>
-				<div class="well bgcolor4">
-					<b>+1</b> mildly elevated mood, may or may not be normal
-				</div>
-				<div class="well">
-					<b>0</b>	normal, neither up nor down  
-				</div>
-				<div class="well bgcolor5">
-					<b>-1</b>   mildly depressed mood, may or may not be normal
-				</div>
-				<div class="well bgcolor6">
-					<b>-2</b>   early sign(s) of depression are present
-				</div>
-				<div class="well bgcolor7">
-					<b>-3</b>   multiple signs of depression are present
-				</div>
-				<div class="well bgcolor8">
-					<b>-4</b>   depression getting out of control 
-				</div>
-				<div class="well bgcolor9">
-					<b>-5</b>   worst, most depressed
-				</div>
-			</div>
+	<div class="panel panel-primary">
+		<div class="panel-heading">
+			<h3 class="panel-title">{{thermometer.symptoms[thermometer.currentSymptomClassIndex].instructions}}</h3>
+		</div>
+		<div class="panel-body">
+			<div class="tag-cloud">
+				<span ng-repeat="symptom in thermometer.symptoms[thermometer.currentSymptomClassIndex].symptoms track by $index">
+					<span class="btn btn-sm btn-default" data-drag="true" jqyoui-draggable class="{{thermometer.showSymptomSelected($index)}}" ng-click="thermometer.addToThermometer(thermometer.currentSymptomIndex, $index); thermometer.selectSymptom($index);" ng-model="thermometer.symptoms[thermometer.currentSymptomClassIndex].symptoms" ng-hide="!symptom" >
+						{{symptom}}
+					</span>
+				</span>
+			</div>	
 		</div>
 	</div>
+	</div>
 	<div class="col-md-6">
-		<div class="panel panel-primary">
+		When you're ready....
+		<button class="btn btn-primary warning" ng-click="thermometer.currentSymptomClassIndex = thermometer.currentSymptomClassIndex + 1" ng-show="thermometer.currentSymptomClassIndex < 2"> click here to label your symptoms of {{thermometer.symptoms[thermometer.currentSymptomClassIndex].name}}</button>
+		<div class="panel panel-warning">
 			<div class="panel-heading">
-				<h3 class="panel-title">2nd, review the symptoms below and <span class="">drag</span> to the area of the thermometer that matches</h3>
-				
+				<h3 class="panel-title">Drag the symptoms to the colored boxes on the thermometer below!</h3>
 			</div>
-			<div class="panel-body">
-			<p>Tip: You can drag more than one symptom to the thermometer!</p>
-				<div class="row">
-					<div class="col-md-12">
-					<h4>Category</h4>
-						<span ng-repeat="class in thermometer.symptoms track by $index">
-							<button class="btn btn-default btn-sm {{thermometer.showSymptomClassSelected($index)}}" ng-click="thermometer.selectSymptomClass($index)">
-								{{class.name}} 
-							</button>
-						</span>
-					</div>
-				</div>
-				<div class="row">
-					<div class="col-md-12">
-					<h4>Symptom</h4>
-						<div class="tag-cloud">
-							<button data-drag="true" jqyoui-draggable class="btn btn-default btn-sm {{thermometer.showSymptomSelected($index)}}" ng-repeat="symptom in thermometer.symptoms[thermometer.currentSymptomClassIndex].symptoms track by $index" ng-click="thermometer.addToThermometer(thermometer.currentSymptomIndex, $index); thermometer.selectSymptom($index);">
-								{{symptom}}
-							</button>
-							<div ng-show="thermometer.currentSymptomClassIndex == null" class="well">select a symptom category to begin!</div>
-						</div>	
+			<div class="panel-body mood-thermometer">
+				<div ng-repeat="degree in thermometer.thermometerContent track by $index" ng-hide="degree.type != thermometer.symptoms[thermometer.currentSymptomClassIndex].type">
+					<b>{{degree.value}}</b> {{degree.text}}
+					<div data-drop="true" data-jqyoui-options ng-model="thermometer.thermometerContent" jqyoui-droppable class="well bgcolor{{$index}}">
+					  {{thermometerContent.contents[$index]}}
 					</div>
 				</div>
 			</div>
