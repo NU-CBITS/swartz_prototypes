@@ -1,3 +1,41 @@
 <h2>Mood Thermometer</h2>
 
-<div class="alert alert-warning">This to be completed in the next iteration!</div>
+<div class="bs-callout bs-callout-primary">
+	<p>Everyone experiences mania and depression differently.</p>
+	<p>Let's walk through your specific symptoms of feeling manic, feeling normal, and feeling depressed.</p>
+	<p>Tip: You can drag more than one symptom to the thermometer!</p>
+</div>
+
+<div class="row">
+	<div class="col-md-6">
+		<div class="panel panel-primary">
+			<div class="panel-heading">
+				<h3 class="panel-title">{{thermometer.symptoms[thermometer.currentSymptomClassIndex].instructions}}</h3>
+			</div>
+			<div class="panel-body">
+				<div class="tag-cloud">
+					<span ng-repeat="symptom in thermometer.symptoms[thermometer.currentSymptomClassIndex].symptoms track by $index">
+						<span class="btn btn-sm btn-default" data-drag="true" jqyoui-draggable class="{{thermometer.showSymptomSelected($index)}}" ng-click="thermometer.addToThermometer(thermometer.currentSymptomIndex, $index); thermometer.selectSymptom($index);" ng-model="thermometer.symptoms[thermometer.currentSymptomClassIndex].symptoms" ng-hide="!symptom" >
+							{{symptom}}
+						</span>
+					</span>
+				</div>	
+			</div>
+		</div>
+	</div>
+	<div class="col-md-6">
+		<div class="panel panel-warning">
+			<div class="panel-heading">
+				<h3 class="panel-title">Drag the symptoms to the colored boxes on the thermometer below!</h3>
+			</div>
+			<div class="panel-body mood-thermometer">
+				<div ng-repeat="degree in thermometer.thermometerContent track by $index" ng-hide="degree.type != thermometer.symptoms[thermometer.currentSymptomClassIndex].type">
+					<b>{{degree.value}}</b> {{degree.text}}
+					<div data-drop="true" data-jqyoui-options ng-model="thermometer.thermometerContent" jqyoui-droppable class="well bgcolor{{$index}}">
+					  {{thermometerContent.contents[$index]}}
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

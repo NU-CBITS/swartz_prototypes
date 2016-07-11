@@ -1,13 +1,13 @@
 <h2>Social Rhythm Metric ({{100*srm.daysLeftToLog()/7 | number:0}}% complete)</h2>
 
-<p><a data-toggle="modal" data-target="#targetTimesModal">Reset your target times <i class="fa fa-clock-o" aria-hidden="true"></i></a>
+<p ng-show="srm.showTargetTimes"><a data-toggle="modal" data-target="#targetTimesModal">Reset your target times <i class="fa fa-clock-o" aria-hidden="true"></i></a>
 </p>
 
 <table class="full-width-table hidden-xs">
     <tr>
-        <td ng-repeat="srmDay in srm.srmDays track by $index" style="width:{{(100/7)}}%;" class="text-center">
-            <button ng-click="srm.goToDay($index)" class="btn {{srm.daySelectionActive($index)}} btn-xs btn-{{srm.srmDayStatusLabel(srmDay.accessible,srmDay.complete)}}">
-            {{srmDay.dayName}} <br/>
+        <td ng-repeat="srmDay in srm.srmDays() track by $index" style="width:{{(100/7)}}%;" class="text-center">
+            <button ng-click="srm.goToDay(srmDay.dayIndex)" class="btn {{srm.daySelectionActive(srmDay.dayIndex)}} btn-xs btn-{{srm.srmDayStatusLabel(srmDay.accessible,srmDay.complete)}}">
+            {{srm.dayIndexToString[srmDay.dayIndex]}} <br/>
             <span ng-show="srmDay.complete">complete</span>
             <span ng-show="srmDay.accessible && !srmDay.complete">click to finish</span>
             <span ng-show="!srmDay.accessible">not available</span>
@@ -16,52 +16,50 @@
     </tr>
 </table>
 
-<div ng-repeat="srmDay in srm.srmDays track by $index">
-    <div class="panel panel-primary" ng-show="$index == srm.currentActiveDay">
+<div ng-repeat="srmDay in srm.srmDays() track by $index">
+    <div class="panel panel-primary" ng-show="srmDay.dayIndex == srm.currentActiveDay">
         <div class="panel-heading">
-            <h3 class="panel-title">On {{srmDay.dayName}}:</h3>
+            <h3 class="panel-title">On {{srm.dayIndexToString[srmDay.dayIndex]}}:</h3>
         </div>
         <div class="panel-body">
         <h3>What time did you...</h3>
             <form>
                 <div class="form-group">
                     <label for="getOutOfBed"><i class="fa fa-bed fa-2x fa-fw"></i> Get out of bed?</label>
-                    <input type="time" class="form-control" id="getOutOfBed" ng-model="srmDay.getOutOfBed[$index]">
+                    <input type="time" class="form-control" id="getOutOfBed" ng-model="srmDay.getOutOfBed[srmDay.dayIndex]">
                 </div>
                 <div class="form-group">
                     <label for="firstContact"><i class="fa fa-users fa-2x fa-fw"></i> Have your first contact with another person?</label>
-                    <input type="time" class="form-control" id="firstContact" ng-model="srmDay.firstContact[$index]">
+                    <input type="time" class="form-control" id="firstContact" ng-model="srmDay.firstContact[srmDay.dayIndex]">
                 </div>
                 <div class="form-group">
                     <label for="startWork"><i class="fa fa-suitcase fa-2x fa-fw"></i> Start your work, school, volunteer work or family care?
                     </label>
-                    <input type="time" class="form-control" id="startWork" ng-model="srmDay.startWork[$index]">
+                    <input type="time" class="form-control" id="startWork" ng-model="srmDay.startWork[srmDay.dayIndex]">
                 </div>
                 <div class="form-group">
                     <label for="haveDinner"><i class="fa fa-spoon fa-2x fa-fw"></i> Have dinner?</label>
-                    <input type="time" class="form-control" id="haveDinner" ng-model="srmDay.haveDinner[$index]">
+                    <input type="time" class="form-control" id="haveDinner" ng-model="srmDay.haveDinner[srmDay.dayIndex]">
                 </div>
                 <hr/>
-                <div class="form-group">
-                    <label for="mood"><i class="fa fa-smile-o fa-2x fa-fw"></i> On a scale from 1-10, what was your mood? <label class="label label-success">{{srmDay.mood[$index]}}</label></label>
-                    <input type="range" class="form-control" id="mood" ng-model="srmDay.mood[$index]" min="1" max="10" step="1">
+                <div class="form-group" ng-show="srm.showMoodRatings">
+                    <label for="mood"><i class="fa fa-smile-o fa-2x fa-fw"></i> On a scale from 1-10, what was your mood? <label class="label label-success">{{srmDay.mood[srmDay.dayIndex]}}</label></label>
+                    <input type="range" class="form-control" id="mood" ng-model="srmDay.mood[srmDay.dayIndex]" min="1" max="10" step="1">
                     <div class="row">
                         <div class="col-md-4 col-xs-4 col-sm-4 text-left">Bad</div>
                         <div class="col-md-4 col-xs-4 col-sm-4 text-center"></div>
                         <div class="col-md-4 col-xs-4 col-sm-4 text-right">Good</div>
                     </div>
                 </div>
-                <div class="form-group">
-                    <label for="energy"><i class="fa fa-battery-three-quarters fa-2x fa-fw"></i> On a scale from 1-10, what was your energy level?  <label class="label label-success">{{srmDay.energy[$index]}}</label></label>
-                    <input type="range" class="form-control" id="energy" ng-model="srmDay.energy[$index]" min="1" max="10" step="1">
+                <div class="form-group" ng-show="srm.showMoodRatings">
+                    <label for="energy"><i class="fa fa-battery-three-quarters fa-2x fa-fw"></i> On a scale from 1-10, what was your energy level?  <label class="label label-success">{{srmDay.energy[srmDay.dayIndex]}}</label></label>
+                    <input type="range" class="form-control" id="energy" ng-model="srmDay.energy[srmDay.dayIndex]" min="1" max="10" step="1">
                     <div class="row">
                         <div class="col-md-4 col-xs-4 col-sm-4 text-left">Low</div>
                         <div class="col-md-4 col-xs-4 col-sm-4 text-center"></div>
                         <div class="col-md-4 col-xs-4 col-sm-4 text-right">High</div>
                     </div>
                 </div>
-
-
                 <p><a data-toggle="modal" data-target="#helpModal">Need help picking your times?</a>
                 </p>
                 <button type="submit" class="btn btn-primary">Save</button>
@@ -122,7 +120,53 @@
                 <h4 class="modal-title">Need some help picking your times?</h4>
             </div>
             <div class="modal-body">
+<div class="panel-body lesson-slide ng-binding">
+    <h4>Here are some tips about questions that commonly arise when completing the SRM</h4>
 
+    <h5>Time Out of Bed</h5>
+
+    <ul>
+    <li>Record the time that your feet hit the ground in the morning (your body clock has sensors that can tell you are vertical)<br></li>
+    <li>If you get up to use the bathroom and then go back to bed briefly, it doesn't count</li>
+    <li>If you are out of bed for at least 30 minutes, count that as your Time Out of Bed (even if you go back to bed later for a nap)</li>
+    <li>If you are awake but lying in bed, don't record "Out of Bed" until your feet are on the floor for at least 30 minutes.</li>
+    </ul>
+
+    <h5>First Contact with Another Person  </h5>
+
+    <ul>
+    <li>This refers to your first reciprocal contact with another person.  How you define "reciprocal" is up to you.<br></li>
+    <li>"Reciprocal" typically means that the other person responds to you in real time.  Texts don't usually count because there is often a delay before the other person responds. However, if you get a quick response from a text, you may decide it counts.<br></li>
+    <li>Facebook probably doesn't count, but Facebook Messenger might, if the person responds immediately.<br></li>
+    <li>If you pass your roommate in the bathroom and he or she says "hi," that counts.<br></li>
+    <li>If you order a latte from a barrista at a coffee shop, that counts.<br></li>
+    <li>If your cat jumps on your head and wakes you up, that does not count.  It has to be a person.<br></li>
+    </ul>
+
+    <h5>Time that you start your usual daily activity</h5>
+
+    <ul>
+    <li>Usual daily activity can be anything: a job, housework, classes, volunteer work.  The idea is to pick something that you do multiple times per week.<br></li>
+    <li>There may be days when you do not have a daily activity (for instance, if you work Monday through Friday but do not work on the weekend).</li>
+    <li>If you have different kinds of activities that you do across the week but each of them gets you out of the house, you can use different activities each day (for instance, on Mondays and Wednesday, you play golf, on Tuesdays and Thursdays you volunteer in the local school, on Fridays you have a book club, and on Sunday you go to church).<br></li>
+    </ul>
+
+    <h5>Dinner Time</h5>
+
+    <ul>
+    <li>Record the time that you eat (rather than prepare) dinner.  Your body clock has sensors in the intestinal track that is affected by the time that you eat your meals.<br></li>
+    <li>If you do not eat dinner on a specific day, it will be recorded as missing.  This is important information that you will examine in subsequent weeks. </li>
+    </ul>
+
+    <h5>Bed Time</h5>>
+
+    <ul>
+    <li>Record the time that you turn out the lights for the night with the intent to go to sleep.<br></li>
+    <li>If you get into bed at 10:30 pm and read for half an hour before turning off the lights at 11 pm, you would record 11 pm as your bed time.</li>
+    <li>If you are up and down multiple times during the night, record the time that you first tried to go to sleep for at least 30 minutes.<br></li>
+    <li>If you fall asleep on the couch for an hour after dinner, get up and the go to bed at 1 am for the rest of the night, record 1 am as your bed time.  The time on the couch would be considered a nap.<br></li>
+    </ul>
+</div>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>

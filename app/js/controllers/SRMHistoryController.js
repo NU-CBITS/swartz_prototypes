@@ -28,7 +28,7 @@
 		{dayName:'Thursday', getOutOfBed:'5:00 AM', firstContact:'7:00 AM', startWork:'9:00 AM', haveDinner:'8 PM', mood:4, energy:7, complete:true, accessible:true},
 		{dayName:'Friday', getOutOfBed:'5:00 AM', firstContact:'7:00 AM', startWork:'9:00 AM', haveDinner:'8 PM', mood:4, energy:7, complete:true, accessible:true},
 		{dayName:'Saturday', getOutOfBed:'5:00 AM', firstContact:'7:00 AM', startWork:'9:00 AM', haveDinner:'8 PM', mood:4, energy:7, complete:true, accessible:true},
-	   ];
+	  ];
 
     this.srmDays[1] = [
     	{dayName:'Sunday', getOutOfBed:'5:00 AM', firstContact:'7:00 AM', startWork:'9:00 AM', haveDinner:'8 PM', mood:4, energy:7, complete:true, accessible:true},
