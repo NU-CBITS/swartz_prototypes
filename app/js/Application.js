@@ -130,7 +130,7 @@
   angular.module('sis.services',
       ['sis.resources', 'sis.constants']);
   angular.module('sis',
-      ['ngRoute', 'mobiscroll-datetime', 'sis.controllers',
+      ['ngRoute', 'ngDragDrop', 'mobiscroll-datetime', 'sis.controllers',
         'sis.resources', 'sis.services', 'sis.constants'])
       .config(['$routeProvider', 'Routes', Application.configure])
       .run(['$rootScope', '$location', '$q', '$window',

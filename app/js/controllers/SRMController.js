@@ -3,19 +3,34 @@
 
   function SRMController() {
 
-  	var currentDayOfWeek = new Date().getDay();
+  	// uncommment to set to current day
+    // var currentDayOfWeek = new Date().getDay();
+    // this.currentActiveDay = currentDayOfWeek; 
+    // for prototyping day is set to Thursday (i.e. index of 4)
+    var currentDayOfWeek = 4;
+    this.currentActiveDay = 4; 
 
-    this.currentActiveDay = currentDayOfWeek; 
+    this.showMoodRatings = true;
+    this.showTargetTimes = true;
 
-    this.srmDays = [
-    	{dayName:'Sunday', getOutOfBed:null, firstContact:null, startWork:null, haveDinner:null, mood:null, energy:null, complete:true, accessible:true},
-    	{dayName:'Monday', getOutOfBed:null, firstContact:null, startWork:null, haveDinner:null, mood:null, energy:null, complete:true, accessible:true},
-    	{dayName:'Tuesday', getOutOfBed:null, firstContact:null, startWork:null, haveDinner:null, mood:null, energy:null, complete:false, accessible:true},
-    	{dayName:'Wednesday', getOutOfBed:null, firstContact:null, startWork:null, haveDinner:null, mood:null, energy:null, complete:false, accessible:true},
-    	{dayName:'Thursday', getOutOfBed:null, firstContact:null, startWork:null, haveDinner:null, mood:null, energy:null, complete:false, accessible:true},
-     	{dayName:'Friday', getOutOfBed:null, firstContact:null, startWork:null, haveDinner:null, mood:null, energy:null, complete:false, accessible:false},
-      	{dayName:'Saturday', getOutOfBed:null, firstContact:null, startWork:null, haveDinner:null, mood:null, energy:null, complete:false, accessible:false}
-    ];
+    this.dayIndexToString = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
+
+    this.seedSRMArray = [
+        {dayIndex:0, getOutOfBed:null, firstContact:null, startWork:null, haveDinner:null, mood:null, energy:null, complete:true, accessible:true},
+        {dayIndex:1, getOutOfBed:null, firstContact:null, startWork:null, haveDinner:null, mood:null, energy:null, complete:true, accessible:true},
+        {dayIndex:2,  getOutOfBed:null, firstContact:null, startWork:null, haveDinner:null, mood:null, energy:null, complete:false, accessible:true},
+        {dayIndex:3,  getOutOfBed:null, firstContact:null, startWork:null, haveDinner:null, mood:null, energy:null, complete:false, accessible:true},
+        {dayIndex:4, getOutOfBed:null, firstContact:null, startWork:null, haveDinner:null, mood:null, energy:null, complete:false, accessible:true},
+        {dayIndex:5,  getOutOfBed:null, firstContact:null, startWork:null, haveDinner:null, mood:null, energy:null, complete:false, accessible:false},
+        {dayIndex:6, getOutOfBed:null, firstContact:null, startWork:null, haveDinner:null, mood:null, energy:null, complete:false, accessible:false}
+        ];
+
+    this.srmDays = function(){
+
+        var srmDays = this.seedSRMArray;
+
+        return srmDays
+    };
 
     this.srmDayStatusLabel = function(isAccesible,isComplete){
     	var status = 'info';
@@ -36,7 +51,7 @@
     }
 
     this.daysLeftToLog = function(){
-    	var srmDaysThisWeek = this.srmDays;
+    	var srmDaysThisWeek = this.srmDays();
     	var daysLeftToLog = 7;
     	angular.forEach(srmDaysThisWeek,function(day){
     		if (day.complete){daysLeftToLog--}

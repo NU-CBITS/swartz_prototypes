@@ -31,6 +31,7 @@
 
     this.getSessionContent = function(lessonId, contentPath){
       contentService.getContent(contentPath).then(function(data){
+        console.log(data);
         self.rawLessonContent = self.filterLessonContent(data,self.sessionId);
         self.slides = self.rawLessonContent.slides;
         self.lessonMetaData = self.rawLessonContent.lesson;

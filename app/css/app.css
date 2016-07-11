@@ -27,6 +27,47 @@ body{
 
 }
 
+.tag-cloud .btn {
+    margin:.25em .25em;
+}
+
+.mood-thermometer .well {
+    margin-top:.25em;
+    margin-bottom:0;
+    padding:.25em;
+}
+
+.bgcolor0 {
+    background-color:#00E561;
+}
+.bgcolor1 {
+    background-color:#00E11C;
+}
+.bgcolor2 {
+    background-color:#26DD00;
+}
+.bgcolor3 {
+    background-color:#A4D500;
+}
+.bgcolor4 {
+    background-color:#D2C300;
+}
+.bgcolor5 {
+    background-color:#CE8100;
+}
+.bgcolor6 {
+    background-color:#EA6220;
+}
+.bgcolor7 {
+    background-color:#E62520;
+}
+.bgcolor8 {
+    background-color:#E23054;
+}
+.bgcolor9 {
+    background-color:#DF208C;
+}
+
 /* to preserve vertical height of divs in rows */
 .height200 {height:200px;}
 .height250 {height:250px;}

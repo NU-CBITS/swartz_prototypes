@@ -1,3 +1,30 @@
-<h2>SRM Feedback</h2>
+<h2>{{srm_feedback.pageTitle()}}</h2>
 
-<div class="alert alert-warning">This to be completed in the next iteration!</div>
+<div class="panel panel-primary" ng-repeat="week in srm_feedback.srmWeeks">
+    <div class="panel-heading">
+        <h3 class="panel-title">
+        	{{week.name}}
+        </h3>
+    </div>
+    <div class="panel-body">
+    <h3>SRM Score: {{week.score}}</h3>
+        <div class="bs-callout bs-callout-success">
+            <div class="alert alert-danger" ng-bind-html="srm_feedback.currentDidactic()">
+            </div>
+        </div>
+        <button ng-click="srm_feedback.showDetails(week.id)" ng-show="!srm_feedback.detailsVisible[week.id]" class="btn btn-sm btn-info">show details</button>
+        <button ng-click="srm_feedback.hideDetails(week.id)" ng-show="srm_feedback.detailsVisible[week.id]" class="btn btn-sm btn-warning">hide details</button>
+
+    	<div class="well" ng-show="srm_feedback.detailsVisible[week.id]" ng-repeat="srmDay in srm_feedback.srmDays[week.id]">
+        <h5>{{srmDay.dayName}}</h5>
+            <table class="table table-rounded table-striped table-sm">
+            <tr><td>Got up:</td><td>{{srmDay.gotUp}}</td></tr>
+            <tr><td>First contact with another person:</td><td>{{srmDay.firstContact}}</td></tr>
+            <tr><td>Had dinner:</td><td>{{srmDay.startWork}}</td></tr>
+            <tr><td>Had dinner:</td><td>{{srmDay.haveDinner}}</td></tr>
+            <tr><td>Mood:</td><td>{{srmDay.mood}}</td></tr>
+            <tr><td>Energy:</td><td>{{srmDay.energy}}</td></tr>
+            </table>
+        </div>
+    </div>
+</div>
