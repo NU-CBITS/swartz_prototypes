@@ -8,24 +8,22 @@
 
 <div class="row">
 	<div class="col-md-6">
-	<div class="panel panel-primary">
-		<div class="panel-heading">
-			<h3 class="panel-title">{{thermometer.symptoms[thermometer.currentSymptomClassIndex].instructions}}</h3>
-		</div>
-		<div class="panel-body">
-			<div class="tag-cloud">
-				<span ng-repeat="symptom in thermometer.symptoms[thermometer.currentSymptomClassIndex].symptoms track by $index">
-					<span class="btn btn-sm btn-default" data-drag="true" jqyoui-draggable class="{{thermometer.showSymptomSelected($index)}}" ng-click="thermometer.addToThermometer(thermometer.currentSymptomIndex, $index); thermometer.selectSymptom($index);" ng-model="thermometer.symptoms[thermometer.currentSymptomClassIndex].symptoms" ng-hide="!symptom" >
-						{{symptom}}
+		<div class="panel panel-primary">
+			<div class="panel-heading">
+				<h3 class="panel-title">{{thermometer.symptoms[thermometer.currentSymptomClassIndex].instructions}}</h3>
+			</div>
+			<div class="panel-body">
+				<div class="tag-cloud">
+					<span ng-repeat="symptom in thermometer.symptoms[thermometer.currentSymptomClassIndex].symptoms track by $index">
+						<span class="btn btn-sm btn-default" data-drag="true" jqyoui-draggable class="{{thermometer.showSymptomSelected($index)}}" ng-click="thermometer.addToThermometer(thermometer.currentSymptomIndex, $index); thermometer.selectSymptom($index);" ng-model="thermometer.symptoms[thermometer.currentSymptomClassIndex].symptoms" ng-hide="!symptom" >
+							{{symptom}}
+						</span>
 					</span>
-				</span>
-			</div>	
+				</div>	
+			</div>
 		</div>
-	</div>
 	</div>
 	<div class="col-md-6">
-		When you're ready....
-		<button class="btn btn-primary warning" ng-click="thermometer.currentSymptomClassIndex = thermometer.currentSymptomClassIndex + 1" ng-show="thermometer.currentSymptomClassIndex < 2"> click here to label your symptoms of {{thermometer.symptoms[thermometer.currentSymptomClassIndex].name}}</button>
 		<div class="panel panel-warning">
 			<div class="panel-heading">
 				<h3 class="panel-title">Drag the symptoms to the colored boxes on the thermometer below!</h3>
