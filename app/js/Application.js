@@ -107,8 +107,12 @@
           controller: 'SRMAnchorsController',
           controllerAs: 'srm_anchors'
         })
+          .when(Routes.SRM_ANCHORS, {  
+          templateUrl: 'partials/srm_goal_setting.html',
+          controller: 'SRMGoalSettingController',
+          controllerAs: 'srm_goal_setting'
+        })
     },
-
     run: function run($rootScope, $location, $q, $window, 
                       Routes, sessionQuestionService, resourceCache,
                       sessionsService, sessionsCache,

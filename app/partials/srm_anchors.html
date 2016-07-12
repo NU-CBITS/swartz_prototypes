@@ -10,7 +10,7 @@
 	<h4>Check the boxes below if these social rhythm anchors apply to you.<br/>Only check them if you do the same thing at about the same time almost every day.</h4>
 		<form>
 			<div class="checkbox" ng-repeat="anchor in srm_anchors.anchors track by $index">
-			  <label>
+			  <label class="btn btn-default">
 			    <input type="checkbox" ng-model="anchors[$index].response">
 			    {{anchor.name}}
 			  </label>
@@ -18,13 +18,14 @@
 			<button class="btn btn-primary" ng-click="srm_anchors.completeAnchorSelectionForm()">Continue <i class="fa fa-chevron-right"></i></button>
 		</form>
 	</div>
-
 	<div class="panel-body" ng-show="srm_anchors.anchorSelectionFormComplete && !srm_anchors.reviewAnchorsComplete">
 
 	<h4>You have selected the following social rhythm anchors:</h4> 
 
+
+
 	<p>These are examples of activities that help set your body clock.  Doing these activities at the same time every day provides cues your body clock and helps to keep it in rhythm. </p>
-	<p>  There are o Create a chart like this one and write down the time of day that you do the activity.</p>  Try to keep it as close to the target time as possible.
+
 
 	<button class="btn btn-primary" ng-click="srm_anchors.completeReviewForm()">Continue <i class="fa fa-chevron-right"></i></button>
 	</div>
