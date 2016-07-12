@@ -102,6 +102,11 @@
           controller: 'MoodThermometerController',
           controllerAs: 'thermometer'
         })
+        .when(Routes.SRM_ANCHORS, {  
+          templateUrl: 'partials/srm_anchors.html',
+          controller: 'SRMAnchorsController',
+          controllerAs: 'srm_anchors'
+        })
     },
 
     run: function run($rootScope, $location, $q, $window, 
@@ -130,7 +135,7 @@
   angular.module('sis.services',
       ['sis.resources', 'sis.constants']);
   angular.module('sis',
-      ['ngRoute', 'ngDragDrop', 'mobiscroll-datetime', 'sis.controllers',
+      ['ngRoute', 'ngDragDrop', 'sticky', 'mobiscroll-datetime', 'sis.controllers',
         'sis.resources', 'sis.services', 'sis.constants'])
       .config(['$routeProvider', 'Routes', Application.configure])
       .run(['$rootScope', '$location', '$q', '$window',

@@ -16,7 +16,8 @@
     HISTORY: '/history',
     SRM_FEEDBACK: '/srm_feedback',
     BIPOLAR_DISORDER_CALCULATOR: '/bipolar_disorder_calculator',
-    MOOD_THERMOMETER: '/mood_thermometer'
+    MOOD_THERMOMETER: '/mood_thermometer',
+    SRM_ANCHORS: '/srm_anchors'
   };
 
   angular.module('sis.constants')
