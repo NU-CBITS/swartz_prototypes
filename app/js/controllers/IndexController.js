@@ -3,6 +3,9 @@
 
   function IndexController($location) {
 
+    this.login = function(){
+      $location.url('/home');
+    }
   
   }
 
