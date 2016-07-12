@@ -107,7 +107,7 @@
           controller: 'SRMAnchorsController',
           controllerAs: 'srm_anchors'
         })
-          .when(Routes.SRM_ANCHORS, {  
+        .when(Routes.SRM_GOAL_SETTING, {  
           templateUrl: 'partials/srm_goal_setting.html',
           controller: 'SRMGoalSettingController',
           controllerAs: 'srm_goal_setting'

@@ -1,4 +1,4 @@
-<nav class="navbar navbar-default">
+<nav class="navbar navbar-default" ng-show="navbar.showNavbar">
   <div class="container-fluid">
     <div class="navbar-header">
       <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapsed" aria-expanded="false">
@@ -17,7 +17,11 @@
             <li><a href="#/lessons_current">Current Lesson Plan  <label ng-show="navbar.newTasks('lessons,lessons_current')" class="label label-success">new!</label></a></li>
             <li><a href="#/history">Explore Your History  <label ng-show="navbar.newTasks('lessons,history')" class="label label-success">new!</label></a></li>
             <li role="separator" class="divider"></li>
+            <li><a href="#/tools">Tools</a></li>
+            <li><a href="#/lessons">Lessons</a></li>
+            <li role="separator" class="divider"></li>
             <li><a href="#/lessons_archive">Old Lesson Plans</a></li>
+
           </ul>
         </li>
         <li class="dropdown">

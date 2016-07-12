@@ -5,6 +5,7 @@
 
     this.userName = 'Ray User';
     this.brand = 'RAY';
+    this.showNavbar = $location.path != '/';
 
     this.newTasks= function(taskType){
 
