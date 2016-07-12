@@ -18,7 +18,9 @@
     BIPOLAR_DISORDER_CALCULATOR: '/bipolar_disorder_calculator',
     MOOD_THERMOMETER: '/mood_thermometer',
     SRM_ANCHORS: '/srm_anchors',
-    SRM_GOAL_SETTING: '/srm_goal_setting'
+    SRM_GOAL_SETTING: '/srm_goal_setting',
+    HELP: '/help',
+    INDEX: '/index'
   };
 
   angular.module('sis.constants')

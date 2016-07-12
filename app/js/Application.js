@@ -8,9 +8,9 @@
     configure: function configure($routeProvider, Routes) {
       $routeProvider
         .when(Routes.ROOT, {
-          templateUrl: 'partials/home.html',
-          controller: 'HomeController',
-          controllerAs: 'home'
+          templateUrl: 'partials/index.html',
+          controller: 'IndexController',
+          controllerAs: 'index'
         })
         .when(Routes.HOME, {
           templateUrl: 'partials/home.html',
