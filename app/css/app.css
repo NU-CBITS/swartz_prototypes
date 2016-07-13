@@ -20,7 +20,7 @@ body{
     font-weight: bold;
 }
 
-.tag-cloud .btn {
+.btn-padding {
     margin:.25em .25em;
 }
 
@@ -28,6 +28,28 @@ body{
     margin-top:.25em;
     margin-bottom:0;
     padding:.25em;
+}
+
+.vertical-center {
+  min-height: 100%;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+}
+
+.popoverLink {
+    color: orange;
+    cursor: pointer;
+}
+
+.popoverLink:hover {
+    text-decoration: underline;
+}
+
+.popoverFinished {
+    color: green;
+    cursor: pointer;
+    text-decoration: underline;
 }
 
 

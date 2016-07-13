@@ -7,10 +7,10 @@
 
     configure: function configure($routeProvider, Routes) {
       $routeProvider
-        .when(Routes.ROOT, {
-          templateUrl: 'partials/index.html',
-          controller: 'IndexController',
-          controllerAs: 'index'
+        .when(Routes.INDEX, {
+          templateUrl: 'partials/home.html',
+          controller: 'HomeController',
+          controllerAs: 'home'
         })
         .when(Routes.HOME, {
           templateUrl: 'partials/home.html',
@@ -112,6 +112,21 @@
           controller: 'SRMGoalSettingController',
           controllerAs: 'srm_goal_setting'
         })
+        .when(Routes.LEARN_ABOUT_ANCHORS, {  
+          templateUrl: 'partials/learn_about_anchors.html',
+          controller: 'LearnAboutAnchorsController',
+          controllerAs: 'learn_about_anchors'
+        })
+        .when(Routes.TOOLS, {  
+          templateUrl: 'partials/tools.html',
+          controller: 'ToolsController',
+          controllerAs: 'tools'
+        })
+        .when(Routes.HANDBOOKS, {  
+          templateUrl: 'partials/handbooks.html',
+          controller: 'HandbooksController',
+          controllerAs: 'handbooks'
+        })
     },
     run: function run($rootScope, $location, $q, $window, 
                       Routes, sessionQuestionService, resourceCache,
@@ -139,7 +154,7 @@
   angular.module('sis.services',
       ['sis.resources', 'sis.constants']);
   angular.module('sis',
-      ['ngRoute', 'ngDragDrop', 'sticky', 'mobiscroll-datetime', 'sis.controllers',
+      ['ngRoute', 'mobiscroll-datetime', 'sis.controllers',
         'sis.resources', 'sis.services', 'sis.constants'])
       .config(['$routeProvider', 'Routes', Application.configure])
       .run(['$rootScope', '$location', '$q', '$window',
