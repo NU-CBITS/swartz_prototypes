@@ -112,6 +112,11 @@
           controller: 'SRMGoalSettingController',
           controllerAs: 'srm_goal_setting'
         })
+        .when(Routes.SRM_GOAL_SETTING + '/:goal_version', {  
+          templateUrl: 'partials/srm_goal_setting.html',
+          controller: 'SRMGoalSettingController',
+          controllerAs: 'srm_goal_setting'
+        })
         .when(Routes.LEARN_ABOUT_ANCHORS, {  
           templateUrl: 'partials/learn_about_anchors.html',
           controller: 'LearnAboutAnchorsController',
@@ -127,6 +132,77 @@
           controller: 'HandbooksController',
           controllerAs: 'handbooks'
         })
+        .when(Routes.TIPS_ARCHIVE, {  
+          templateUrl: 'partials/tips_archive.html',
+          controller: 'TipsArchiveController',
+          controllerAs: 'tips'
+        })
+        .when(Routes.SETTING_MANAGEABLE_GOALS, {  
+          templateUrl: 'partials/setting_manageable_goals.html',
+          controller: 'SettingManageableGoalsController',
+          controllerAs: 'manageable'
+        })
+        .when(Routes.I_CANT_SLEEP_PLAN, {  
+          templateUrl: 'partials/i_cant_sleep_plan.html',
+          controller: 'ICantSleepPlanController',
+          controllerAs: 'cant_sleep'
+        })
+        .when(Routes.RULES_FOR_BETTER_SLEEP, {  
+          templateUrl: 'partials/rules_for_better_sleep.html',
+          controller: 'RulesForBetterSleepController',
+          controllerAs: 'rules'
+        })
+        .when(Routes.GETTING_OUT_OF_BED_SEARCH, {  
+          templateUrl: 'partials/handbooks.html',
+          controller: 'GettingOutOfBedSearchController',
+          controllerAs: 'bed'
+        })
+        .when(Routes.TROUBLESHOOTING_ROUTINES, {  
+          templateUrl: 'partials/troubleshooting_routines.html',
+          controller: 'TroubleshootingRoutinesController',
+          controllerAs: 'troubleshooting'
+        })
+        .when(Routes.ANTICIPATING_DISRUPTIONS, {  
+          templateUrl: 'partials/handbooks.html',
+          controller: 'AnticipatingDisruptionsController',
+          controllerAs: 'anticipating'
+        })
+        .when(Routes.MY_SOCIAL_CHANGES, {  
+          templateUrl: 'partials/my_social_changes.html',
+          controller: 'MySocialChangesController',
+          controllerAs: 'changes'
+        })
+        .when(Routes.I_STATEMENTS, {  
+          templateUrl: 'partials/i_statements.html',
+          controller: 'IStatementsController',
+          controllerAs: 'i_statements'
+        })
+        .when(Routes.LETS_TALK, {  
+          templateUrl: 'partials/lets_talk.html',
+          controller: 'LetsTalkController',
+          controllerAs: 'talk'
+        })
+        .when(Routes.DISAGREEMENTS, {  
+          templateUrl: 'partials/disagreements.html',
+          controller: 'DisagreementsController',
+          controllerAs: 'disagreements'
+        })
+        .when(Routes.REVIEWING_PROGRESS, {  
+          templateUrl: 'partials/reviewing_progress.html',
+          controller: 'ReviewingProgressController',
+          controllerAs: 'progress'
+        })
+        .when(Routes.EARLY_WARNING_SIGNS, {  
+          templateUrl: 'partials/handbooks.html',
+          controller: 'EarlyWarningSignsController',
+          controllerAs: 'ews'
+        })
+        .when(Routes.RELAPSE_PREVENTION_PLAN, {  
+          templateUrl: 'partials/relapse_prevention_plan.html',
+          controller: 'RelapsePreventionPlanController',
+          controllerAs: 'relapse'
+        })
+
     },
     run: function run($rootScope, $location, $q, $window, 
                       Routes, sessionQuestionService, resourceCache,

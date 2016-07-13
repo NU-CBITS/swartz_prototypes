@@ -1,7 +1,7 @@
 (function () {
   'use strict';
 
-  function HelpController($location) {
+  function HelpController() {
 
     this.confirmationVisible = false;
 
@@ -13,5 +13,5 @@
 
   angular.module('cbitsPrototype.controllers')
     .controller('HelpController',
-    [ '$location',HelpController]);
+    [HelpController]);
 })();
