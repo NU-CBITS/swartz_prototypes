@@ -30,7 +30,8 @@
     name:"Finding the Beat", description:"This week is all about Finding the Beat!", modules:[
      {name:'All About Rhythms and Blues',icon:'book',type:'',available:true, target:'#/session/5'},
      {name:'Explore Your SRM',icon:'area-chart',type:'',available:true, target:'#/srm_feedback'},
-     {name:'What are your Social Rhythm Anchors?',icon:'wrench',type:'',available:true, target:"#/social_rhythm_anchors"},
+     {name:'Learn About Social Rhythm Anchors',icon:'wrench',type:'',available:true, target:"#/learn_about_anchors"},
+     {name:'What are your Social Rhythm Anchors?',icon:'wrench',type:'',available:true, target:"#/srm_anchors"},
      {name:'Learn How to Set a Social Rhythm Goal',icon:'bolt',type:'',available:true, target:"#/srm_goal"},
      {name:'Social Rhythm Metric',icon:'bolt',type:'',available:true, target:"#/srm"}
      ]

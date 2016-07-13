@@ -7,7 +7,7 @@
 
     configure: function configure($routeProvider, Routes) {
       $routeProvider
-        .when(Routes.ROOT, {
+        .when(Routes.INDEX, {
           templateUrl: 'partials/home.html',
           controller: 'HomeController',
           controllerAs: 'home'
@@ -102,8 +102,32 @@
           controller: 'MoodThermometerController',
           controllerAs: 'thermometer'
         })
+        .when(Routes.SRM_ANCHORS, {  
+          templateUrl: 'partials/srm_anchors.html',
+          controller: 'SRMAnchorsController',
+          controllerAs: 'srm_anchors'
+        })
+        .when(Routes.SRM_GOAL_SETTING, {  
+          templateUrl: 'partials/srm_goal_setting.html',
+          controller: 'SRMGoalSettingController',
+          controllerAs: 'srm_goal_setting'
+        })
+        .when(Routes.LEARN_ABOUT_ANCHORS, {  
+          templateUrl: 'partials/learn_about_anchors.html',
+          controller: 'LearnAboutAnchorsController',
+          controllerAs: 'learn_about_anchors'
+        })
+        .when(Routes.TOOLS, {  
+          templateUrl: 'partials/tools.html',
+          controller: 'ToolsController',
+          controllerAs: 'tools'
+        })
+        .when(Routes.HANDBOOKS, {  
+          templateUrl: 'partials/handbooks.html',
+          controller: 'HandbooksController',
+          controllerAs: 'handbooks'
+        })
     },
-
     run: function run($rootScope, $location, $q, $window, 
                       Routes, sessionQuestionService, resourceCache,
                       sessionsService, sessionsCache,
@@ -130,7 +154,7 @@
   angular.module('sis.services',
       ['sis.resources', 'sis.constants']);
   angular.module('sis',
-      ['ngRoute', 'ngDragDrop', 'mobiscroll-datetime', 'sis.controllers',
+      ['ngRoute', 'mobiscroll-datetime', 'sis.controllers',
         'sis.resources', 'sis.services', 'sis.constants'])
       .config(['$routeProvider', 'Routes', Application.configure])
       .run(['$rootScope', '$location', '$q', '$window',

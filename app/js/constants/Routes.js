@@ -2,8 +2,9 @@
   'use strict';
 
   var Routes = {
-    ROOT: '/',
+    ROOT: '/home',
     HOME: '/home',
+    INDEX: '/home',
     SESSIONS: '/session',
     LESSONS_CURRENT: '/lessons_current',
     LESSONS_ARCHIVE: '/lessons_archive',
@@ -16,7 +17,13 @@
     HISTORY: '/history',
     SRM_FEEDBACK: '/srm_feedback',
     BIPOLAR_DISORDER_CALCULATOR: '/bipolar_disorder_calculator',
-    MOOD_THERMOMETER: '/mood_thermometer'
+    MOOD_THERMOMETER: '/mood_thermometer',
+    SRM_ANCHORS: '/srm_anchors',
+    SRM_GOAL_SETTING: '/srm_goal_setting',
+    HELP: '/help',
+    LEARN_ABOUT_ANCHORS: '/learn_about_anchors',
+    TOOLS: '/tools',
+    HANDBOOKS: '/handbooks'
   };
 
   angular.module('sis.constants')

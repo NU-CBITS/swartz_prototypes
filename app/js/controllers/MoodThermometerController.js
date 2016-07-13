@@ -23,7 +23,7 @@
 	];
 
   	this.symptoms[0] = {
-  		name:'Mania', type:'mania', instructions:'Which of these symptoms do you feel when you are manic?',symptoms:[
+  		name:'Mania', type:'mania', instructions:'Which of these symptoms do you feel when you are manic?', bgcolor:2,symptoms:[
   		'Overly good mood',
 		'Irritability or snappiness',
 		'Talking fast',
@@ -42,7 +42,7 @@
   	]};
 
   	this.symptoms[2] = {
-		name:'Depression', type:'depression', instructions:'Which of these symptoms do you feel when you are depressed?', symptoms:[
+		name:'Depression', type:'depression', instructions:'Which of these symptoms do you feel when you are depressed?', bgcolor:5, symptoms:[
 		'Sadness',
 		'Anxiety',
 		'Feelings of emptiness',
@@ -68,7 +68,7 @@
 	]};
 
 	this.symptoms[1] = {
-		name:'Normal', type:'normal', instructions:'Which of these symptoms do you feel when you are feeling normal?', symptoms:[
+		name:'Normal', type:'normal', instructions:'Which of these symptoms do you feel when you are feeling normal?', bgcolor:8, symptoms:[
 		'Even mood',
 		'Neither high nor low',
 		'Feeling pretty normal',

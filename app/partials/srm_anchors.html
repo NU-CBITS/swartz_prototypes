@@ -1,0 +1,61 @@
+<h2>Social Rhythm Anchors</h2>
+
+<div class="bs-callout bs-callout-primary">
+    <p>As you have seen, The Social Rhythm Metric (SRM) tracks five activities or "anchors" that research has shown helps many people improve their mood.</p>
+    <p>It's also possible to track additional anchors that are important to you!</p>
+</div>
+
+<div class="panel panel-primary">
+    <div class="panel-heading">
+        <h3 class="panel-title">What are examples of social rhythm anchors in your life?</h3>
+    </div>
+    <div class="panel-body" ng-show="srm_anchors.panelVisible[0]">
+        <h4>Check the boxes below if these social rhythm anchors apply to you.<br/>Only check them if you do the same thing at about the same time almost every day.</h4>
+            <div ng-repeat="anchor in srm_anchors.anchors track by $index">
+                <label class="btn btn-default btn-padding">
+                    <input type="checkbox" ng-model="srm_anchors.anchors[$index].response"> {{anchor.name}}
+                </label>
+            </div>
+    </div>
+    <div class="panel-body" ng-show="srm_anchors.panelVisible[1]">
+
+        <h4>You have selected the following social rhythm anchors:</h4>
+
+    	<button disabled ng-repeat="anchor in srm_anchors.anchors" ng-show="anchor.response" class="btn-padding btn btn-disabled btn-info">
+    		{{anchor.name}}
+    	</button>
+
+        <p>These are examples of activities that help set your body clock. Doing these activities at the same time every day provides cues your body clock and helps to keep it in rhythm. </p>
+
+    </div>
+
+    <div class="panel-body" ng-show="srm_anchors.panelVisible[2]">
+
+        <h4>You have selected the following social rhythm anchors:</h4>
+
+        <button ng-repeat="anchor in srm_anchors.anchors" ng-show="anchor.response" class="btn-padding btn btn-disabled btn-info">
+    		{{anchor.name}}
+    	</button>
+
+        <h4>Now let's build a map to track your new anchors.</h4>
+
+    </div>
+    <div class="panel-footer">
+    	<div class="row">
+    		<div class="col-md-6 col-sm-6 col-xs-6">
+    				<button ng-show="srm_anchors.panelVisible[1]" class="btn btn-default" ng-click="srm_anchors.showPanel(0)"><i class="fa fa-chevron-left"></i> Back
+		            </button>
+			      	<button ng-show="srm_anchors.panelVisible[2]" class="btn btn-default" ng-click="srm_anchors.showPanel(1)"><i class="fa fa-chevron-left"></i> Back
+			        </button>
+    		</div>
+    		<div class="col-md-6 col-sm-6 col-xs-6 text-right">
+		            <button ng-show="srm_anchors.panelVisible[0]" class="btn btn-primary" ng-click="srm_anchors.showPanel(1)">Continue <i class="fa fa-chevron-right"></i>
+		            </button>
+			      	<button ng-show="srm_anchors.panelVisible[1]" class="btn btn-primary" ng-click="srm_anchors.showPanel(2)">Continue <i class="fa fa-chevron-right"></i>
+			        </button>
+    		        <a ng-show="srm_anchors.panelVisible[2]" href="#/lessons_current" >Continue <i class="fa fa-chevron-right"></i></a>
+    		</div>
+    	</div>
+    </div>
+
+</div>
