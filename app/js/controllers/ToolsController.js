@@ -1,11 +1,11 @@
 (function () {
   'use strict';
 
-  function ToolsController($location) {
+  function ToolsController($location, LessonPlans) {
   
   }
 
   angular.module('cbitsPrototype.controllers')
     .controller('ToolsController',
-    [ '$location',ToolsController]);
+    [ '$location','LessonPlans',ToolsController]);
 })();
