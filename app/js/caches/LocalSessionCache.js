@@ -13,6 +13,6 @@
     return new LocalSession(localSessionCache);
   }
 
-  angular.module('sis.services')
+  angular.module('cbitsPrototype.services')
          .factory('localSessionCache', ['resourceCache', LocalSessionCache]);
 })();

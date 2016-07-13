@@ -21,6 +21,6 @@
     return new Resource($http, settingsCache, uuid);
   }
 
-  angular.module('sis.resources')
+  angular.module('cbitsPrototype.resources')
     .factory('settings', ['$http', 'settingsCache', 'uuid', Settings]);
 })();

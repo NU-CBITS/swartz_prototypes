@@ -20,7 +20,7 @@
     return new asyncContent($filter, $http);
   }
 
-  angular.module('sis.services')
+  angular.module('cbitsPrototype.services')
     .factory('contentService',
     [ '$filter',
       '$http',

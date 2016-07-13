@@ -16,6 +16,6 @@
     return new Sessions(resourceCache);
   }
 
-  angular.module('sis.services')
+  angular.module('cbitsPrototype.services')
          .factory('sessionsCache', ['resourceCache', SessionsCache]);
 })();

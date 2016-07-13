@@ -14,6 +14,6 @@
     return new Settings(resourceCache);
   }
 
-  angular.module('sis.services')
+  angular.module('cbitsPrototype.services')
          .factory('settingsCache', ['resourceCache', SettingsCache]);
 })();

@@ -29,7 +29,7 @@
     };
   }
 
-  angular.module('sis.directives')
+  angular.module('cbitsPrototype.directives')
     .directive(
         'schedulequitday', ['configurationService', scheduleQuitDay]
     );

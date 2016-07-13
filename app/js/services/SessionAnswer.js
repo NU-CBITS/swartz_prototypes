@@ -23,7 +23,7 @@
     return new SessionAnswer(sessionAnswerCache, uuid);
   }
 
-  angular.module('sis.services')
+  angular.module('cbitsPrototype.services')
     .factory('sessionAnswerService',
     ['sessionAnswerCache', 'uuid', SessionAnswerFactory]);
 })();

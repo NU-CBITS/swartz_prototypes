@@ -81,7 +81,7 @@
   
   }
 
-  angular.module('sis.controllers')
+  angular.module('cbitsPrototype.controllers')
     .controller('LessonsCurrentController',
     [ '$location','$routeParams',LessonsCurrentController]);
 })();

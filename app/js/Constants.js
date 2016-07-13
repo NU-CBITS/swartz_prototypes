@@ -2,10 +2,10 @@
 (function() {
   'use strict';
 
-  var BASE_URL = 'https://sis.northwestern.edu';
+  var BASE_URL = 'https://cbitsPrototype.northwestern.edu';
 
   angular
-  .module('sis.constant', [])
+  .module('cbitsPrototype.constant', [])
   .constant('sisConfig', {
     clickKey: 'sisClickEvents',
     sisPin: 'sisPin'

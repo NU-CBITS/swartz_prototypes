@@ -98,7 +98,7 @@
   
   }
 
-  angular.module('sis.controllers')
+  angular.module('cbitsPrototype.controllers')
     .controller('MoodThermometerController',
     [ '$location', '$filter', MoodThermometerController]);
 })();

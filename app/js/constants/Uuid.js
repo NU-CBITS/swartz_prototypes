@@ -13,6 +13,6 @@
     return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, replacement);
   }
 
-  angular.module('sis.constants')
+  angular.module('cbitsPrototype.constants')
          .constant('uuid', uuid);
 })();

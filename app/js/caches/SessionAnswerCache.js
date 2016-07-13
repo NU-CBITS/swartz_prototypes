@@ -15,6 +15,6 @@
     return new SessionAnswer(resourceCache);
   }
 
-  angular.module('sis.services')
+  angular.module('cbitsPrototype.services')
     .factory('sessionAnswerCache', ['resourceCache', SessionAnswerCache]);
 })();

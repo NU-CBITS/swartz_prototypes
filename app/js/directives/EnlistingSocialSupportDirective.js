@@ -16,7 +16,7 @@
     };
   }
 
-  angular.module('sis.directives')
+  angular.module('cbitsPrototype.directives')
     .directive(
         'enlistingsocialsupport', ['$modal', 'configurationModalService', enlistingSocialSupport]
     );

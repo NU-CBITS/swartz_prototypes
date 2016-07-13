@@ -141,7 +141,7 @@
     return new ResourceCache($window, $filter);
   }
 
-  angular.module('sis.services')
+  angular.module('cbitsPrototype.services')
       .constant('ResourceCache', ResourceCache)
       .factory('resourceCache',
       ['$window', '$filter', ResourceCacheFactory]);

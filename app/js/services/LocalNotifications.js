@@ -22,6 +22,6 @@
     return new LocalNotifications($window);
   }
 
-  angular.module('sis.services')
+  angular.module('cbitsPrototype.services')
     .factory('localNotifications', ['$window', LocalNotificationsFactory]);
 })();

@@ -92,7 +92,7 @@
     return new Session(sessionsCache);
   }
 
-  angular.module('sis.services')
+  angular.module('cbitsPrototype.services')
     .factory('sessionsService',
     ['sessionsCache', SessionFactory]);
 })();

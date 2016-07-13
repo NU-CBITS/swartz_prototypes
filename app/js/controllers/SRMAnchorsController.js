@@ -37,7 +37,7 @@
 
   }
 
-  angular.module('sis.controllers')
+  angular.module('cbitsPrototype.controllers')
     .controller('SRMAnchorsController',
     [ SRMAnchorsController]);
 })();

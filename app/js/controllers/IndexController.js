@@ -9,7 +9,7 @@
   
   }
 
-  angular.module('sis.controllers')
+  angular.module('cbitsPrototype.controllers')
     .controller('IndexController',
     [ '$location',IndexController]);
 })();

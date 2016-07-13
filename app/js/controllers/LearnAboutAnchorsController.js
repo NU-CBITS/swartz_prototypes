@@ -68,7 +68,7 @@
 
   }
 
-  angular.module('sis.controllers')
+  angular.module('cbitsPrototype.controllers')
     .controller('LearnAboutAnchorsController',
     [ '$location',LearnAboutAnchorsController]);
 })();

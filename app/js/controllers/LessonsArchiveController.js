@@ -25,7 +25,7 @@
   
   }
 
-  angular.module('sis.controllers')
+  angular.module('cbitsPrototype.controllers')
     .controller('LessonsArchiveController',
     [ '$location',LessonsArchiveController]);
 })();

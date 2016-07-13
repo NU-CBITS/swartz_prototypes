@@ -144,18 +144,18 @@
     }
   };
 
-  angular.module('sis.constants', []);
-  angular.module('sis.directives',
-      ['sis.controllers', 'sis.services','sis.constants']);
-  angular.module('sis.resources',
-      ['ngResource', 'sis.services', 'sis.constants']);
-  angular.module('sis.controllers',
-      ['sis.directives','sis.constants', 'sis.resources', 'sis.services', 'ui.bootstrap']);
-  angular.module('sis.services',
-      ['sis.resources', 'sis.constants']);
-  angular.module('sis',
-      ['ngRoute', 'mobiscroll-datetime', 'sis.controllers',
-        'sis.resources', 'sis.services', 'sis.constants'])
+  angular.module('cbitsPrototype.constants', []);
+  angular.module('cbitsPrototype.directives',
+      ['cbitsPrototype.controllers', 'cbitsPrototype.services','cbitsPrototype.constants']);
+  angular.module('cbitsPrototype.resources',
+      ['ngResource', 'cbitsPrototype.services', 'cbitsPrototype.constants']);
+  angular.module('cbitsPrototype.controllers',
+      ['cbitsPrototype.directives','cbitsPrototype.constants', 'cbitsPrototype.resources', 'cbitsPrototype.services', 'ui.bootstrap']);
+  angular.module('cbitsPrototype.services',
+      ['cbitsPrototype.resources', 'cbitsPrototype.constants']);
+  angular.module('cbitsPrototype-app',
+      ['ngRoute', 'mobiscroll-datetime', 'cbitsPrototype.controllers',
+        'cbitsPrototype.resources', 'cbitsPrototype.services', 'cbitsPrototype.constants'])
       .config(['$routeProvider', 'Routes', Application.configure])
       .run(['$rootScope', '$location', '$q', '$window',
         'Routes', 

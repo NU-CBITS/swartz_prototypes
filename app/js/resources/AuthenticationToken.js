@@ -34,7 +34,7 @@
                         AuthenticationTokenCache);
   }
 
-  angular.module('sis.resources')
+  angular.module('cbitsPrototype.resources')
          .factory('authenticationToken',
                   ['$resource', 'settingsCache', 'authenticationTokenCache', AuthenticationToken]);
 })();

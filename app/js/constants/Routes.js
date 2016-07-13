@@ -26,6 +26,6 @@
     HANDBOOKS: '/handbooks'
   };
 
-  angular.module('sis.constants')
+  angular.module('cbitsPrototype.constants')
          .constant('Routes', Routes);
 })();

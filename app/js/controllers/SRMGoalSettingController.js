@@ -11,7 +11,7 @@
   
   }
 
-  angular.module('sis.controllers')
+  angular.module('cbitsPrototype.controllers')
     .controller('SRMGoalSettingControllerr',
     [ '$location',SRMGoalSettingController]);
 })();
