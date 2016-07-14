@@ -3,7 +3,7 @@
 
   function LessonsCurrentController($location, $routeParams, LessonPlans) {
     this.lessonPlan = LessonPlans;
-    this.currentLessonPlan = $routeParams.lessons_index || 0;
+    this.currentLessonPlan = $routeParams.lessons_index || 2;
   }
 
   angular.module('cbitsPrototype.controllers')
