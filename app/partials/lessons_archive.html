@@ -5,7 +5,7 @@
 	<span ng-show="!task.available">
 		<div class="row">
 			<div class="col-md-7 col-sm-7">
-			{{task.name}}
+			# {{$index}} {{task.name}}
 			<br/><label class="label label-success" ng-show="task.completed"><i class="fa fa-check-circle"></i> completed</label>
 			</div>
 			<div class="col-md-3 col-sm-3">
