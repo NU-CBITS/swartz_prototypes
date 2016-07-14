@@ -3,7 +3,8 @@
 
   var User = {
     firstName:'Holly',
-    startDate: new Date()
+    startDate: new Date(),
+    currentGoal: ''
   };
 
   angular.module('cbitsPrototype.constants')

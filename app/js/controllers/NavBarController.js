@@ -1,10 +1,10 @@
 (function () {
   'use strict';
 
-  function NavBarController($location,User) {
+  function NavBarController($location,User,Site) {
 
     this.userName = User.firstName;
-    this.brand = 'RAY';
+    this.brand = Site.brand;
 
     this.newTasks= function(taskType){
 
@@ -25,5 +25,5 @@
 
   angular.module('cbitsPrototype.controllers')
     .controller('NavBarController',
-    [ '$location', 'User', NavBarController]);
+    [ '$location', 'User', 'Site', NavBarController]);
 })();
