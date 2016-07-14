@@ -11,19 +11,21 @@
     </div>
     <div class="panel-body" ng-show="srm_anchors.panelVisible[0]">
         <h4>Check the boxes below if these social rhythm anchors apply to you.<br/>Only check them if you do the same thing at about the same time almost every day.</h4>
-            <div ng-repeat="anchor in srm_anchors.anchors track by $index">
+            <span ng-repeat="anchor in srm_anchors.anchors track by $index">
                 <label class="btn btn-default btn-padding">
                     <input type="checkbox" ng-model="srm_anchors.anchors[$index].response"> {{anchor.name}}
                 </label>
-            </div>
+            </span>
     </div>
     <div class="panel-body" ng-show="srm_anchors.panelVisible[1]">
 
         <h4>You have selected the following social rhythm anchors:</h4>
 
-    	<button disabled ng-repeat="anchor in srm_anchors.anchors" ng-show="anchor.response" class="btn-padding btn btn-disabled btn-info">
-    		{{anchor.name}}
-    	</button>
+        <ul>
+        <li ng-repeat="anchor in srm_anchors.anchors" ng-show="anchor.response">
+            {{anchor.name}}
+        </li>
+        </ul>
 
         <p>These are examples of activities that help set your body clock. Doing these activities at the same time every day provides cues your body clock and helps to keep it in rhythm. </p>
 
@@ -31,31 +33,87 @@
 
     <div class="panel-body" ng-show="srm_anchors.panelVisible[2]">
 
-        <h4>Now that you have selected some social rhythm anchors, let's add them to your </h4>
+        <h4>Now that you have selected some social rhythm anchors, let's add them to your Social Rhythm anchor chart:</h4>
 
-        <button ng-repeat="anchor in srm_anchors.anchors" ng-show="anchor.response" class="btn-padding btn btn-disabled btn-info">
-    		{{anchor.name}}
-    	</button>
+        <div class="well" ng-repeat="anchor in srm_anchors.anchors track by $index" ng-show="anchor.response">
+            <h4>{{anchor.name}}</h4>
+            <div class="form-group">
+                <label for="anchor{{$index}}">What time will you try to do this each day?
+                <input type="time" class="form-control" id="anchor{{$index}}" ng-model="srm_anchors.anchors[$index].targetTime">
+                </label>
+            </div>
+        </div>
+    </div>
 
-        <h4>Now let's build a map to track your new anchors.</h4>
+    <div class="panel-body" ng-show="srm_anchors.panelVisible[3]">
+        <h3>We've built you a personalized anchor log!</h3>
+
+        <button class="btn btn-primary" ng-click="srm_anchors.makePDF()"><i class="fa fa-print"></i> Print this log and take it with you!</button>
+        
+        <p><i>Check out a preview below!</i></p>
+        <div class="well printable">
+            <div id="anchorsTable" class="printable">   
+                <h5>Write down the time of day that you do the activity.</h5>
+                <p>Try to keep it as close to the target time as possible.</p>
+                <table class="full-width-table table table-rounded ">
+                <tr><th>Name</th>
+                    <th>Target Time</th>
+                    <th>Su<span class="hidden-xs">nday</span></th>
+                    <th>M<span class="hidden-xs">onday</span></th>
+                    <th>Tu<span class="hidden-xs">esday</span></th>
+                    <th>W<span class="hidden-xs">ednesday</span></th>
+                    <th>Th<span class="hidden-xs">ursday</span></th>
+                    <th>F<span class="hidden-xs">riday</span></th>
+                    <th>Sa<span class="hidden-xs">turday</span></th>
+                </tr>
+                <tr ng-repeat="anchor in srm_anchors.filteredAnchors() track by $index  ">
+                    <th>{{anchor.name}}</th>
+                    <th>{{anchor.targetTime | date: "mediumTime"}}</th>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>   
+                </table>
+            </div>
+        </div>
 
     </div>
+    <div class="panel-body" ng-show="srm_anchors.panelVisible[4]">
+    <h3>Thanks!</h3>
+    <div class="alert alert-danger">Holly, it would be good to get some concluding text!</div>
+    </div>
+
+
     <div class="panel-footer">
-    	<div class="row">
-    		<div class="col-md-6 col-sm-6 col-xs-6">
-    				<button ng-show="srm_anchors.panelVisible[1]" class="btn btn-default" ng-click="srm_anchors.showPanel(0)"><i class="fa fa-chevron-left"></i> Back
-		            </button>
-			      	<button ng-show="srm_anchors.panelVisible[2]" class="btn btn-default" ng-click="srm_anchors.showPanel(1)"><i class="fa fa-chevron-left"></i> Back
-			        </button>
-    		</div>
-    		<div class="col-md-6 col-sm-6 col-xs-6 text-right">
-		            <button ng-show="srm_anchors.panelVisible[0]" class="btn btn-primary" ng-click="srm_anchors.showPanel(1)">Continue <i class="fa fa-chevron-right"></i>
-		            </button>
-			      	<button ng-show="srm_anchors.panelVisible[1]" class="btn btn-primary" ng-click="srm_anchors.showPanel(2)">Continue <i class="fa fa-chevron-right"></i>
-			        </button>
-    		        <a class="btn" ng-show="srm_anchors.panelVisible[2]" href="#/lessons_current" >Continue <i class="fa fa-chevron-right"></i></a>
-    		</div>
-    	</div>
+        <div class="row">
+            <div class="col-md-6 col-sm-6 col-xs-6">
+                    <button ng-show="srm_anchors.panelVisible[1]" class="btn btn-default" ng-click="srm_anchors.showPanel(0)"><i class="fa fa-chevron-left"></i> Back
+                    </button>
+                    <button ng-show="srm_anchors.panelVisible[2]" class="btn btn-default" ng-click="srm_anchors.showPanel(1)"><i class="fa fa-chevron-left"></i> Back
+                    </button>
+                    <button ng-show="srm_anchors.panelVisible[3]" class="btn btn-default" ng-click="srm_anchors.showPanel(2)"><i class="fa fa-chevron-left"></i> Back
+                    </button>
+                    <button ng-show="srm_anchors.panelVisible[4]" class="btn btn-default" ng-click="srm_anchors.showPanel(3)"><i class="fa fa-chevron-left"></i> Back
+                    </button>
+            </div>
+            <div class="col-md-6 col-sm-6 col-xs-6 text-right">
+                    <button ng-show="srm_anchors.panelVisible[0]" class="btn btn-primary" ng-click="srm_anchors.showPanel(1)">Continue <i class="fa fa-chevron-right"></i>
+                    </button>
+                    <button ng-show="srm_anchors.panelVisible[1]" class="btn btn-primary" ng-click="srm_anchors.showPanel(2)">Continue <i class="fa fa-chevron-right"></i>
+                    </button>
+                    <button ng-show="srm_anchors.panelVisible[2]" class="btn btn-primary" ng-click="srm_anchors.showPanel(3)">Continue <i class="fa fa-chevron-right"></i>
+                    </button>
+                    <button ng-show="srm_anchors.panelVisible[3]" class="btn btn-primary" ng-click="srm_anchors.showPanel(4)">Continue <i class="fa fa-chevron-right"></i>
+                    </button>
+                    <button ng-show="srm_anchors.panelVisible[4]" class="btn btn-primary" ng-click="srm_anchors.showPanel(5)">Continue <i class="fa fa-chevron-right"></i>
+                    </button>
+                    <a class="btn" ng-show="srm_anchors.panelVisible[5]" href="#/lessons_current" >Continue <i class="fa fa-chevron-right"></i></a>
+            </div>
+        </div>
     </div>
 
 </div>
