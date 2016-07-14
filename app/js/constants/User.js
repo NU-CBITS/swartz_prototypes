@@ -2,10 +2,8 @@
   'use strict';
 
   var User = {
-    name:'Joan Smith',
-    startDate: new Date(),
-    endDate: new Date(),
-    email:'jsmith@gmail.com'
+    firstName:'Holly',
+    startDate: new Date()
   };
 
   angular.module('cbitsPrototype.constants')
