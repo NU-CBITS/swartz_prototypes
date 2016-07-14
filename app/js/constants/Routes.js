@@ -2,9 +2,8 @@
   'use strict';
 
   var Routes = {
-    ROOT: '/home',
+    ROOT: '/',
     HOME: '/home',
-    INDEX: '/home',
     SESSIONS: '/session',
     LESSONS_CURRENT: '/lessons_current',
     LESSONS_ARCHIVE: '/lessons_archive',
