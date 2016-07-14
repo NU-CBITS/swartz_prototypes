@@ -1,14 +1,13 @@
 (function () {
   'use strict';
 
-  function HomeController() {
+  function HomeController(User) {
 
-    this.appName = 'RAY User';
-    this.currentUser = 'user';
+    this.userName = User.firstName;
   
   }
 
   angular.module('cbitsPrototype.controllers')
     .controller('HomeController',
-    [ HomeController]);
+    ['User', HomeController]);
 })();
