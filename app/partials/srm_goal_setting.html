@@ -1,19 +1,37 @@
-<h2>Setting Your Social Rhythm Goals</h2>
-
+<h2>{{srm_goal_setting.currrentStage.title}}</h2>
 <div class="bs-callout bs-callout-primary">
-	<p>Setting and meeting SRM goals can help you improve your social rhythms and your mood.</p>
-
-	<p>This week you will set one short term SRM goal.  The idea is to pick a goal that you think you might be able to accomplish by the end of the week. Don’t pick something too ambitious.<p>
+    <p>{{srm_goal_setting.currentStage.preamble}}</p>
+    <p>{{srm_goal_setting.currentStage.description}}
+        <p>
+            <p><b>Tip! {{srm_goal_setting.currentStage.tip}}</b> </p>
 </div>
-
-<div class="panel panel-primary">
-	<div class="panel-heading">
-		<h3 class="panel-title">Select one of the following SRM goals--each goal will come with a list of tips and suggestions to help you reach your goal this week.
-		</h3>
-	</div>
-	<div class="panel-body">
-		<h3>Pick something that you would like to work on and yet doesn’t seem too overwhelming</h3>
-	</div>
-	<div class="panel-footer">
-	</div>
+<div ng-show="srm_goal_setting.goalCompletionRequired()">
+    <div class="panel panel-primary">
+        <div class="panel-heading">
+            <h3 class="panel-title">Let's track your goal!
+			</h3> </div>
+        <div class="panel-body">
+            <h4>Last week you set your SRM Goal:</h4>
+            <div class="well">{{srm_goal_setting.currentGoal.title}}</div>
+            <h3>Did you meet your SRM goal this week?</h3>
+            <label class="btn btn-success">
+                <input type="radio" ng-model="srm_goal_setting.currentGoalTaskCompleted" value="Yes"> Yes</label>
+            <label class="btn btn-danger">
+                <input type="radio" ng-model="srm_goal_setting.currentGoalTaskCompleted" value="No"> No</label><br/><br/>
+            <div class="alert alert-success" ng-show="srm_goal_setting.goalSuccess()" ng-bind-html="srm_goal_setting.goalSuccessHTML"> </div>
+            <div class="alert alert-danger" ng-show="srm_goal_setting.goalFailure()" ng-bind-html="srm_goal_setting.goalFailureHTML"> </div>
+        </div>
+        <div class="panel-footer text-right">
+            <button class="btn btn-primary" ng-click="srm_goal_setting.finishGoalTracking()" ng-disabled="!srm_goal_setting.currentGoalTaskCompleted">Continue <i class="fa fa-chevron-right"></i> </button>
+        </div>
+    </div>
+</div>
+<div ng-show="!srm_goal_setting.goalCompletionRequired()">
+    <div class="panel panel-primary">
+        <div class="panel-heading">
+            <h3 class="panel-title">{{srm_goal_setting.currentStage.instructions}}
+			</h3> </div>
+        <div class="panel-body"> </div>
+        <div class="panel-footer"> </div>
+    </div>
 </div>

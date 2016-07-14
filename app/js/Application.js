@@ -112,7 +112,7 @@
           controller: 'SRMGoalSettingController',
           controllerAs: 'srm_goal_setting'
         })
-        .when(Routes.SRM_GOAL_SETTING + '/:goal_version', {  
+        .when(Routes.SRM_GOAL_SETTING + '/:goal_stage_index', {  
           templateUrl: 'partials/srm_goal_setting.html',
           controller: 'SRMGoalSettingController',
           controllerAs: 'srm_goal_setting'
