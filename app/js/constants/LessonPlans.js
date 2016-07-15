@@ -159,7 +159,7 @@
     LessonPlans[4] = {
         name: 'Rhythms and Sleep',
         description: 'This week is all about Rhythms and Sleep!',
-        available: false,
+        available: true,
         completed: false,
         modules: [{
             name: 'All About Rhythms and Sleep',
@@ -197,7 +197,7 @@
     LessonPlans[5] = {
         name: 'Even Better Sleep',
         description: 'This week is all about getting even better sleep!',
-        available: false,
+        available: true,
         completed: false,
         modules: [{
             name: 'All About Even Better Sleep',
@@ -241,7 +241,7 @@
     LessonPlans[6] = {
         name: 'Skipped Beats',
         description: 'This week is all about skipped beats!',
-        available: false,
+        available: true,
         completed: false,
         modules: [{
             name: 'All About Skipped Beats',
@@ -285,7 +285,7 @@
     LessonPlans[7] = {
         name: 'Social Rhythms',
         description: 'This week is all about Social Rhythms!',
-        available: false,
+        available: true,
         completed: false,
         modules: [{
             name: 'All About Social Rhythms',
@@ -317,7 +317,7 @@
     LessonPlans[8] = {
         name: 'Let’s Talk',
         description: 'This week is all about learning to communicate!',
-        available: false,
+        available: true,
         completed: false,
         modules: [{
             name: 'All About Communication',
@@ -349,7 +349,7 @@
     LessonPlans[9] = {
         name: 'Relationships and Rhythms',
         description: 'This week we will learn about how your social rhythm and your relationships are related!',
-        available: false,
+        available: true,
         completed: false,
         modules: [{
             name: 'All About Relationships and Rhythms',
@@ -381,7 +381,7 @@
     LessonPlans[10] = {
         name: 'Timing Tomorrow',
         description: 'This week is all about how to time... tomorrow!',
-        available: false,
+        available: true,
         completed: false,
         modules: [{
             name: 'All About Timing Tomorrow',
@@ -407,7 +407,7 @@
     LessonPlans[11] = {
         name: 'Staying in Rhythm',
         description: 'This week is all about staying in rhythm!',
-        available: false,
+        available: true,
         completed: false,
         modules: [{
             name: 'All About Staying in Rhythm',
