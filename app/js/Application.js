@@ -75,7 +75,7 @@
         .when(Routes.ALIGNED_MISALIGNED_RHYTHMS, {  
           templateUrl: 'partials/aligned_misaligned_rhythms.html',
           controller: 'AlignedMisalignedRhythmsController',
-          controllerAs: 'aligned_rhythms'
+          controllerAs: 'aligned'
         })
         .when(Routes.REMEMBERING_A_WELL_PERIOD, {  
           templateUrl: 'partials/remembering_a_well_period.html',
@@ -163,7 +163,7 @@
           controllerAs: 'troubleshooting'
         })
         .when(Routes.ANTICIPATING_DISRUPTIONS, {  
-          templateUrl: 'partials/handbooks.html',
+          templateUrl: 'partials/anticipating_disruptions.html',
           controller: 'AnticipatingDisruptionsController',
           controllerAs: 'anticipating'
         })
@@ -235,7 +235,7 @@
   angular.module('cbitsPrototype.services',
       ['cbitsPrototype.resources', 'cbitsPrototype.constants']);
   angular.module('cbitsPrototype-app',
-      ['ngRoute', 'mobiscroll-datetime', 'cbitsPrototype.controllers',
+      ['ngRoute', 'anguvideo', 'mobiscroll-datetime', 'cbitsPrototype.controllers',
         'cbitsPrototype.resources', 'cbitsPrototype.services', 'cbitsPrototype.constants'])
       .config(['$routeProvider', 'Routes', Application.configure])
       .run(['$rootScope', '$location', '$q', '$window',
