@@ -202,6 +202,11 @@
           controller: 'RelapsePreventionPlanController',
           controllerAs: 'relapse'
         })
+        .when(Routes.SRM_HELP, {  
+          templateUrl: 'partials/srm_help.html',
+          controller: 'SRMHelpController',
+          controllerAs: 'srm_help'
+        })
 
     },
     run: function run($rootScope, $location, $q, $window, 

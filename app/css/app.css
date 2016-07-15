@@ -101,10 +101,7 @@ body{
 
 /* to preserve vertical height of divs in rows */
 .height200 {height:200px;}
-.height250 {height:250px;}
-.height300 {height:300px;}
-.height350 {height:350px;}
-.height400 {height:400px;}
+.height235 {height:235px;}
 
 /* callouts */
 .bs-callout {

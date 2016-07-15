@@ -83,6 +83,7 @@
     }
   }
   SRMGoalSetting.Goals[0] = {
+    id:0,
     title: 'Get up at the same time every day.',
     availability: [0,1,2,5],
     tags: [],
@@ -91,6 +92,7 @@
       '<ol><li>Are you having trouble getting out of bed? This is a very common problem with bipolar disorder.&nbsp; We will spend more time on this issue later in RAY. But, in the meantime, here are some suggestions: <ol><li>Set multiple alarm clocks</li><li>Ask a friend or family member to call you in the morning</li><li>Keep a cold glass of water by your bed and drink the whole thing as soon as you wake up. Even if you fall back to sleep, soon your bladder will convince you to get out of bed.</li><li>Don&rsquo;t close your blinds at night; the light in the morning will help you wake up</li></ol></li></ol><ol><li>Maybe you are being too ambitious. Instead of trying to get up at exactly the same time every day, give yourself a 1 hour window</li><li>Are you trying to get up too early for your body clock ? Try setting your wake up time a little later this week.</li></ol>']
   }
   SRMGoalSetting.Goals[1] = {
+    id:1,
     title: 'Start an activity at the same time every day.',
     availability: [0,1,2,5],
     tags: [],
@@ -100,6 +102,7 @@
     ]
   }
   SRMGoalSetting.Goals[2] = {
+    id:2,
     title: 'Increase the regularity of my social contacts.',
     availability: [0,1,2,5],
     tags: [],
@@ -109,6 +112,7 @@
     ]
   }
   SRMGoalSetting.Goals[3] = {
+    id:3,
     title: 'Eat dinner at a regular time every day.',
     availability: [0,1,2,5],
     tags: [],
@@ -118,6 +122,7 @@
     ]
   }
   SRMGoalSetting.Goals[4] = {
+    id:4,
     title: 'Go to bed at a regular time every night.',
     availability: [0,1,2,5],
     tags: [],
@@ -128,6 +133,7 @@
   }
 
   SRMGoalSetting.Goals[5] = {
+    id:5,
     title: 'Exercise at least 5 times per week.',
     availability: [1,2,5],
     tags: ['Exercise'],
@@ -138,6 +144,7 @@
   }
 
   SRMGoalSetting.Goals[5] = {
+    id:5,
     title: 'Reduce Time in Bed to Time Asleep + 30 minutes',
     availability: [2,5],
     tags: ['Sleep'],
@@ -148,6 +155,7 @@
   }
 
   SRMGoalSetting.Goals[6] = {
+    id:6,
     title: 'Get up earlier than my current wake up time.',
     availability: [3,4,5],
     tags: ['Optimize'],
@@ -158,6 +166,7 @@
   }
 
   SRMGoalSetting.Goals[7] = {
+    id:7,
     title: 'Find a meaningful daily activity.',
     availability: [3,5],
     tags: ['Optimize'],
@@ -167,6 +176,7 @@
   }
 
   SRMGoalSetting.Goals[8] = {
+    id:8,
     title: 'Increase the number and quality of my face-to-face social contacts.',
     availability: [3,5],
     tags: ['Optimize'],
@@ -176,6 +186,7 @@
   }
 
   SRMGoalSetting.Goals[9] = {
+    id:9,
     title: 'Improve the regularity of my weekend schedule.',
     availability: [3,4,5],
     tags: ['Optimize'],
@@ -185,6 +196,7 @@
   }
 
   SRMGoalSetting.Goals[10] = {
+    id:10,
     title: 'Go to bed earlier.',
     availability: [3,4,5],
     tags: ['Optimize'],
@@ -194,6 +206,7 @@
   }
 
   SRMGoalSetting.Goals[11] = {
+    id:11,
     title: 'Prepare for an Anticipated Rhythm Disruption.',
     availability: [4,5],
     tags: ['Rhythm'],

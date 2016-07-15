@@ -36,7 +36,8 @@
     DISAGREEMENTS: '/disagreements',
     REVIEWING_PROGRESS: '/reviewing_progress',
     EARLY_WARNING_SIGNS: '/early_warning_signs',
-    RELAPSE_PREVENTION_PLAN: '/relapse_prevention_plan'
+    RELAPSE_PREVENTION_PLAN: '/relapse_prevention_plan',
+    SRM_HELP:'/srm_help'
   };
 
   angular.module('cbitsPrototype.constants')
