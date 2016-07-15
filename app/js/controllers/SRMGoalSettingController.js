@@ -59,13 +59,12 @@
     }
 
     this.nextGoal = function(){
-      debugger;
         return this.goals[this.nextGoalIndex];
     }
 
     this.strategiesHTML = function(){ 
       var strategiesHTML = '';
-      if (this.nextGoal() != undefined){debugger;
+      if (this.nextGoal() != undefined){
       strategiesHTML = this.nextGoal().strategiesHTML[this.currentStrategyIndex];
       }
       return $sce.trustAsHtml(strategiesHTML)
