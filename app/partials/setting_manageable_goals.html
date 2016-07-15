@@ -6,6 +6,8 @@
     <div class="panel-heading">
         <h3 class="panel-title">Below identify some common social rhythm goals. Decide whether you would categorize them as manageable, unmanageable, or long-term.</h3> </div>
     <div class="panel-body" ng-show="manageable.panelVisible[0]">
+
+        <i>Make sure to answer all questions!</i>
         <div ng-repeat="goal in manageable.goals track by goal.id">
             <label>{{goal.name}}</label>
             <br/>
@@ -43,6 +45,7 @@
                 <button ng-show="manageable.panelVisible[1]" class="btn btn-default" ng-click="manageable.showPanel(0)"><i class="fa fa-chevron-left"></i> Back </button>
             </div>
             <div class="col-md-6 col-sm-6 col-xs-6 text-right">
+                <div class="alert alert-info" ng-show="!manageable.allGoalsAnswered()">Make sure to answer all questions to continue!</div>
                 <button ng-show="manageable.panelVisible[0]" class="btn btn-primary" ng-click="manageable.showPanel(1)" ng-disabled="!manageable.allGoalsAnswered()">Continue <i class="fa fa-chevron-right"></i> </button>
                 <button ng-show="manageable.panelVisible[1]" class="btn btn-primary" ng-click="manageable.showPanel(2)">Continue <i class="fa fa-chevron-right"></i> </button> <a class="btn" ng-show="manageable.panelVisible[2]" href="#/lessons_current">Continue <i class="fa fa-chevron-right"></i></a> </div>
         </div>
