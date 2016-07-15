@@ -1,10 +1,10 @@
-<h2>{{srm_goal_setting.currrentStage.title}}</h2>
+<h2 ng-init="srm_goal_setting.init()">{{srm_goal_setting.currrentStage.title}}</h2>
 <div class="bs-callout bs-callout-primary">
     <p>{{srm_goal_setting.currentStage.preamble}}</p>
     <p>{{srm_goal_setting.currentStage.description}}
     <p><b>Tip! {{srm_goal_setting.currentStage.tip}}</b></p>
 </div>
-<div ng-show="srm_goal_setting.goalCompletionRequired()">
+<div ng-show="srm_goal_setting.panelsVisible[0]">
     <div class="panel panel-primary">
         <div class="panel-heading">
             <h3 class="panel-title">Let's track your goal!
@@ -23,11 +23,11 @@
             <div class="alert alert-danger" ng-show="srm_goal_setting.goalFailure()" ng-bind-html="srm_goal_setting.goalFailureHTML"> </div>
         </div>
         <div class="panel-footer text-right">
-            <button class="btn btn-primary" ng-click="srm_goal_setting.finishGoalTracking()" ng-disabled="!srm_goal_setting.currentGoalTaskCompleted">Continue <i class="fa fa-chevron-right"></i> </button>
+            <button class="btn btn-primary" ng-click="srm_goal_setting.showPanel(1)" ng-disabled="!srm_goal_setting.currentGoalTaskCompleted">Continue <i class="fa fa-chevron-right"></i> </button>
         </div>
     </div>
 </div>
-<div ng-show="srm_goal_setting.goalCompleted()">
+<div ng-show="srm_goal_setting.panelsVisible[1]">
     <div class="panel panel-primary">
         <div class="panel-heading">
             <h3 class="panel-title">{{srm_goal_setting.currentStage.instructions}}
@@ -41,18 +41,18 @@
             <div class="row">
                 <div class="col-md-6 text-left"></div>
                 <div class="col-md-6 text-right">
-                    <button class="btn btn-primary" ng-click="srm_goal_setting.saveNextGoal()" ng-disabled="!srm_goal_setting.nextGoalIndex">Continue <i class="fa fa-chevron-right"></i> </button>
+                    <button class="btn btn-primary" ng-click="srm_goal_setting.showPanel(2)" ng-disabled="!srm_goal_setting.nextGoalIndex">Continue <i class="fa fa-chevron-right"></i> </button>
                 </div>
             </div>
         </div>
     </div>
 </div>
-<div ng-show="srm_goal_setting.nextGoalSaved">
+<div ng-show="srm_goal_setting.panelsVisible[2]">
     <div class="panel panel-primary">
         <div class="panel-heading">
             <h3 class="panel-title">You chose the following strategy:
 			</h3> </div>
-        <div class="panel-body">
+        <div class="panel-body">{{srm_goal_setting.nextGoalindex}}
             <h3>{{srm_goal_setting.nextGoal().title}}</h3>
             <h4>Let's take a look at some strategies you can use to achieve this!</h4>
             <div class="well" ng-bind-html="srm_goal_setting.strategiesHTML()"> </div>
