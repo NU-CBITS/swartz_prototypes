@@ -12,9 +12,14 @@ body{
     max-width:1000px;
 }
 
-.full-width-table{
+.full-width{
     width:100%;
 }
+
+.btn {
+    white-space: normal;
+}
+
 
 .btn-active{
     font-weight: bold;

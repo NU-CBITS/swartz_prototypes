@@ -3,7 +3,7 @@
 <p ng-show="srm.showTargetTimes"><a data-toggle="modal" data-target="#targetTimesModal">Reset your target times <i class="fa fa-clock-o" aria-hidden="true"></i></a>
 </p>
 
-<table class="full-width-table hidden-xs">
+<table class=.full-width hidden-xs">
     <tr>
         <td ng-repeat="srmDay in srm.srmDays() track by $index" style="width:{{(100/7)}}%;" class="text-center">
             <button ng-click="srm.goToDay(srmDay.dayIndex)" class="btn {{srm.daySelectionActive(srmDay.dayIndex)}} btn-xs btn-{{srm.srmDayStatusLabel(srmDay.accessible,srmDay.complete)}}">
@@ -15,7 +15,6 @@
         </td>
     </tr>
 </table>
-
 <div ng-repeat="srmDay in srm.srmDays() track by $index">
     <div class="panel panel-primary" ng-show="srmDay.dayIndex == srm.currentActiveDay">
         <div class="panel-heading">
