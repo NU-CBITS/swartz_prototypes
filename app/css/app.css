@@ -16,6 +16,11 @@ body{
     width:100%;
 }
 
+.btn {
+    white-space: normal;
+}
+
+
 .btn-active{
     font-weight: bold;
 }
