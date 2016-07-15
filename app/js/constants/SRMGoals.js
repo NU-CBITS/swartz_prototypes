@@ -215,8 +215,6 @@
     ]
   }
 
-
-
   angular.module('cbitsPrototype.constants')
     .constant('SRMGoalsContent', SRMGoalSetting);
 })();
