@@ -1,3 +1,75 @@
 <h2>I Can't Sleep Plan</h2>
 
-<div class="alert alert-warning">Functionality pending</div>
+<div class="bs-callout bs-callout-primary">
+Many people have with their sleep.  In this exercise, you will be asked to think about strategies to get a better night’s sleep.  You will be able to develop a personalized plan to help with your sleep problems.
+</div>
+
+<div class="panel panel-primary">
+    <div class="panel-heading">
+        <h3 class="panel-title">{{cant_sleep.currentContent().title}}</h3> 
+    </div>
+    <div class="panel-body" ng-show="cant_sleep.panelVisible[0]">
+    	<label>{{cant_sleep.currentContent().instructions}}</label>
+            <br/>
+        <div class="row">
+            <label class="btn btn-default full-width btn-sm align-left" ng-repeat="response in cant_sleep.currentContent().content track by $index">
+                <div class="col-md-1 text-right">
+                    <input type="checkbox" name="{{cant_sleep.currentContent().name}}" ng-model="cant_sleep.responses[cant_sleep.currentPanelIndex()][$index]" value="{{$index}}"> </div>
+                <div class="col-md-11 text-left">{{response}}</div>
+            </label>
+        </div>
+    </div>
+    <div class="panel-body" ng-show="cant_sleep.panelVisible[1]">
+       	<label>{{cant_sleep.currentContent().instructions}}</label>
+            <br/>
+        <div class="row">
+            <label class="btn btn-default full-width btn-sm align-left" ng-repeat="response in cant_sleep.currentContent().content track by $index">
+                <div class="col-md-1 text-right">
+                    <input type="checkbox" name="{{cant_sleep.currentContent().name}}" ng-model="cant_sleep.responses[cant_sleep.currentPanelIndex()][$index]" value="{{$index}}"> </div>
+                <div class="col-md-11 text-left">{{response}}</div>
+            </label>
+        </div>
+    </div>
+    <div class="panel-body" ng-show="cant_sleep.panelVisible[2]">
+    	<label>{{cant_sleep.currentContent().instructions}}</label>
+            <br/>
+        <div class="row">
+            <label class="btn btn-default full-width btn-sm align-left" ng-repeat="response in cant_sleep.currentContent().content track by $index">
+                <div class="col-md-1 text-right">
+                    <input type="checkbox" name="{{cant_sleep.currentContent().name}}" ng-model="cant_sleep.responses[cant_sleep.currentPanelIndex()][$index]" value="{{$index}}"> </div>
+                <div class="col-md-11 text-left">{{response}}</div>
+            </label>
+        </div>    
+    </div>
+    <div class="panel-body" ng-show="cant_sleep.panelVisible[3]">
+
+    	<div ng-repeat="item in cant_sleep.content track by $index">
+    		<h3>{{item.content}</h3>
+    		<ul>
+    			<li ng-repeat="response in item.content track by $index" ng-show="cant_sleep.responses[$parent.$index][$index]">
+    				
+    			</li>
+    		</ul>
+    		
+    	</div>
+
+    </div>
+    <div class="panel-body" ng-show="cant_sleep.panelVisible[4]">
+        <div class="alert alert-danger"> Holly! Conclusion content, if possible! </div>
+    </div>
+
+    <div class="panel-footer">
+        <div class="row">
+            <div class="col-md-6 col-sm-6 col-xs-6">
+                <button ng-show="cant_sleep.panelVisible[1]" class="btn btn-default" ng-click="cant_sleep.showPanel(0)"><i class="fa fa-chevron-left"></i> Back </button>
+            </div>
+            <div class="col-md-6 col-sm-6 col-xs-6 text-right">
+                
+                <button ng-show="cant_sleep.panelVisible[0]" class="btn btn-primary" ng-click="cant_sleep.showPanel(1)" ng-disabled="!cant_sleep.responseAnswered()">Continue <i class="fa fa-chevron-right"></i> </button>
+                <button ng-show="cant_sleep.panelVisible[1]" class="btn btn-primary" ng-click="cant_sleep.showPanel(2)" ng-disabled="!cant_sleep.responseAnswered()">Continue <i class="fa fa-chevron-right"></i> </button>
+                <button ng-show="cant_sleep.panelVisible[2]" class="btn btn-primary" ng-click="cant_sleep.showPanel(3)" ng-disabled="!cant_sleep.responseAnswered()">Continue <i class="fa fa-chevron-right"></i> </button> 
+                <button ng-show="cant_sleep.panelVisible[3]" class="btn btn-primary" ng-click="cant_sleep.showPanel(4)">Continue <i class="fa fa-chevron-right"></i> </button>  
+                <a class="btn" ng-show="cant_sleep.panelVisible[4]" href="#/lessons_current">Continue <i class="fa fa-chevron-right"></i></a> </div>
+        </div>
+    </div>
+</div>
