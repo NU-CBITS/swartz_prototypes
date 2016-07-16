@@ -394,7 +394,7 @@
             icon: 'wrench',
             type: 'tool',
             available: true,
-            target: '#/srm_goal_setting/7'
+            target: '#/srm_goal_setting/6'
         }, {
             name: 'Reviewing Progress',
             icon: 'wrench',
