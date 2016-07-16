@@ -153,7 +153,7 @@
           controllerAs: 'rules'
         })
         .when(Routes.GETTING_OUT_OF_BED_SEARCH, {  
-          templateUrl: 'partials/handbooks.html',
+          templateUrl: 'partials/getting_out_of_bed_search.html',
           controller: 'GettingOutOfBedSearchController',
           controllerAs: 'bed'
         })

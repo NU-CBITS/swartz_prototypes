@@ -1,64 +1,63 @@
-<h2>Getting Out of Bed Search</h2>
+<h2>Getting Out of Bed Strategies</h2>
 
+<div class="bs-callout bs-callout-primary">
+<p>There are several strategies you can use to make getting out of bed easier!</p>
+</div>
 
-<h4>ALARMS/TIMERS</h4>
+<div class="panel panel-primary">
+    <div class="panel-heading">
+        <h3 class="panel-title">Review each of the strategies below:</h3>
+    </div>
+    <div class="panel-body" ng-show="bed.panelVisible[0]">
+        <h4>Check the boxes below if you think these specific strategies might help!</h4>
+        <br/>
+        <div ng-repeat="item in bed.content track by item.id">
+        	<label for="response{{$index}}">Can you {{item.title}}...</label>
+	        <div class="row">
+	            <label class="btn btn-default full-width btn-sm align-left" ng-repeat="response in item.content track by $index">
+	                <div class="col-md-1 col-xs-1 col-sm-1 text-right">
+	                    <input type="checkbox" name="response{{$index}}" ng-model="bed.responses[$parent.$index][$index]" value="{{$index}}"> </div>
+	                <div class="col-md-11 col-xs-11 col-sm-11 text-left" ng-bind-html="bed.responseHTML(response)"></div>
+	            </label>
+	        </div>
+	        <br/>
+        </div>
+    </div>
+    <div class="panel-body" ng-show="bed.panelVisible[1]">
 
-<ul>
-<li>Put alarm clock across the room; vary the location</li>
-<li>Practice physically getting up in response to the alarm going off.</li>
-<li>Use multiple alarm clocks</li>
-<li>Use vibrating alarm clock</li>
-<li>Use cell phone alarm: use different ringtones and volumes</li>
-<li>Use appliance timer to turn ON:
-<ul>
-<li>Lamp</li>
-<li>Radio</li>
-<li>Cassette player</li>
-<li>TV</li>
-<li>Coffee maker</li>
-<li>Microwave</li>
-</ul>
-</li>
-<li>Use appliance timer to turn OFF:
-<ul>
-<li>White noise machine</li>
-</ul>
-</li>
-</ul>
+        <h4>You have selected the following get out of bed strategies:</h4>
 
-<h4>ENLIST FRIENDS/RELATIVES TO</h4>
+		<div ng-repeat="item in bed.content track by item.id" ng-show="!bed.responsesExist($index)">
+        	<label for="response{{$index}}">You said you could {{item.title}}...</label>
+	        <ul>
+	                <li ng-repeat="response in item.content track by $index" ng-show="bed.responses[$parent.$index][$index]" ng-bind-html="bed.responseHTML(response)"></li>
+	        </ul>
+        </div>
 
-<ul>
-<li>Call you on telephone</li>
-<li>Visit you in the morning for breakfast (or come live with you?)</li>
-<li>Meet you for coffee or breakfast or exercise or errands</li>
-</ul>
+        <p>These are examples of activities that can help you get out of bed!</p>
 
-<h4>ENVIRONMENT</h4>
+    </div>
+    <div class="panel-body" ng-show="bed.panelVisible[2]">
 
-<ul>
-<li>Raise/open blinds when you go to bed to allow morning light</li>
-<li>Get a rooster?</li>
-</ul>
-
-<h4>ON WAKING UP</h4>
-
-<ul>
-<li>Place encouraging/coping thoughts card on bedside table; read immediately</li>
-<li>Practice mindfulness and note thoughts, emotions</li>
-<li>Place pros and cons list of getting out of bed on bedside table; read IMMEDIATELY</li>
-<li>Listen to tape you made reminding yourself of reasons to get up</li>
-<li>Place water on bedside table; splash on face or drink</li>
-<li>Place something with strong smell on table; inhale (e.g. cinnamon)</li>
-<li>Throw off the covers IMMEDIATELY</li>
-<li>Put feet on the floor IMMEDIATELY</li>
-<li>Get up and take a shower</li>
-<li>Get the newspaper IMMEDIATELY</li>
-</ul>
-
-
-<p>HAVE A REASON TO GET UP</p>
-<ul>
-<li>Set appointment or make plan for doing something in morning (e.g. go to work, go to volunteer job, go to exercise)</li>
-<li>Get a pet</li>
-</ul>
+      <div class="alert alert-danger">Holly, need conclusion content for this!</div>
+    </div>
+    <div class="panel-footer">
+     <div class="row">
+            <div class="col-md-6 col-sm-6 col-xs-6">
+                    <button ng-show="bed.panelVisible[1]" class="btn btn-default" ng-click="bed.showPanel(0)"><i class="fa fa-chevron-left"></i> Back
+                    </button>
+                    <button ng-show="bed.panelVisible[2]" class="btn btn-default" ng-click="bed.showPanel(1)"><i class="fa fa-chevron-left"></i> Back
+                    </button>
+                    <button ng-show="bed.panelVisible[3]" class="btn btn-default" ng-click="bed.showPanel(2)"><i class="fa fa-chevron-left"></i> Back
+                    </button>
+            </div>
+            <div class="col-md-6 col-sm-6 col-xs-6 text-right">
+                    <button ng-show="bed.panelVisible[0]" ng-disabled="!bed.responsesSelected()" class="btn btn-primary" ng-click="bed.showPanel(1)">Continue <i class="fa fa-chevron-right"></i>
+                    </button>
+                    <button ng-show="bed.panelVisible[1]" class="btn btn-primary" ng-click="bed.showPanel(2)">Continue <i class="fa fa-chevron-right"></i>
+                    </button>
+                    <a class="btn" ng-show="bed.panelVisible[2]" href="#/lessons_current" >Continue <i class="fa fa-chevron-right"></i></a>
+            </div>
+        </div>
+    </div>
+</div>

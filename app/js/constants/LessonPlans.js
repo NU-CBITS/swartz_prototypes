@@ -218,7 +218,7 @@
             available: true,
             target: '#/rules_for_better_sleep'
         }, {
-            name: 'Getting Out of Bed Search',
+            name: 'Getting Out of Bed Strategies',
             icon: 'wrench',
             type: 'tool',
             available: true,
