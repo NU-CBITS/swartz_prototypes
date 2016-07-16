@@ -27,6 +27,13 @@
 		return this.responses[this.currentPanelIndex()] != undefined
 	}
 
+	    this.makePDF = function(){
+    	  var pdf = new jsPDF('l', 'in', [11,8.5]);
+		    pdf.addHTML( document.getElementById('i-cant-sleep-plan'),  function() {
+		    pdf.save('MyICantSleepPlan.pdf');
+  		  });
+    }
+
   }
 
   angular.module('cbitsPrototype.controllers')

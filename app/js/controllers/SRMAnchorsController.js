@@ -43,7 +43,7 @@
 
     this.makePDF = function(){
     	  var pdf = new jsPDF('l', 'in', [11,8.5]);
-		  pdf.addHTML( document.getElementById('anchorsTable'),  function() {
+		    pdf.addHTML( document.getElementById('anchorsTable'),  function() {
 		    pdf.save('MySRMAnchors.pdf');
   		  });
     }

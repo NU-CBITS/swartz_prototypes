@@ -43,15 +43,19 @@ Many people have with their sleep.  In this exercise, you will be asked to think
     </div>
     <div class="panel-body" ng-show="cant_sleep.panelVisible[3]">
 
-    	<div ng-repeat="item in cant_sleep.content track by $index">
-    		<h3>{{item.content}</h3>
-    		<ul>
-    			<li ng-repeat="response in item.content track by $index" ng-show="cant_sleep.responses[$parent.$index][$index]">
-    				
-    			</li>
-    		</ul>
-    		
-    	</div>
+    	<button class="btn btn-primary btn-padding" ng-click="cant_sleep.makePDF()"><i class="fa fa-print"></i> Print this log and take it with you!</button><br/>
+    	<div class="printable" id="i-cant-sleep-plan">
+        <p><i>Check out a preview below!</i></p>
+	    	<div ng-repeat="item in cant_sleep.content track by $index">
+	    		<h4>{{item.title}}</h4>
+	    		<ul>
+	    			<li ng-repeat="response in item.content track by $index" ng-show="cant_sleep.responses[$parent.$index][$index]">
+	    				{{response}}
+	    			</li>
+	    		</ul>
+	    		
+	    	</div>
+	    </div>
 
     </div>
     <div class="panel-body" ng-show="cant_sleep.panelVisible[4]">
