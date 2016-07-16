@@ -1,6 +1,6 @@
 <html>
 <head>
-<title>bedroom</title>
+<title>Bedroom Explorer</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <script type="text/javascript" src="../../vendor/js/jquery-2.1.4.min.js"></script>
 <script type="text/javascript" src="../../vendor/js/bootstrap.min.js"></script>
@@ -11,26 +11,30 @@
 
 <script>
 $( document ).ready(function() {
+   	var goodTemplate = '<div class="popover" role="tooltip"><div class="arrow"></div><h3 class="popover-title"></h3><div class="popover-content"></div></div>'
+
+   	var badTemplate = '<div class="popover" role="tooltip"><div class="arrow"></div><h3 class="popover-title"></h3><div class="popover-content"></div></div>'
+
     var imageMessages = [
-    	{imageID:23,name:'Bed', popoverText:'Your bed should be used only for sleep and sex', placement:'left'},
-    	{imageID:22,name:'Clock', popoverText:'If you wake up in the middle of the night, don’t look at the clock.  Turn it away from you or put it in another part of the room so you can’t see it.', placement:'left'},
-		{imageID:38,name:'Glass/bottle of water', popoverText:'Avoid drinking a lot of liquid in the evening to minimize trips to the bathroom', placement:'top'},
-		{imageID:28,name:'Bottle of alcohol', popoverText:'While alcohol can help tense people fall asleep more easily, the sleep you get under the influence of alcohol is fragmented and less restorative.  Avoid alcohol at night.', placement:'left'},
-		{imageID:32,name:'Computer screen', popoverText:'Exposure to bright light prior to bedtime may interfere with sleep. Don\’t go use your computer before bedtime', placement:'left'},
-		{imageID:9,name:'Thermostat', popoverText:'Keep room temperature moderate.  A room that is too warm or too cold can disturb sleep.', placement:'right'}, 
-		{imageID:11,name:'Overhead light', popoverText:'Keep the room dark at night.  Turn off the lights.', placement:'bottom'},
-		{imageID:7,name:'T.V.', popoverText:'Although some people like “white noise,” keeping the TV on all night is usually disruptive because sound levels change.  Turn off your TV at night.', placement:'bottom'},
-		{imageID:2,name:'Window with drapes', popoverText:'Close your blinds or curtains to keep your room dark at night.', placement:'bottom'},
-		{imageID:4,name:'Window with drapes', popoverText:'Close your blinds or curtains to keep your room dark at night.', placement:'bottom'},
-		{imageID:19,name:'Cup of coffee', popoverText:'Avoid caffeine in the evening', placement:'right'},
-		{imageID:16,name:'Exercise bicycle (or just a bicycle)', popoverText:'Daily exercise can help deepen sleep but do not exercise too close to bedtime', placement:'top'},
-		{imageID:34,name:'Small plate of food on night stand', popoverText:'A light snack before bedtime (especially carbohydrates) may help sleep. Avoid greasy or heavy foods', placement:'left'}
+    	{imageID:23,name:'Bed', popoverText:'Your bed should be used only for sleep and sex', placement:'left', template:badTemplate},
+    	{imageID:22,name:'Clock', popoverText:'If you wake up in the middle of the night, don’t look at the clock.  Turn it away from you or put it in another part of the room so you can’t see it.', placement:'left', template:badTemplate},
+		{imageID:38,name:'Glass/bottle of water', popoverText:'Avoid drinking a lot of liquid in the evening to minimize trips to the bathroom', placement:'top', template:badTemplate},
+		{imageID:28,name:'Bottle of alcohol', popoverText:'While alcohol can help tense people fall asleep more easily, the sleep you get under the influence of alcohol is fragmented and less restorative.  Avoid alcohol at night.', placement:'left', template:badTemplate},
+		{imageID:32,name:'Computer screen', popoverText:'Exposure to bright light prior to bedtime may interfere with sleep. Don\’t go use your computer before bedtime', placement:'left', template:goodTemplate},
+		{imageID:9,name:'Thermostat', popoverText:'Keep room temperature moderate.  A room that is too warm or too cold can disturb sleep.', placement:'right', template:goodTemplate}, 
+		{imageID:11,name:'Overhead light', popoverText:'Keep the room dark at night.  Turn off the lights.', placement:'bottom', template:badTemplate},
+		{imageID:7,name:'T.V.', popoverText:'Although some people like “white noise,” keeping the TV on all night is usually disruptive because sound levels change.  Turn off your TV at night.', placement:'bottom', template:badTemplate},
+		{imageID:2,name:'Window with drapes', popoverText:'Close your blinds or curtains to keep your room dark at night.', placement:'bottom',template:badTemplate},
+		{imageID:4,name:'Window with drapes', popoverText:'Close your blinds or curtains to keep your room dark at night.', placement:'bottom', template:goodTemplate},
+		{imageID:19,name:'Cup of coffee', popoverText:'Avoid caffeine in the evening', placement:'right', template:badTemplate},
+		{imageID:16,name:'Exercise bicycle (or just a bicycle)', popoverText:'Daily exercise can help deepen sleep but do not exercise too close to bedtime', placement:'top', template:badTemplate},
+		{imageID:34,name:'Small amount of food on night stand', popoverText:'A light snack before bedtime (especially carbohydrates) may help sleep. Avoid greasy or heavy foods', placement:'left', template:goodTemplate}
    	];
 
    	for(var i = 0; i < imageMessages.length; i++){
 
    		$('#image'+ imageMessages[i].imageID).css('cursor', 'pointer');
-   		$('#image'+ imageMessages[i].imageID).popover({placement:imageMessages[i].placement,content:imageMessages[i].popoverText, title:imageMessages[i].name })   				
+   		$('#image'+ imageMessages[i].imageID).popover({placement:imageMessages[i].placement,content:imageMessages[i].popoverText, title:imageMessages[i].name, html:true, template:imageMessages[i].template, trigger:'hover' });
    	}
 });
 </script>
