@@ -1,0 +1,245 @@
+<html>
+<head>
+<title>bedroom</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<script type="text/javascript" src="../../vendor/js/jquery-2.1.4.min.js"></script>
+<script type="text/javascript" src="../../vendor/js/bootstrap.min.js"></script>
+<link rel="stylesheet" href="../../vendor/css/bootstrap.min.css">
+<link rel="stylesheet" href="../../vendor/css/font-awesome/css/font-awesome.min.css">
+<link rel="stylesheet" href="../../vendor/css/ui-bootstrap-custom-1.3.3-csp.css">
+<link rel="stylesheet" href="../../css/app.css">
+
+<script>
+$( document ).ready(function() {
+    var imageMessages = [
+    	{imageID:23,name:'Bed', popoverText:'Your bed should be used only for sleep and sex', placement:'left'},
+    	{imageID:22,name:'Clock', popoverText:'If you wake up in the middle of the night, don’t look at the clock.  Turn it away from you or put it in another part of the room so you can’t see it.', placement:'left'},
+		{imageID:38,name:'Glass/bottle of water', popoverText:'Avoid drinking a lot of liquid in the evening to minimize trips to the bathroom', placement:'top'},
+		{imageID:28,name:'Bottle of alcohol', popoverText:'While alcohol can help tense people fall asleep more easily, the sleep you get under the influence of alcohol is fragmented and less restorative.  Avoid alcohol at night.', placement:'left'},
+		{imageID:32,name:'Computer screen', popoverText:'Exposure to bright light prior to bedtime may interfere with sleep. Don\’t go use your computer before bedtime', placement:'left'},
+		{imageID:9,name:'Thermostat', popoverText:'Keep room temperature moderate.  A room that is too warm or too cold can disturb sleep.', placement:'right'}, 
+		{imageID:11,name:'Overhead light', popoverText:'Keep the room dark at night.  Turn off the lights.', placement:'bottom'},
+		{imageID:7,name:'T.V.', popoverText:'Although some people like “white noise,” keeping the TV on all night is usually disruptive because sound levels change.  Turn off your TV at night.', placement:'bottom'},
+		{imageID:2,name:'Window with drapes', popoverText:'Close your blinds or curtains to keep your room dark at night.', placement:'bottom'},
+		{imageID:4,name:'Window with drapes', popoverText:'Close your blinds or curtains to keep your room dark at night.', placement:'bottom'},
+		{imageID:19,name:'Cup of coffee', popoverText:'Avoid caffeine in the evening', placement:'right'},
+		{imageID:16,name:'Exercise bicycle (or just a bicycle)', popoverText:'Daily exercise can help deepen sleep but do not exercise too close to bedtime', placement:'top'},
+		{imageID:34,name:'Small plate of food on night stand', popoverText:'A light snack before bedtime (especially carbohydrates) may help sleep. Avoid greasy or heavy foods', placement:'left'}
+   	];
+
+   	for(var i = 0; i < imageMessages.length; i++){
+
+   		$('#image'+ imageMessages[i].imageID).css('cursor', 'pointer');
+   		$('#image'+ imageMessages[i].imageID).popover({placement:imageMessages[i].placement,content:imageMessages[i].popoverText, title:imageMessages[i].name })   				
+   	}
+});
+</script>
+</head>
+<body bgcolor="#FFFFFF" leftmargin="0" topmargin="0" marginwidth="0" marginheight="0">
+<!-- Save for Web Slices (bedroom.psd) -->
+<table id="bedroom" width="956" height="538" border="0" cellpadding="0" cellspacing="0">
+	<tr>
+		<td colspan="7">
+			<img src="images/bedroom_01.jpg" width="282" height="56" alt=""></td>
+		<td rowspan="5">
+			<img src="images/bedroom_02.jpg" width="70" height="233" alt="" id="image2"></td>
+		<td colspan="4" rowspan="2">
+			<img src="images/bedroom_03.jpg" width="305" height="108" alt=""></td>
+		<td colspan="4" rowspan="5">
+			<img src="images/bedroom_04.jpg" width="99" height="233" alt="" id="image4"></td>
+		<td colspan="5" rowspan="6">
+			<img src="images/bedroom_05.jpg" width="199" height="249" alt=""></td>
+		<td>
+			<img src="images/spacer.gif" width="1" height="56" alt=""></td>
+	</tr>
+	<tr>
+		<td colspan="2" rowspan="5">
+			<img src="images/bedroom_06.jpg" width="34" height="193" alt=""></td>
+		<td colspan="2" rowspan="2">
+			<img src="images/bedroom_07.jpg" width="158" height="109" alt="" id="image7"></td>
+		<td rowspan="4">
+			<img src="images/bedroom_08.jpg" width="30" height="177" alt=""></td>
+		<td rowspan="2">
+			<img src="images/bedroom_09.jpg" width="38" height="109" alt="" id="image9"></td>
+		<td rowspan="4">
+			<img src="images/bedroom_10.jpg" width="22" height="177" alt=""></td>
+		<td>
+			<img src="images/spacer.gif" width="1" height="52" alt=""></td>
+	</tr>
+	<tr>
+		<td colspan="2" rowspan="2">
+			<img src="images/bedroom_11.jpg" width="203" height="71" alt="" id="image11"></td>
+		<td colspan="2" rowspan="5">
+			<img src="images/bedroom_12.jpg" width="102" height="161" alt=""></td>
+		<td>
+			<img src="images/spacer.gif" width="1" height="57" alt=""></td>
+	</tr>
+	<tr>
+		<td colspan="2" rowspan="3">
+			<img src="images/bedroom_13.jpg" width="158" height="84" alt=""></td>
+		<td rowspan="2">
+			<img src="images/bedroom_14.jpg" width="38" height="68" alt=""></td>
+		<td>
+			<img src="images/spacer.gif" width="1" height="14" alt=""></td>
+	</tr>
+	<tr>
+		<td colspan="2" rowspan="3">
+			<img src="images/bedroom_15.jpg" width="203" height="90" alt=""></td>
+		<td>
+			<img src="images/spacer.gif" width="1" height="54" alt=""></td>
+	</tr>
+	<tr>
+		<td colspan="4" rowspan="10">
+			<img src="images/bedroom_16.jpg" width="160" height="256" alt="" id="image16"></td>
+		<td colspan="4">
+			<img src="images/bedroom_17.jpg" width="99" height="16" alt=""></td>
+		<td>
+			<img src="images/spacer.gif" width="1" height="16" alt=""></td>
+	</tr>
+	<tr>
+		<td rowspan="11">
+			<img src="images/bedroom_18.jpg" width="13" height="288" alt=""></td>
+		<td colspan="2" rowspan="3">
+			<img src="images/bedroom_19.jpg" width="90" height="66" alt="" id="image19"></td>
+		<td rowspan="11">
+			<img src="images/bedroom_20.jpg" width="89" height="288" alt=""></td>
+		<td colspan="2">
+			<img src="images/bedroom_21.jpg" width="46" height="20" alt=""></td>
+		<td colspan="4" rowspan="2">
+			<img src="images/bedroom_22.jpg" width="106" height="50" alt="" id="image22"></td>
+		<td colspan="3" rowspan="4">
+			<img src="images/bedroom_23.jpg" width="146" height="110" alt="" id="image23"></td>
+		<td>
+			<img src="images/spacer.gif" width="1" height="20" alt=""></td>
+	</tr>
+	<tr>
+		<td rowspan="10">
+			<img src="images/bedroom_24.jpg" width="45" height="268" alt=""></td>
+		<td colspan="4" rowspan="5">
+			<img src="images/bedroom_25.jpg" width="296" height="128" alt=""></td>
+		<td rowspan="10">
+			<img src="images/bedroom_26.jpg" width="10" height="268" alt=""></td>
+		<td>
+			<img src="images/spacer.gif" width="1" height="30" alt=""></td>
+	</tr>
+	<tr>
+		<td rowspan="9">
+			<img src="images/bedroom_27.jpg" width="11" height="238" alt=""></td>
+		<td rowspan="6">
+			<img src="images/bedroom_28.jpg" width="42" height="166" alt="" id="image28"></td>
+		<td colspan="2" rowspan="3">
+			<img src="images/bedroom_29.jpg" width="53" height="87" alt=""></td>
+		<td>
+			<img src="images/spacer.gif" width="1" height="16" alt=""></td>
+	</tr>
+	<tr>
+		<td colspan="2" rowspan="8">
+			<img src="images/bedroom_30.jpg" width="90" height="222" alt=""></td>
+		<td>
+			<img src="images/spacer.gif" width="1" height="44" alt=""></td>
+	</tr>
+	<tr>
+		<td colspan="2">
+			<img src="images/bedroom_31.jpg" width="25" height="27" alt=""></td>
+		<td rowspan="4">
+			<img src="images/bedroom_32.jpg" width="121" height="106" alt="" id="image32"></td>
+		<td>
+			<img src="images/spacer.gif" width="1" height="27" alt=""></td>
+	</tr>
+	<tr>
+		<td rowspan="6">
+			<img src="images/bedroom_33.jpg" width="15" height="151" alt=""></td>
+		<td colspan="2" rowspan="3">
+			<img src="images/bedroom_34.jpg" width="52" height="79" alt="" id="image34"></td>
+		<td rowspan="6">
+			<img src="images/bedroom_35.jpg" width="11" height="151" alt=""></td>
+		<td>
+			<img src="images/spacer.gif" width="1" height="11" alt=""></td>
+	</tr>
+	<tr>
+		<td colspan="4">
+			<img src="images/bedroom_36.jpg" width="296" height="9" alt=""></td>
+		<td>
+			<img src="images/spacer.gif" width="1" height="9" alt=""></td>
+	</tr>
+	<tr>
+		<td colspan="2" rowspan="4">
+			<img src="images/bedroom_37.jpg" width="196" height="131" alt=""></td>
+		<td rowspan="3">
+			<img src="images/bedroom_38.jpg" width="64" height="117" alt="" id="image38"></td>
+		<td rowspan="4">
+			<img src="images/bedroom_39.jpg" width="36" height="131" alt=""></td>
+		<td>
+			<img src="images/spacer.gif" width="1" height="59" alt=""></td>
+	</tr>
+	<tr>
+		<td rowspan="3">
+			<img src="images/bedroom_40.jpg" width="42" height="72" alt=""></td>
+		<td colspan="2" rowspan="3">
+			<img src="images/bedroom_41.jpg" width="52" height="72" alt=""></td>
+		<td rowspan="3">
+			<img src="images/bedroom_42.jpg" width="121" height="72" alt=""></td>
+		<td>
+			<img src="images/spacer.gif" width="1" height="24" alt=""></td>
+	</tr>
+	<tr>
+		<td colspan="4" rowspan="2">
+			<img src="images/bedroom_43.jpg" width="160" height="48" alt="" id="image43"></td>
+		<td>
+			<img src="images/spacer.gif" width="1" height="34" alt=""></td>
+	</tr>
+	<tr>
+		<td>
+			<img src="images/bedroom_44.jpg" width="64" height="14" alt=""></td>
+		<td>
+			<img src="images/spacer.gif" width="1" height="14" alt=""></td>
+	</tr>
+	<tr>
+		<td>
+			<img src="images/spacer.gif" width="13" height="1" alt=""></td>
+		<td>
+			<img src="images/spacer.gif" width="21" height="1" alt=""></td>
+		<td>
+			<img src="images/spacer.gif" width="69" height="1" alt=""></td>
+		<td>
+			<img src="images/spacer.gif" width="89" height="1" alt=""></td>
+		<td>
+			<img src="images/spacer.gif" width="30" height="1" alt=""></td>
+		<td>
+			<img src="images/spacer.gif" width="38" height="1" alt=""></td>
+		<td>
+			<img src="images/spacer.gif" width="22" height="1" alt=""></td>
+		<td>
+			<img src="images/spacer.gif" width="70" height="1" alt=""></td>
+		<td>
+			<img src="images/spacer.gif" width="45" height="1" alt=""></td>
+		<td>
+			<img src="images/spacer.gif" width="158" height="1" alt=""></td>
+		<td>
+			<img src="images/spacer.gif" width="38" height="1" alt=""></td>
+		<td>
+			<img src="images/spacer.gif" width="64" height="1" alt=""></td>
+		<td>
+			<img src="images/spacer.gif" width="36" height="1" alt=""></td>
+		<td>
+			<img src="images/spacer.gif" width="10" height="1" alt=""></td>
+		<td>
+			<img src="images/spacer.gif" width="11" height="1" alt=""></td>
+		<td>
+			<img src="images/spacer.gif" width="42" height="1" alt=""></td>
+		<td>
+			<img src="images/spacer.gif" width="15" height="1" alt=""></td>
+		<td>
+			<img src="images/spacer.gif" width="38" height="1" alt=""></td>
+		<td>
+			<img src="images/spacer.gif" width="14" height="1" alt=""></td>
+		<td>
+			<img src="images/spacer.gif" width="11" height="1" alt=""></td>
+		<td>
+			<img src="images/spacer.gif" width="121" height="1" alt=""></td>
+		<td></td>
+	</tr>
+</table>
+<!-- End Save for Web Slices -->
+</body>
+</html>
