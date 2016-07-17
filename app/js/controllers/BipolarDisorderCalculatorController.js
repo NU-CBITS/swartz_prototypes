@@ -10,7 +10,7 @@
 
   	this.diagnoses = [
   		{name:'Bipolar One (I) Disorder', conditions:{mania:'true'}},
-		{name:'Bipolar Two (II) Disorder',conditions:{depression:'true',mania:'false',hypomania:'true'}},
+		  {name:'Bipolar Two (II) Disorder',conditions:{depression:'true',mania:'false',hypomania:'true'}},
   		{name:'Major Despressive Disorder',conditions:{depression:'true',mania:'false',hypomania:'false'}},
   		{name:'Cyclothymia or Other Specified Bipolar Disorder',conditions:{}}
   	];

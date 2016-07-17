@@ -1,3 +1,91 @@
-<h2>Troubleshooting Routines</h2>
+<h2>Troubleshooting Disrupted Routines</h2>
 
-<div class="alert alert-warning">Functionality pending</div>
+<div class="bs-callout bs-callout-primary">
+<p>It can be hard to stick to regular routines when the world around you is changing.</p>  <p>In this exercise, we will look at some real-world examples of tricky situations that make it hard to stick to a routine.  You will come up with ideas to address these problems.</p><p>  Anticipating challenging situations and problem solving in advance can help you maintain stability in the face of rhythm disruptions.</p>
+</div>
+
+<div class="panel panel-primary">
+    <div class="panel-heading">
+        <h3 class="panel-title">Take a look at how real people are challenged by their social rhythm changing--and understand how to provide solutions!</h3> 
+    </div>
+    <div class="panel-body" ng-show="troubleshooting.panelVisible[0]">
+   		<h3>{{troubleshooting.currentStory.name}}'s Story</h3>
+   		<div class="well">{{troubleshooting.currentStory.story}}</div>
+
+   		<h4>Which of the following are rhythm challenges facing {{troubleshooting.currentStory.name}}?</h4>
+
+   		<div class="row">
+   			<div class="col-md-12">
+   				<h5>
+   					<ng-pluralize count="troubleshooting.correctlyIdentifiedChallengesRemaining()" when="troubleshooting.pluralize.challenges"></ng-pluralize> 
+   					left to identify!
+				</h5>
+   			</div>
+   		</div>
+   		<div ng-repeat="challenge in troubleshooting.currentStory.challenges track by $index">
+	   		<label class="btn btn-default full-width">
+	   			<div class="row" >
+	   				<div class="col-md-1 col-xs-1 col-sm-1"><input type="checkbox" ng-model="troubleshooting.responses.challenges[$index]"></div>
+	   				<div class="col md-11 col-xs-11 col-sm-11 text-left">{{challenge.name}}</div>
+	   			</div>
+	   			<div class="row" ng-show="troubleshooting.responses.challenges[$index]">
+	   				<div class="col-md-12 text-left">
+	   					<div class="alert alert-success" ng-show="challenge.correct"> <h6><i class="fa fa-fw fa-check"></i> Correct, this is a challenge that {{troubleshooting.currentStory.name}} is dealing with!</h6></div>
+	   					<div class="alert alert-danger" ng-show="!challenge.correct"><h6><i class="fa fa-fw fa-close"></i> This is not a rhythm challenge...</h6> {{challenge.message}}</div>
+	   				</div>
+	   			</div>
+	   		</label>
+   		</div>
+    </div>
+    <div class="panel-body" ng-show="troubleshooting.panelVisible[1]">
+       	<h3>{{troubleshooting.currentStory.name}}'s Story</h3>
+   		<div class="well">{{troubleshooting.currentStory.story}}</div>
+
+   		<h4>Which of the following are solutions for each of {{troubleshooting.currentStory.name}}'s rhythm challenges?</h4>
+
+   		<div class="row">
+   			<div class="col-md-12">
+   				<h5>
+   					<ng-pluralize count="troubleshooting.correctlyIdentifiedSolutionsRemaining()" when="troubleshooting.pluralize.challenges"></ng-pluralize> 
+   					left to identify!
+				</h5>
+   			</div>
+   		</div>
+   		<div ng-repeat="challenge in troubleshooting.correctChallenges() track by $index">
+   			<label>{{challenge.name}}</label>
+	   			<label class="btn btn-default full-width" ng-repeat="solution in challenge.solutions track by $index">
+	   			<div class="row" >
+	   				<div class="col-md-1 col-xs-1 col-sm-1"><input type="checkbox" ng-model="troubleshooting.responses.solutions[$parent.$index][$index]"></div>
+	   				<div class="col md-11 col-xs-11 col-sm-11 text-left">{{solution.name}}<br/></div>
+	   			</div>
+	   			<div class="row" ng-show="troubleshooting.responses.solutions[$parent.$index][$index]" ng-show="solution.prompt">
+		   			<div ng-show="troubleshooting.responses.solutions[$parent.$index][$index]">
+		   				<div class="col-md-12 text-left">
+		   					<div class="alert alert-success" ng-show="solution.correct"><i class="fa fa-fw fa-check"></i> Correct!</div>
+		   					<div class="alert alert-danger" ng-show="!solution.correct"><i class="fa fa-fw fa-close"></i> {{solution.prompt}}</div>
+		   				</div>
+		   			</div>
+	   			</div>
+   			</label>
+   			<br/><br/>
+   		</div>
+       
+    </div>
+    <div class="panel-body" ng-show="troubleshooting.panelVisible[4]">
+        <div class="alert alert-danger"> Holly! Conclusion content, if possible! </div>
+    </div>
+
+    <div class="panel-footer">
+        <div class="row">
+            <div class="col-md-6 col-sm-6 col-xs-6">
+                <button ng-show="troubleshooting.panelVisible[1]" class="btn btn-default" ng-click="troubleshooting.showPanel(0)"><i class="fa fa-chevron-left"></i> Back </button>
+                <button ng-show="troubleshooting.panelVisible[2]" class="btn btn-default" ng-click="troubleshooting.showPanel(1)"><i class="fa fa-chevron-left"></i> Back </button>
+            </div>
+            <div class="col-md-6 col-sm-6 col-xs-6 text-right">             
+                <button ng-show="troubleshooting.panelVisible[0]" class="btn btn-primary" ng-click="troubleshooting.showPanel(1)" ng-disabled="!troubleshooting.challengesFinished()">Continue <i class="fa fa-chevron-right"></i> </button>
+                <button ng-show="troubleshooting.panelVisible[1]" class="btn btn-primary" ng-click="troubleshooting.showPanel(2)" ng-disabled="!troubleshooting.storyFinished()">Continue <i class="fa fa-chevron-right"></i> </button>
+                <button ng-show="troubleshooting.panelVisible[2]" class="btn btn-primary" ng-click="troubleshooting.showPanel(3)">Continue <i class="fa fa-chevron-right"></i> </button>  
+                <a class="btn" ng-show="troubleshooting.panelVisible[3]" href="#/lessons_current">Continue <i class="fa fa-chevron-right"></i></a> </div>
+        </div>
+    </div>
+</div>
