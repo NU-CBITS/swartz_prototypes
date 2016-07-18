@@ -48,18 +48,20 @@
   		return challengesRemaining
   	}
 
-  	this.correctlyIdentifiedSolutionsemaining = function(challengeIndex){
-  		var challengesRemaining = null;
-  		var challengesCompleted = 0;
-  		var totalCorrectChallenges = this.correctChallenges().length;  
-  		for (var i =0; i < this.currentStory.challenges.length; i++){
-  			if (this.responses.challenges[i] == true && this.currentStory.challenges[i].correct){
-  				challengesCompleted++
-  			}
-  		}
-  		challengesRemaining = totalCorrectChallenges - challengesCompleted;
-  		return challengesRemaining
-  	}
+  	// this.correctlyIdentifiedSolutionsRemaining = function(solutionIndex){
+  	// 	var solutionsRemaining = null;
+  	// 	var solutionsCompleted = 0;
+  	// 	var totalCorrectSolutions = 0;
+  	// 	debugger
+  	// 	for (var i =0; i < this.currentStory.challenges.length; i++){
+  	// 		for (var x = 0; x < this.currentStory.challenges[i].solutions.length; x++)
+  	// 		if (this.responses.challenges[i].solutions == true && this.currentStory.challenges[i].correct){
+  	// 			solutionsCompleted++
+  	// 		}
+  	// 	}
+  	// 	challengesRemaining = totalCorrectSolutions - solutionsCompleted;
+  	// 	return solutionsRemaining
+  	// }
 
   	this.currentPanelIndex = function(){
   		return this.panelVisible.indexOf(true);

@@ -36,7 +36,7 @@
       message: null,
       solutions: [{
         name: 'Be glad that she doesn’t have to worry about cooking for so many people any more',
-        correct: true,
+        correct: false,
         prompt: 'She may be relieved that she no longer has to worry about cooking for a large family, but this will not address the fact that her schedule is no longer tied to cooking for her family.'
       }, {
         name: 'Even though she may not feel like it, continue to prepare a small meal for herself every night at the same time that she used to eat with her family',
