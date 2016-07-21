@@ -23,7 +23,7 @@
 	];
 
   	this.symptoms[0] = {
-  		name:'Mania', type:'mania', instructions:'Which of these symptoms do you feel when you are manic?', bgcolor:2,symptoms:[
+  		name:'Mania', type:'mania', instructions:'Which of these symptoms do you feel when you are manic or hypomanic?', bgcolor:2,symptoms:[
   		'Overly good mood',
 		'Irritability or snappiness',
 		'Talking fast',

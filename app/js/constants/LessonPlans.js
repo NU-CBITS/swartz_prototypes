@@ -9,7 +9,7 @@
         available: true,
         completed: true,
         modules: [{
-            name: 'Welcome to Rhythms and You (RAY)!',
+            name: 'Welcome!',
             icon: 'book',
             type: 'handbook',
             available: true,

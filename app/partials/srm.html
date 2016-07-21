@@ -40,10 +40,14 @@
                     <label for="haveDinner">Have dinner?</label>
                     <input type="time" class="form-control" id="haveDinner" ng-model="srmDay.haveDinner[srmDay.dayIndex]">
                 </div>
+                <div class="form-group">
+                    <label for="goToBed">Go to bed?</label>
+                    <input type="time" class="form-control" id="haveDinner" ng-model="srmDay.goToBed[srmDay.dayIndex]">
+                </div>
                 <hr/>
                 <div class="form-group" ng-show="srm.showMoodRatings">
                     <label for="mood"> On a scale from 1-10, what was your mood? <label class="label label-success">{{srmDay.mood[srmDay.dayIndex]}}</label></label>
-                    <input type="range" class="form-control" id="mood" ng-model="srmDay.mood[srmDay.dayIndex]" min="1" max="10" step="1">
+                    <input type="range" class="form-control" id="mood" ng-model="srmDay.mood[srmDay.dayIndex]" min="-5" max="5" step="1">
                     <div class="row">
                         <div class="col-md-4 col-xs-4 col-sm-4 text-left">Bad</div>
                         <div class="col-md-4 col-xs-4 col-sm-4 text-center"></div>
@@ -52,14 +56,14 @@
                 </div>
                 <div class="form-group" ng-show="srm.showMoodRatings">
                     <label for="energy">On a scale from 1-10, what was your energy level?  <label class="label label-success">{{srmDay.energy[srmDay.dayIndex]}}</label></label>
-                    <input type="range" class="form-control" id="energy" ng-model="srmDay.energy[srmDay.dayIndex]" min="1" max="10" step="1">
+                    <input type="range" class="form-control" id="energy" ng-model="srmDay.energy[srmDay.dayIndex]" min="-5" max="5" step="1">
                     <div class="row">
                         <div class="col-md-4 col-xs-4 col-sm-4 text-left">Low</div>
                         <div class="col-md-4 col-xs-4 col-sm-4 text-center"></div>
                         <div class="col-md-4 col-xs-4 col-sm-4 text-right">High</div>
                     </div>
                 </div>
-                <p><a data-toggle="modal" data-target="#helpModal">Need help picking your times?</a>
+                <p><a data-toggle="modal" data-target="#helpModal">Need more help with the SRM?</a>
                 </p>
                 <button type="submit" class="btn btn-primary">Save</button>
             </form>

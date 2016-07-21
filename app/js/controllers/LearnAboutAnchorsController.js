@@ -12,8 +12,8 @@
 	    	{text:'We can use technology to help regulate our social rhythms.  Setting alarms helps regulate routines', reviewed:false},
 	    	{text:'Pets are often good social anchors.  Like Jon’s cat, they have regular circadian rhythms and rarely take “no” for an answer.  Jon’s cat helps to get him up at the same time every day.', reviewed:false},
 	    	{text:'Regular meals help to regulate our body clock.  A cup of coffee may help to wake Jon up but isn’t enough food to alert his body clock that the day has started.', reviewed:false},
-	    	{text:'Regular exercise is healthy and also helps to keep the body clock running smoothly', reviewed:false},
 	    	{text:'Regular hygiene routines like showering can help keep your body clock on track.', reviewed:false},
+	    	{text:'Regular exercise is healthy and also helps to keep the body clock running smoothly', reviewed:false},
 	    	{text:'Although a breakfast bar may not  be as nutritious as a “real” meal, it will still send signals to Jon’s body clock about time of day', reviewed:false},
 	    	{text:'Having daily activities helps keep us on track', reviewed:false}
 	    	]

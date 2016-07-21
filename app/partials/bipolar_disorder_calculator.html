@@ -3,7 +3,7 @@
 <div class="bs-callout bs-callout-primary">
     <p>There are four basic types of Bipolar Disorder.</p>
     <p>To be diagnosed with bipolar disorder, the symptoms must be a major change from your normal mood or behavior. This tool will help you figure out what type of Bipolar Disorder you MAY HAVE.</p>
-    <p><i>Please note: This does NOT take the place of a formal diagnosis which must be undertaken by your doctor.</i>srm</p>
+    <p><i>Please note: This does NOT take the place of a formal diagnosis which must be undertaken by your doctor.srm can only be made by your doctor</i></p>
 
 </div>
 
@@ -113,7 +113,8 @@
     <div class="panel-body" ng-show="bipolar_calculator.panelVisible[3]">
     	<h4>Based on your responses, you probably have a diagnosis of:</h4>
         <div class="well">
-        {{bipolar_calculator.chooseDiagnosis().name}}
+        <b>{{bipolar_calculator.chooseDiagnosis().name}}</b><br/>
+        {{bipolar_calculator.chooseDiagnosis().content}}
         </div>
         <div class="alert alert-danger">Holly, some concluding test would be helpful here.</div>
         <h4>Thanks!</h4>

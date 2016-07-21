@@ -19,8 +19,9 @@
     this.goalResponses =[
     'Manageable (can be accomplished in 1-2 weeks)',
     'Probably Manageable (can be accomplished in 2-3 weeks)',	
-    'Not for me (unrealistic for me;  probably not possible in the short term or long term; not applicable to me)',	
     'Long-term (can be accomplished in 6 months- 1 year)'
+    'Not for me (not applicable to me, not a priority for me)'
+
     ];
 
     this.goals = [
@@ -43,7 +44,9 @@
 		{id:17, name:'Meet friends for coffee on Saturday morning',response:null},
 		{id:18, name:'Get more involved with church so I have somewhere to go on Sundays',response:null},
 		{id:19, name:'Join a gym',response:null},
-		{id:20, name:'Get more organized about my life',response:null}
+		{id:20, name:'Get more organized about my life',response:null},
+    {id:21, name:'Not for me',response:null}
+
     ];
 
 
