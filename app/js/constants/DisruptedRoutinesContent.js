@@ -8,7 +8,7 @@
     challenges: [{
       name: 'Her children used to keep her rhythms on track but now they are out of the house',
       correct: true,
-      message: null,
+      message: 'Correct, this is a rhythm challenge that Faith is dealing with!',
       solutions: [{
         name: 'Get a paying or volunteer job to give her something to do during the day',
         correct: true,
@@ -22,13 +22,14 @@
         correct: true,
         prompt: null
       }, {
-        name: 'Take up a hobby',
+        name: 'Correct... Assuming she does activities from her new hobby at the same time every day!',
         correct: true,
         prompt: null
       }]
     }, {
       name: 'Faith is sad',
       correct: false,
+      message:'This is a difficult feeling but not a rhythm challenge.',
       solutions: []
     }, {
       name: 'Preparing meals for her family was a social rhythm anchor but now she is without an anchor at dinner time',
@@ -50,7 +51,7 @@
     }, {
       name: 'Faith really wants grandchildren',
       correct: false,
-      message: null,
+      message: 'This is a wish but not a rhythm challenge.',
       solutions: []
     }]
   };

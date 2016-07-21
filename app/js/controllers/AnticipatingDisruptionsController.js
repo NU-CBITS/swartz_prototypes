@@ -3,6 +3,7 @@
 
   function AnticipatingDisruptionsController() {
 
+  	this.eventOptions = []
   }
 
   angular.module('cbitsPrototype.controllers')
