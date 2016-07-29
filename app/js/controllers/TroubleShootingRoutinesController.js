@@ -7,7 +7,9 @@
   	this.panelVisible = [true,false,false];
   	this.currentStoryIndex =  $routeParams.storyIndex || 0;  	
   	this.currentStory = this.content[this.currentStoryIndex];
-
+    this.notLastPanel = function(){
+        return !this.panelVisible[this.panelVisible.length-1]
+    }
   	this.responses = {
   		challenges:[],
   		solutions:[]

@@ -3,7 +3,9 @@
 
   function LearnAboutAnchorsController($location) {
     this.panelVisible = [true,false,false];
-
+    this.notLastPanel = function(){
+        return !this.panelVisible[this.panelVisible.length-1]
+    }
     this.popovers = [
     	//Jon's popovers
     	{

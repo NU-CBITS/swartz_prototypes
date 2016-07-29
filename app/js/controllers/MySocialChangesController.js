@@ -2,7 +2,9 @@
   'use strict';
 
   function MySocialChangesController() {
-
+    this.notLastPanel = function(){
+        return !this.panelVisible[this.panelVisible.length-1]
+    }
   	this.areas = ['Area of My Life',
 		'Amount of responsibility in work/family',
 		'Financial situation',

@@ -10,6 +10,10 @@
     	}
     	this.panelVisible[panelIndex] = true;
     }
+
+    this.notLastPanel = function(){
+        return !this.panelVisible[this.panelVisible.length-1]
+    }
   }
 
   angular.module('cbitsPrototype.controllers')

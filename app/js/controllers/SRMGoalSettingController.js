@@ -20,7 +20,9 @@
       }
       this.panelsVisible[panelIndex] = true;
     }
-
+    this.notLastPanel = function(){
+        return !this.panelsVisible[this.panelsVisible.length-1]
+    }
     this.init = function(){
       if (this.currentStageIndex() === 0){
         this.panelsVisible = [false,true,false];

@@ -5,7 +5,9 @@
 
   	this.panelVisible = [true,false,false,false,false];
   	this.content = ICantSleepContent;
-
+    this.notLastPanel = function(){
+        return !this.panelVisible[this.panelVisible.length-1]
+    }
   	this.responses = [];
 
   	this.currentPanelIndex = function(){

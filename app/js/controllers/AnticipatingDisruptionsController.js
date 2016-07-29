@@ -5,7 +5,11 @@
 
   	this.eventOptions = ['More','Less','Disruptive','Broken'];
 
-  	this.panelVisible = [true,false,false,false];
+  	this.panelVisible = [true,false];
+
+    this.notLastPanel = function(){
+        return !this.panelVisible[this.panelVisible.length-1]
+    }
 
     this.showPanel = function(panelIndex){
     	for(var i = 0; i < this.panelVisible.length; i++){

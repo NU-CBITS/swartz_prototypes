@@ -5,7 +5,9 @@
 
 
   	this.panelVisible = [true,false,false];
-
+    this.notLastPanel = function(){
+        return !this.panelVisible[this.panelVisible.length-1]
+    }
   	this.showPanel = function(panelIndex){
     	for(var i = 0; i < this.panelVisible.length; i++){
     			this.panelVisible[i] = false;
