@@ -193,7 +193,7 @@
           controllerAs: 'progress'
         })
         .when(Routes.EARLY_WARNING_SIGNS, {  
-          templateUrl: 'partials/handbooks.html',
+          templateUrl: 'partials/early_warning_signs.html',
           controller: 'EarlyWarningSignsController',
           controllerAs: 'ews'
         })
