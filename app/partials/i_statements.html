@@ -1,3 +1,94 @@
-<h2>I Statements</h2>
-
-<div class="alert alert-warning">Functionality pending</div>
+<h2>"I" Statements</h2>
+<div class="bs-callout bs-callout-primary">
+  <div class="alert alert-danger">Holly, framing content about what an I statement is would be helpful.</div>
+</div>
+<div class="panel panel-default" >
+  <div class="panel-heading">
+    <h3 class="panel-title">Let's learn about "I" Statements...</h3>
+  </div>
+  <div class="panel-body" ng-show="i_statements.panelVisible[0]">
+    <h4>The Standard Form of "I" Statements</h4>
+    <div class="well"<p>I feel
+      <label class="label label-info">emotion</label>
+      </b> when I
+      <label class="label label-info">statement of factual behavior or circumstances</label>
+      because
+      <label class="label label-info">explain why you feel the what you feel</label>
+      .</p>
+      </div>
+    <p>After making an “I” statement, add a positive request for change in the form of a request for a specific action or behavior.</p><p>  Avoid general requests such as “In the future, I would like you to be nice.”</p>
+    <p> Make your request as specific as possible, for instance, “In the future, I would like you to pick up more milk when we run out without my having to ask you.”</p>
+    <p>In the future, I would like <label class="label label-info">precise action</label>.</p>
+  </div>
+  <div class="panel-body" ng-show="i_statements.panelVisible[1]">
+    <h4>Example of a “you” statement</h4>
+    <p>You are such a jerk for coming home late every day this week.  It’s so unfair to me. </p>
+    <h4>Example of an “I” statement</h4>
+    <p>I feel <label class="label label-info">hurt</label> when <label class="label label-info">you stay out late at night</label> because I <label class="label label-info">worry that something bad has happened to you</label>.   In the future, I <label class="label label-info">would like you call me to let me know if you are running late</label>.</p>
+  </div>
+  <div ng-show="i_statements.panelVisible[2]">
+    <h4>Example of a “you” statement</h4>
+    <p>You are such a nag.  I can’t stand coming home any more.</p>
+    <h4>Example of an “I” statement</h4>
+    <p>I feel <label class="label label-info">angry</label> when you <label class="label label-info">start asking me to do things as soon as I walk in the door</label> because <label class="label label-info">I feel like you don’t understand how tired I am at the end of the day</label>.   In the future, I would like you to <label class="label label-info">wait at least an hour after I come home before asking me to do things around the house</label>.</p>
+  </div>
+  <div class="panel-body" ng-show="i_statements.panelVisible[3]">
+    <h3>Turn these “you” statements into   “I” statements</h3>
+    <h4>You make me angry because you are such a slob.</h4>
+    I feel
+    <input type="text">
+    when you
+    <input type="text">
+    because
+    <input type="text">.<br/>
+    In the future, I would like
+    <input type="text">.
+    <h4>You are the worst husband ever.  You never help me with anything.</h4>
+    I feel
+    <input type="text">
+    when you
+    <input type="text">
+    because
+    <input type="text">.<br/>
+    In the future, I would like
+    <input type="text">.
+    <h4>If you don’t work harder in school,  I will ground you forever.</h4>
+    I feel
+    <input type="text">
+    when you
+    <input type="text">
+    because
+    <input type="text">.<br/>
+    In the future, I would like
+    <input type="text">.
+    <h4>You always leave plans for the weekend up to me.  That’s unfair.</h4>
+    I feel
+    <input type="text">
+    when you
+    <input type="text">
+    because
+    <input type="text">.<br/>
+    In the future, I would like
+    <input type="text">.
+  </div>
+  <div class="panel-body" ng-show="i_statements.panelVisible[4]">
+    <div class="alert alert-danger">Content needed</div>
+  </div>
+  <div class="panel-footer">
+    <div class="row">
+      <div class="col-md-6 col-sm-6 col-xs-6">
+        <button ng-show="i_statements.panelVisible[1]" class="btn btn-default" ng-click="i_statements.showPanel(0)"><i class="fa fa-chevron-left"></i> Back </button>
+        <button ng-show="i_statements.panelVisible[2]" class="btn btn-default" ng-click="i_statements.showPanel(1)"><i class="fa fa-chevron-left"></i> Back </button>
+        <button ng-show="i_statements.panelVisible[3]" class="btn btn-default" ng-click="i_statements.showPanel(2)"><i class="fa fa-chevron-left"></i> Back </button>
+        <button ng-show="i_statements.panelVisible[4]" class="btn btn-default" ng-click="i_statements.showPanel(3)"><i class="fa fa-chevron-left"></i> Back </button>
+      </div>
+      <div class="col-md-6 col-sm-6 col-xs-6 text-right">
+        <button ng-show="i_statements.panelVisible[0]" class="btn btn-primary" ng-click="i_statements.showPanel(1)">Continue <i class="fa fa-chevron-right"></i> </button>
+        <button ng-show="i_statements.panelVisible[1]" class="btn btn-primary" ng-click="i_statements.showPanel(2)">Continue <i class="fa fa-chevron-right"></i> </button>
+        <button ng-show="i_statements.panelVisible[2]" class="btn btn-primary" ng-click="i_statements.showPanel(3)">Continue <i class="fa fa-chevron-right"></i> </button>
+        <button ng-show="i_statements.panelVisible[3]" class="btn btn-primary" ng-click="i_statements.showPanel(4)">Continue <i class="fa fa-chevron-right"></i> </button>
+        <a class="btn" ng-show="i_statements.panelVisible[4]" href="#/lessons_current">Continue <i class="fa fa-chevron-right"></i></a> </div>
+    </div>
+  </div>
+</div>
+</div>
