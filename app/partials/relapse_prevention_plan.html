@@ -1,3 +1,46 @@
 <h2>Relapse Prevention Plan</h2>
+<div class="bs-callout bs-callout-primary">The following questions will help you develop a Personal Relapse Prevention Plan.  
+</div>
+</div>
+<div class="panel panel-default" >
+  <div class="panel-heading">
+    <h3 class="panel-title">For each question, select all that apply or add your own personal example.</h3>
+  </div>
+  <div class="panel-body" ng-show="relapse.panelVisible[0]">
+  	<label>Main Warning Signs</label>
+  	<select class="form-control"><option>--</option><option>Less sleep</option><option>More sleep</option><option>Taking too fast</option><option>Change in mood</option><option>Other (free text to specify)</option></select><br/>
 
-<div class="alert alert-warning">Functionality pending</div>
+  	<label>Situations that Put Me at Risk</label>
+  	<select class="form-control"><option>--</option><option>Staying up all night/not getting enough sleep</option><option>Too much stress</option><option>Not taking my medications</option><option>Other (free text to specify)</option></select><br/>	
+
+  	<label>Phone Numbers to Call</label>
+  	<input type="phone" placeholder="Emergency" class="form-control"><br/>
+	<input type="phone" placeholder="Non-Emergency" class="form-control"><br/>
+	<input type="phone" placeholder="Friends / Family" class="form-control"><br/>
+	<input type="phone" placeholder="Other" class="form-control"><br/>
+
+	<label>What family/friends can do to help me get back on track:</label><br/>
+
+	<label class="btn btn-default"><input type="checkbox" name="help"> Remind me to stick to a regular schedule</label><br/>
+	<label class="btn btn-default"><input type="checkbox" name="help"> Call me if I need help getting up in the morning</label><br/>
+	<label class="btn btn-default"><input type="checkbox" name="help"> Agree to meet with me if I need more social support</label><br/>
+	<label class="btn btn-default"><input type="checkbox" name="help"> Go with me to a doctor’s appointment</label><br/>
+	<label class="btn btn-default"><input type="checkbox" name="help"> Other: (Free text to specify)</label>
+
+  </div>
+  <div class="panel-body" ng-show="relapse.panelVisible[1]">
+    <div class="alert alert-danger">Content needed</div>
+  </div>
+  <div class="panel-footer">
+    <div class="row">
+      <div class="col-md-6 col-sm-6 col-xs-6">
+        <button ng-show="relapse.panelVisible[1]" class="btn btn-default" ng-click="relapse.showPanel(0)"><i class="fa fa-chevron-left"></i> Back </button>
+
+      </div>
+      <div class="col-md-6 col-sm-6 col-xs-6 text-right">
+        <button ng-show="relapse.panelVisible[0]" class="btn btn-primary" ng-click="relapse.showPanel(1)">Continue <i class="fa fa-chevron-right"></i> </button>
+        <a class="btn" ng-show="relapse.panelVisible[4]" href="#/lessons_current">Continue <i class="fa fa-chevron-right"></i></a> </div>
+    </div>
+  </div>
+</div>
+</div>

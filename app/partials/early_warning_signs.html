@@ -1,3 +1,61 @@
 <h2>Early Warning Signs</h2>
+<div class="bs-callout bs-callout-primary">
+  <div class="alert alert-danger">Holly, framing content!</div>
+</div>
+<div class="panel panel-default" >
+  <div class="panel-heading">
+    <h3 class="panel-title">About early warning signs...</h3>
+  </div>
+  <div class="panel-body" ng-show="ews.panelVisible[0]">
+  <h4>Select the options from the drop down menu in each category that best describe changes you notice as you start to become manic or depressed. You may select more than one option for each drop down menu. You may select “Other” and write in a description of a change that is not listed in the drop down menu.</h4>
 
-<div class="alert alert-warning">Functionality pending</div>
+  <table class="full-width">
+  		<tr><th>Changes in...</th><th>When I'm getting manic or hypomanic</th><th>When I'm getting depressed</th></tr>
+
+  		<tr ng-repeat="item in ews.content track by $index">
+  		<th>{{item.title}}</th>
+  		<td><select class="form-control" ><option>--</option><option ng-repeat="list in ews.content[$index].list">{{list}}</option></select></th>
+	  	<td><select class="form-control" ><option>--</option><option ng-repeat="list in ews.content[$index].list">{{list}}</option></select></th>
+  		</tr>
+  </table>
+
+  </div>
+  <div class="panel-body" ng-show="ews.panelVisible[1]">
+
+  <table class="full-width">
+  <tr><th></th><th>Differences in how I feel from my “normal” self</th><th>Differences in how I act from my “normal” self</th><th>What others notice that’s different</th><th>Situations that have triggered it in the past</th></tr>
+  <tr><th>Mania or Hypomania</th><td><textarea class="form-control" placeholder="add your response"></textarea></td><td><textarea class="form-control" placeholder="add your response"></textarea></td><td><textarea class="form-control" placeholder="add your response"></textarea></td><td><textarea class="form-control" placeholder="add your response"></textarea></td></tr>  
+  <tr><th>Depression</th><td><textarea class="form-control" placeholder="add your response"></textarea></td><td><textarea class="form-control" placeholder="add your response"></textarea></td><td><textarea class="form-control" placeholder="add your response"></textarea></td><td><textarea class="form-control" placeholder="add your response"></textarea></td></tr>
+
+  </table>
+
+  <br/>
+<label for="stability">What are two things that you can do to improve the stability of your routines in your life after the change?</label>
+<input type="text" placeholder="first thing" class="form-control"><br/>
+<input type="text" placeholder="second thing" class="form-control"><br/>
+
+<label for="stability">Who in your life can help you to reach the goals you identified?</label>
+<input type="text" placeholder="first person" class="form-control"><br/>
+<input type="text" placeholder="second person" class="form-control"><br/>
+<h4>Maybe this can be one of your goals for the upcoming week!</h4>
+
+  </div>
+
+  <div class="panel-body" ng-show="ews.panelVisible[2]">
+    <div class="alert alert-danger">Content needed</div>
+  </div>
+  <div class="panel-footer">
+    <div class="row">
+      <div class="col-md-6 col-sm-6 col-xs-6">
+        <button ng-show="ews.panelVisible[1]" class="btn btn-default" ng-click="ews.showPanel(0)"><i class="fa fa-chevron-left"></i> Back </button>
+        <button ng-show="ews.panelVisible[2]" class="btn btn-default" ng-click="ews.showPanel(1)"><i class="fa fa-chevron-left"></i> Back </button>
+
+      </div>
+      <div class="col-md-6 col-sm-6 col-xs-6 text-right">
+        <button ng-show="ews.panelVisible[0]" class="btn btn-primary" ng-click="ews.showPanel(1)">Continue <i class="fa fa-chevron-right"></i> </button>
+        <button ng-show="ews.panelVisible[1]" class="btn btn-primary" ng-click="ews.showPanel(2)">Continue <i class="fa fa-chevron-right"></i> </button>
+        <a class="btn" ng-show="ews.panelVisible[2]" href="#/lessons_current">Continue <i class="fa fa-chevron-right"></i></a> </div>
+    </div>
+  </div>
+</div>
+</div>

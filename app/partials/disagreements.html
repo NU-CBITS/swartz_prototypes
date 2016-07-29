@@ -1,3 +1,44 @@
-<h2>Disagreements...</h2>
+<h2>Disagreements</h2>
+<div class="bs-callout bs-callout-primary">
+  <div class="alert alert-danger">Content needed!</div>
+</div>
+<div class="panel panel-default" >
+  <div class="panel-heading">
+    <h3 class="panel-title">Content needed</h3>
+  </div>
+  <div class="panel-body" ng-show="disagreements.panelVisible[0]">
+  <h4>Watch the video, when you're finished, press continue!</h4>
+  	<anguvideo ng-model="aligned.videoURL" width="100%" height="500"></anguvideo>
+  </div>
+  <div class="panel-body" ng-show="disagreements.panelVisible[1]">
+  <h4>Which problem communication patterns did you observe/hear?  Check true or false</h4>
 
-<div class="alert alert-warning">Functionality pending</div>
+
+  </div>
+  <div class="panel-body" ng-show="disagreements.panelVisible[2]">
+
+  </div>
+  <div class="panel-body" ng-show="disagreements.panelVisible[3]">
+
+  </div>
+  <div class="panel-body" ng-show="disagreements.panelVisible[4]">
+    <div class="alert alert-danger">Content needed</div>
+  </div>
+  <div class="panel-footer">
+    <div class="row">
+      <div class="col-md-6 col-sm-6 col-xs-6">
+        <button ng-show="disagreements.panelVisible[1]" class="btn btn-default" ng-click="disagreements.showPanel(0)"><i class="fa fa-chevron-left"></i> Back </button>
+        <button ng-show="disagreements.panelVisible[2]" class="btn btn-default" ng-click="disagreements.showPanel(1)"><i class="fa fa-chevron-left"></i> Back </button>
+        <button ng-show="disagreements.panelVisible[3]" class="btn btn-default" ng-click="disagreements.showPanel(2)"><i class="fa fa-chevron-left"></i> Back </button>
+        <button ng-show="disagreements.panelVisible[4]" class="btn btn-default" ng-click="disagreements.showPanel(3)"><i class="fa fa-chevron-left"></i> Back </button>
+      </div>
+      <div class="col-md-6 col-sm-6 col-xs-6 text-right">
+        <button ng-show="disagreements.panelVisible[0]" class="btn btn-primary" ng-click="disagreements.showPanel(1)">Continue <i class="fa fa-chevron-right"></i> </button>
+        <button ng-show="disagreements.panelVisible[1]" class="btn btn-primary" ng-click="disagreements.showPanel(2)">Continue <i class="fa fa-chevron-right"></i> </button>
+        <button ng-show="disagreements.panelVisible[2]" class="btn btn-primary" ng-click="disagreements.showPanel(3)">Continue <i class="fa fa-chevron-right"></i> </button>
+        <button ng-show="disagreements.panelVisible[3]" class="btn btn-primary" ng-click="disagreements.showPanel(4)">Continue <i class="fa fa-chevron-right"></i> </button>
+        <a class="btn" ng-show="disagreements.panelVisible[4]" href="#/lessons_current">Continue <i class="fa fa-chevron-right"></i></a> </div>
+    </div>
+  </div>
+</div>
+</div>
