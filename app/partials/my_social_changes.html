@@ -1,3 +1,59 @@
 <h2>My Social Changes</h2>
+<div class="bs-callout bs-callout-primary"><p> When going through changes, people tend to idealize life before the change and undervalue life after the change. Our minds naturally think “black and white” when, in fact, most things are grey. It is important to take a more balanced view of life both before and after the change.  </p>
 
-<div class="alert alert-warning">Functionality pending</div>
+<p>First think about [DISPLAY THE CHANGE (first YES response)].</p>
+
+<p>Below you will be asked to think about the way your life was before the change and the way it is after the change.  You will be asked to think about both the positive and negative aspects of the “old role” (i.e., your life before the change) and the positive and negative aspects of the “new role” (i.e., your life after the change). </p>
+
+ </div>
+<div class="panel panel-default" >
+	<div class="panel-heading">
+	  <h3 class="panel-title">Complete the exercise below </h3>
+	</div>
+	<div class="panel-body" ng-show="anticipating.panelVisible[0]">
+	  <h4>Think about your Life Before the Change, select whether this area of life is positive or negative</h4>
+
+	  </div>
+  	  <div class="panel-body" ng-show="anticipating.panelVisible[1]">
+	  <h4>Think about your life After the Change, drag these areas of life to either the positive or negative side of the scale.</h4>
+
+	  </div>
+	  <div class="panel-body" ng-show="anticipating.panelVisible[2]">
+		<h4>How were your social rhythms affected by the change? This next exercise will ask you to think about how your routines and rhythms were impacted by the social change.</h4>
+
+	  </div>
+	  <div class="panel-body" ng-show="anticipating.panelVisible[3]">
+
+	  	<label>What are two things that you can do to improve the stability of your routines in your life after the change?</label>
+<input class="form-control" placeholder="Thing 1" type="text"><Br/>
+<input class="form-control" placeholder="Thing 2" type="text"><Br/>
+<label>Who in your life can help you to reach the goals identified above?</label>
+
+<input class="form-control" placeholder="Person 1" type="text"><Br/>
+<input class="form-control" placeholder="person 2" type="text"><Br/>
+Maybe this can be one of your goals for the upcoming week!
+
+	  </div>
+
+	  	  <div class="panel-body" ng-show="anticipating.panelVisible[4]">
+	  	<div class="alert alert-danger">Content needed</div>
+	  </div>
+	  <div class="panel-footer">
+	    <div class="row">
+	      <div class="col-md-6 col-sm-6 col-xs-6">
+	        <button ng-show="anticipating.panelVisible[1]" class="btn btn-default" ng-click="anticipating.showPanel(0)"><i class="fa fa-chevron-left"></i> Back </button>
+	        <button ng-show="anticipating.panelVisible[2]" class="btn btn-default" ng-click="anticipating.showPanel(1)"><i class="fa fa-chevron-left"></i> Back </button>
+	        <button ng-show="anticipating.panelVisible[3]" class="btn btn-default" ng-click="anticipating.showPanel(2)"><i class="fa fa-chevron-left"></i> Back </button>
+	        <button ng-show="anticipating.panelVisible[4]" class="btn btn-default" ng-click="anticipating.showPanel(3)"><i class="fa fa-chevron-left"></i> Back </button>
+	      </div>
+	      <div class="col-md-6 col-sm-6 col-xs-6 text-right">
+	        <button ng-show="anticipating.panelVisible[0]" class="btn btn-primary" ng-click="anticipating.showPanel(1)">Continue <i class="fa fa-chevron-right"></i> </button>
+	        <button ng-show="anticipating.panelVisible[1]" class="btn btn-primary" ng-click="anticipating.showPanel(2)">Continue <i class="fa fa-chevron-right"></i> </button>
+	        <button ng-show="anticipating.panelVisible[2]" class="btn btn-primary" ng-click="anticipating.showPanel(3)">Continue <i class="fa fa-chevron-right"></i> </button>
+	        <button ng-show="anticipating.panelVisible[3]" class="btn btn-primary" ng-click="anticipating.showPanel(4)">Continue <i class="fa fa-chevron-right"></i> </button>
+	        <a class="btn" ng-show="anticipating.panelVisible[4]" href="#/lessons_current">Continue <i class="fa fa-chevron-right"></i></a> </div>
+	    </div>
+	  </div>
+</div>
+
+</div>
