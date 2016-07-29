@@ -1,0 +1,40 @@
+<h2>title</h2>
+<div class="bs-callout bs-callout-primary">
+  <div class="alert alert-danger">Holly, framing content about what an I statement is would be helpful.</div>
+</div>
+<div class="panel panel-default" >
+  <div class="panel-heading">
+    <h3 class="panel-title"></h3>
+  </div>
+  <div class="panel-body" ng-show="i_statements.panelVisible[0]">
+  </div>
+  <div class="panel-body" ng-show="i_statements.panelVisible[1]">
+
+  </div>
+  <div class="panel-body" ng-show="i_statements.panelVisible[2]">
+
+  </div>
+  <div class="panel-body" ng-show="i_statements.panelVisible[3]">
+
+  </div>
+  <div class="panel-body" ng-show="i_statements.panelVisible[4]">
+    <div class="alert alert-danger">Content needed</div>
+  </div>
+  <div class="panel-footer">
+    <div class="row">
+      <div class="col-md-6 col-sm-6 col-xs-6">
+        <button ng-show="i_statements.panelVisible[1]" class="btn btn-default" ng-click="i_statements.showPanel(0)"><i class="fa fa-chevron-left"></i> Back </button>
+        <button ng-show="i_statements.panelVisible[2]" class="btn btn-default" ng-click="i_statements.showPanel(1)"><i class="fa fa-chevron-left"></i> Back </button>
+        <button ng-show="i_statements.panelVisible[3]" class="btn btn-default" ng-click="i_statements.showPanel(2)"><i class="fa fa-chevron-left"></i> Back </button>
+        <button ng-show="i_statements.panelVisible[4]" class="btn btn-default" ng-click="i_statements.showPanel(3)"><i class="fa fa-chevron-left"></i> Back </button>
+      </div>
+      <div class="col-md-6 col-sm-6 col-xs-6 text-right">
+        <button ng-show="i_statements.panelVisible[0]" class="btn btn-primary" ng-click="i_statements.showPanel(1)">Continue <i class="fa fa-chevron-right"></i> </button>
+        <button ng-show="i_statements.panelVisible[1]" class="btn btn-primary" ng-click="i_statements.showPanel(2)">Continue <i class="fa fa-chevron-right"></i> </button>
+        <button ng-show="i_statements.panelVisible[2]" class="btn btn-primary" ng-click="i_statements.showPanel(3)">Continue <i class="fa fa-chevron-right"></i> </button>
+        <button ng-show="i_statements.panelVisible[3]" class="btn btn-primary" ng-click="i_statements.showPanel(4)">Continue <i class="fa fa-chevron-right"></i> </button>
+        <a class="btn" ng-show="i_statements.panelVisible[4]" href="#/lessons_current">Continue <i class="fa fa-chevron-right"></i></a> </div>
+    </div>
+  </div>
+</div>
+</div>
