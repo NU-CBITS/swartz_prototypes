@@ -3,6 +3,10 @@ body{
 font-family: 'Open Sans', sans-serif !important;
 }
 
+table.full-width td{text-align: center;}
+
+input.full-width {width:80% !important;margin-left:10%;}
+
 .panel-heading {
     margin-left: -10px;
     margin-top:5px;

@@ -1,3 +1,35 @@
 <h2>Reviewing Progress</h2>
+<div class="bs-callout bs-callout-primary">
+  <div class="alert alert-danger">As RAY comes to an end, it is important to think about what you have accomplished over the past 11 weeks.  Here are some questions that we asked you about in the first week of RAY.  We are going to ask you the same question again and then show you how you answered the question in Week 1.  Perhaps some of your responses are different now.  If not, remember that self-help programs do not work for everyone, and there are many different ways to learn about rhythms and moods.  Be sure to talk to your doctor about your continuing concerns. 
+</div>
+</div>
+<div class="panel panel-default" >
+  <div class="panel-heading">
+    <h3 class="panel-title">Please rate the extent to which you agree with the following statements.
+</h3>
+  </div>
+  <div class="panel-body" ng-show="progress.panelVisible[0]">
 
-<div class="alert alert-warning">Functionality pending</div>
+  	<div ng-repeat="item in progress.content">
+  	<label>{{item}}</label>
+  	<table class="full-width"><td style="width:20%">I don't know what this means</td><td style="width:20%">Very low</td><td style="width:20%">Low</td><td style="width:20%">Medium</td><td style="width:20%">High</td></table>
+  	<input type="range" min="1" max="5" step="1" class="full-width"><br/><br/>
+  	</div>
+  </div>
+
+  <div class="panel-body" ng-show="progress.panelVisible[1]">
+    <div class="alert alert-danger">Content needed</div>
+  </div>
+  <div class="panel-footer">
+    <div class="row">
+      <div class="col-md-6 col-sm-6 col-xs-6">
+        <button ng-show="progress.panelVisible[1]" class="btn btn-default" ng-click="progress.showPanel(0)"><i class="fa fa-chevron-left"></i> Back </button>
+
+      </div>
+      <div class="col-md-6 col-sm-6 col-xs-6 text-right">
+        <button ng-show="progress.panelVisible[0]" class="btn btn-primary" ng-click="progress.showPanel(1)">Continue <i class="fa fa-chevron-right"></i> </button>
+        <a class="btn" ng-show="progress.panelVisible[1]" href="#/lessons_current">Continue <i class="fa fa-chevron-right"></i></a> </div>
+    </div>
+  </div>
+</div>
+</div>
