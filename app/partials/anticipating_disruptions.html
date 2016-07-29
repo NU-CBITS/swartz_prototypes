@@ -1,30 +1,142 @@
 <h2>Anticipating Disruptions</h2>
+<div class="bs-callout bs-callout-primary"> Leading up to and during this event, how will your rhythms be disrupted? </div>
+<div class="panel panel-default" >
+	<div class="panel-heading">
+	  <h3 class="panel-title">Think about of each event on the rhythms listed below </h3>
+	</div>
+	<div class="panel-body" ng-show="anticipating.panelVisible[0]">
+	  <h3>Select one of the following from the drop down:</h3>
+	  <div>
+	    <label for="sleep">Sleep</label>
+	    <select  class="form-control" name="sleep">
+	      <option ng-repeat="value in anticipating.eventOptions" value="$index">{{value}}</option>
+	    </select>
+	  </div>
+	  <div>
+	    <label for="meal">Meal schedules</label>
+	    <select class="form-control" name="meal">
+	      <option ng-repeat="value in anticipating.eventOptions" value="$index">{{value}}</option>
+	    </select>
+	  </div>
+	  <div>
+	    <label for="social">Social contacts</label>
+	    <select class="form-control" name="social">
+	      <option ng-repeat="value in anticipating.eventOptions" value="$index">{{value}}</option>
+	    </select>
+	  </div>
+	  <div>
+	    <label for="level"> Level of stimulation/activity</label>
+	    <select class="form-control" name="level">
+	      <option ng-repeat="value in anticipating.eventOptions" value="$index">{{value}}</option>
+	    </select>
+	  </div>
+	  <div>
+	    <label for="routine"> Daily exercise routines</label>
+	    <select class="form-control" name="routine">
+	      <option ng-repeat="value in anticipating.eventOptions" value="$index">{{value}}</option>
+	    </select>
+	  </div>
+	  <div>
+	    <label for="other"> Other</label>
+	    <select class="form-control" name="otther">
+	      <option ng-repeat="value in anticipating.eventOptions" value="$index">{{value}}</option>
+	    </select>
+	  </div>
+	  </div>
+  	  <div class="panel-body" ng-show="anticipating.panelVisible[1]">
+	  	<label for="routines">During the event, it may be possible to keep some of these rhythms relatively stable, even as others are disrupted.  For instance, if you know that your sleep will be interrupted when you have to care for a sick child, you may be able to stick to a regular meal schedule and keep  your exercise routine intact.  Below list the routines that you will try to keep as regular as possible during the event.</label>
+	  	<textarea class="form-control" id="routines">
+	  	</textarea>
 
-<div class="bs-callout bs-callout-primary">
-Leading up to and during this event, how will your rhythms be disrupted?  
+	  	<br/>
+		<h4>Write down a modified schedule for yourself during this event.  Think about making as few adjustments as possible.   If necessary, get others involved in helping you stay on your schedule to the extent that you can.  For instance, if you have house guests, tell them that you keep a strict bed time and ask that everyone keep the noise level down after 10 pm.</h4>
+		<div>
+		<label for="wake">Wake time</label>
+		<input type="time" name="wake" class="form-control">
+		</div>
+		<div>
+		<label for="first_contact">Time of first contact with another person</label>
+		<input type="time" name="first_contact" class="form-control">
+		</div>
+		<div>
+		<label for="begin">Time that you begin your daily activities</label>
+		<input type="time" name="begin" class="form-control">
+		</div>
+		<div>
+		<label for="exercise">Exercise time</label>
+		<input type="time" name="exercise" class="form-control">
+		</div>
+		<div>
+		<label for="lunch">Lunch time</label>
+		<input type="time" name="lunch" class="form-control">
+		</div>
+		<div>
+		<label for="dinner">Dinner time</label>
+		<input type="time" name="dinner" class="form-control">
+		</div>
+		<div>
+		<label for="bed">Time to bed</label>
+		<input type="time" name="bed" class="form-control">
+		</div>
+		<div>
+		<label for="help">How I will get others to help me</label>
+		<input type="text" name="help" class="form-control">
+		</div>
+	  </div>
+	  <div class="panel-body" ng-show="anticipating.panelVisible[2]">
+	  <h4>After the event is over, what kind of changes to your schedule will you make to get back on track?  For instance, when you return from a trip to Europe, how will you change your schedule to re-adjust to your time zone?  Could you as a friend to stay with you in the evening so that you don’t fall asleep too early on your first night back at home?  Write down your “rebound plan” for getting back on track after the event.</h4>
+	  		<div>
+		<label for="wake">Wake time</label>
+		<input type="time" name="wake" class="form-control">
+		</div>
+		<div>
+		<label for="first_contact">Time of first contact with another person</label>
+		<input type="time" name="first_contact" class="form-control">
+		</div>
+		<div>
+		<label for="begin">Time that you begin your daily activities</label>
+		<input type="time" name="begin" class="form-control">
+		</div>
+		<div>
+		<label for="exercise">Exercise time</label>
+		<input type="time" name="exercise" class="form-control">
+		</div>
+		<div>
+		<label for="lunch">Lunch time</label>
+		<input type="time" name="lunch" class="form-control">
+		</div>
+		<div>
+		<label for="dinner">Dinner time</label>
+		<input type="time" name="dinner" class="form-control">
+		</div>
+		<div>
+		<label for="bed">Time to bed</label>
+		<input type="time" name="bed" class="form-control">
+		</div>
+		<div>
+		<label for="help">How I will get others to help me</label>
+		<input type="text" name="help" class="form-control">
+		</div>
+	  </h4>
+	  </div>
+	  <div class="panel-body" ng-show="anticipating.panelVisible[3]">
+	  	<div class="alert alert-danger">Content needed</div>
+	  </div>
+	  <div class="panel-footer">
+	    <div class="row">
+	      <div class="col-md-6 col-sm-6 col-xs-6">
+	        <button ng-show="anticipating.panelVisible[1]" class="btn btn-default" ng-click="anticipating.showPanel(0)"><i class="fa fa-chevron-left"></i> Back </button>
+	        <button ng-show="anticipating.panelVisible[2]" class="btn btn-default" ng-click="anticipating.showPanel(1)"><i class="fa fa-chevron-left"></i> Back </button>
+	        <button ng-show="anticipating.panelVisible[3]" class="btn btn-default" ng-click="anticipating.showPanel(2)"><i class="fa fa-chevron-left"></i> Back </button>
+	      </div>
+	      <div class="col-md-6 col-sm-6 col-xs-6 text-right">
+	        <button ng-show="anticipating.panelVisible[0]" class="btn btn-primary" ng-click="anticipating.showPanel(1)">Continue <i class="fa fa-chevron-right"></i> </button>
+	        <button ng-show="anticipating.panelVisible[1]" class="btn btn-primary" ng-click="anticipating.showPanel(2)">Continue <i class="fa fa-chevron-right"></i> </button>
+	        <button ng-show="anticipating.panelVisible[2]" class="btn btn-primary" ng-click="anticipating.showPanel(3)">Continue <i class="fa fa-chevron-right"></i> </button>
+	        <button ng-show="anticipating.panelVisible[3]" class="btn btn-primary" ng-click="anticipating.showPanel(4)">Continue <i class="fa fa-chevron-right"></i> </button>
+	        <a class="btn" ng-show="anticipating.panelVisible[4]" href="#/lessons_current">Continue <i class="fa fa-chevron-right"></i></a> </div>
+	    </div>
+	  </div>
 </div>
 
-
-<div class="panel panel-default">
-<div class="panel-heading">
-	<h3 class="panel-title">Think about of each event on the rhythms listed below
-</h3>
-</div>
-<div class="panel-body">
-
-	<h3>Select one of the following from the drop down:</h3>
-Sleep
-
-
-_________________(drop down of More, Less, Disruptive, Broken)
-Meal schedules_________________( drop down of More, Less, Disruptive, Broken)
-Social contacts__________________( drop down of More, Less, Disruptive, Broken)
-Level of stimulation/activity__________________( drop down of More, Less, Disruptive, Broken)
-Daily exercise routines______________________( drop down of More, Less, Disruptive, Broken)
-Other__________________________________ (drop down of More, Less, Disruptive, Broken)
-
-
-
-
-</div>
 </div>

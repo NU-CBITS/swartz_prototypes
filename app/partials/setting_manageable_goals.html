@@ -4,8 +4,8 @@
 </div>
 <div class="panel panel-primary">
     <div class="panel-heading">
-        <h3 class="panel-title">Below identify some common social rhythm goals. Decide whether you would categorize them as manageable, unmanageable, or long-term.</h3> </div>
-    <div class="panel-body" ng-show="manageable.panelVisible[0]">
+        <h3 class="panel-title">Below are some common social rhythm goals. Decide whether you would categorize them as manageable, unmanageable, long-term, or not applicable to you.</h3> </div>
+    <div class="panel-body" ng-show="!manageable.panelVisible[2]">
 
         <i>Make sure to answer all questions!</i>
         <div ng-repeat="goal in manageable.goals track by goal.id">
@@ -19,7 +19,7 @@
                 </label>
             </div>
             <br/>
-            </br/> </div>
+            <br/> </div>
     </div>
     <div class="panel-body" ng-show="manageable.panelVisible[1]">
         <h3>Your goals are:</h3>

@@ -19,7 +19,7 @@
     this.goalResponses =[
     'Manageable (can be accomplished in 1-2 weeks)',
     'Probably Manageable (can be accomplished in 2-3 weeks)',	
-    'Long-term (can be accomplished in 6 months- 1 year)'
+    'Long-term (can be accomplished in 6 months- 1 year)',
     'Not for me (not applicable to me, not a priority for me)'
 
     ];

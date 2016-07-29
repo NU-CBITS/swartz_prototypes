@@ -30,8 +30,8 @@
 	   			</div>
 	   			<div class="row" ng-show="troubleshooting.responses.challenges[$index]">
 	   				<div class="col-md-12 text-left">
-	   					<div class="alert alert-success" ng-show="challenge.correct"> <h6><i class="fa fa-fw fa-check"></i> Correct, this is a challenge that {{troubleshooting.currentStory.name}} is dealing with!</h6></div>
-	   					<div class="alert alert-danger" ng-show="!challenge.correct"><h6><i class="fa fa-fw fa-close"></i> This is not a rhythm challenge...</h6> {{challenge.message}}</div>
+	   					<div class="alert alert-success" ng-show="challenge.correct"> <h6><i class="fa fa-fw fa-check"></i> {{challenge.message}}</h6></div>
+	   					<div class="alert alert-danger" ng-show="!challenge.correct"><h6><i class="fa fa-fw fa-close"></i> {{challenge.message}}</div>
 	   				</div>
 	   			</div>
 	   		</label>
@@ -72,7 +72,7 @@
        
     </div>
     <div class="panel-body" ng-show="troubleshooting.panelVisible[2]">
-        <div class="alert alert-danger"> Holly! Conclusion content, if possible! </div>
+         If, like Faith, you have a change in your life, think about how it affects your routines.  When your routines are affected, work on developing new, regular, activities to replace the old routines as soon as possible.
     </div>
 
     <div class="panel-footer">
@@ -84,7 +84,7 @@
             <div class="col-md-6 col-sm-6 col-xs-6 text-right">             
                 <button ng-show="troubleshooting.panelVisible[0]" class="btn btn-primary" ng-click="troubleshooting.showPanel(1)" ng-disabled="!troubleshooting.challengesFinished()">Continue <i class="fa fa-chevron-right"></i> </button>
                 <button ng-show="troubleshooting.panelVisible[1]" class="btn btn-primary" ng-click="troubleshooting.showPanel(2)" >Continue <i class="fa fa-chevron-right"></i> </button>
-                <a class="btn" ng-show="troubleshooting.panelVisible[3]" href="#/lessons_current">Continue <i class="fa fa-chevron-right"></i></a> </div>
+                <a class="btn" ng-show="troubleshooting.panelVisible[2]" href="#/lessons_current">Continue <i class="fa fa-chevron-right"></i></a> </div>
         </div>
     </div>
 </div>
